@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Imgui">
+      <UniqueIdentifier>{20ebef8f-75d6-47a7-8c99-f2c7878a76d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Imgui">
+      <UniqueIdentifier>{c55623f6-93ec-406c-a10e-f2d5d8b56280}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="dearimgui\imgui.cpp">
+      <Filter>Archivos de origen\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="dearimgui\imgui_demo.cpp">
+      <Filter>Archivos de origen\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="dearimgui\imgui_draw.cpp">
+      <Filter>Archivos de origen\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="dearimgui\imgui_impl_sdl.cpp">
+      <Filter>Archivos de origen\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="dearimgui\imgui_impl_sdlrenderer.cpp">
+      <Filter>Archivos de origen\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="dearimgui\imgui_tables.cpp">
+      <Filter>Archivos de origen\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="dearimgui\imgui_widgets.cpp">
+      <Filter>Archivos de origen\Imgui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dearimgui\imconfig.h">
+      <Filter>Archivos de encabezado\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="dearimgui\imgui.h">
+      <Filter>Archivos de encabezado\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="dearimgui\imgui_impl_sdl.h">
+      <Filter>Archivos de encabezado\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="dearimgui\imgui_impl_sdlrenderer.h">
+      <Filter>Archivos de encabezado\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="dearimgui\imgui_internal.h">
+      <Filter>Archivos de encabezado\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="dearimgui\imstb_rectpack.h">
+      <Filter>Archivos de encabezado\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="dearimgui\imstb_textedit.h">
+      <Filter>Archivos de encabezado\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="dearimgui\imstb_truetype.h">
+      <Filter>Archivos de encabezado\Imgui</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
