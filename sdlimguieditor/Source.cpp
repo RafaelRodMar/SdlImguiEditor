@@ -1,3 +1,4 @@
+//compile in release mode.
 #include<SDL.h>
 #include "dearimgui/imgui.h"
 #include "dearimgui/imgui_impl_sdl.h"
@@ -32,6 +33,11 @@ int main(int argc, char* args[])
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
+
+	//configuration flags
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; //navigate through controls by keyboard
+	io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable; //download the imgui docking version
+	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
 	//setup Dear ImGui style
 	ImGui::StyleColorsDark();
@@ -78,6 +84,28 @@ int main(int argc, char* args[])
 			ImGui_ImplSDLRenderer_NewFrame();
 			ImGui_ImplSDL2_NewFrame();
 			ImGui::NewFrame();
+
+			//docking
+			ImGui::DockSpaceOverViewport();
+
+			//menu
+			// ...
+			ImGui::DockSpace(ImGui::GetID("DockSpace"));
+
+			if (ImGui::BeginMainMenuBar()) {
+				if (ImGui::BeginMenu("File")) {
+					if (ImGui::MenuItem("Exit")) {
+						quit = true;
+					}
+					ImGui::EndMenu();
+				}
+				if (ImGui::BeginMenu("View")) {
+					ImGui::MenuItem("Some Panel", nullptr);
+					ImGui::EndMenu();
+				}
+
+				ImGui::EndMainMenuBar();
+			}
 
 			static float f = 0.0f;
 			static int counter = 0;
