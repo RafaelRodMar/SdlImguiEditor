@@ -1,11 +1,53 @@
 //compile in release mode.
 #include<SDL.h>
+#include<SDL_image.h>
+#include<SDL_opengl.h> //for GLuint definition. Need to include opengl32.lib library
+#include<iostream>
+#include<string>
 #include "dearimgui/imgui.h"
 #include "dearimgui/imgui_impl_sdl.h"
 #include "dearimgui/imgui_impl_sdlrenderer.h"
 
 SDL_Window* g_pWindow = 0;
 SDL_Renderer* g_pRenderer = 0;
+
+SDL_Texture* loadTexture(std::string fileName, SDL_Renderer* pRenderer)
+{
+	SDL_Surface* pTempSurface = IMG_Load(fileName.c_str()); //create Surface with contents of fileName
+
+	if (pTempSurface == 0) //exception handle load error
+	{
+		std::cout << "error loading file: " << fileName << std::endl;
+		std::cout << SDL_GetError() << " " << fileName << std::endl;
+		return false;
+	}
+
+	SDL_Texture* pTexture = SDL_CreateTextureFromSurface(pRenderer, pTempSurface); //Pass Surface to Texture
+	SDL_FreeSurface(pTempSurface); //Delete Surface
+
+	if (pTexture == 0) //exception handle transiction Surfacte to Texture
+	{
+		std::cout << "error creating Texture of file: " << fileName << std::endl;
+		return false;
+	}
+
+	return pTexture; //save texture.
+}
+
+void draw(SDL_Texture* texture, int x, int y, int width, int height, SDL_Renderer* pRenderer, SDL_RendererFlip flip)
+{
+	SDL_Rect srcRect; //source rectangle
+	SDL_Rect destRect; //destination rectangle
+
+	srcRect.x = 0;
+	srcRect.y = 0;
+	srcRect.w = destRect.w = width;
+	srcRect.h = destRect.h = height;
+	destRect.x = x; //select x axis on game window
+	destRect.y = y; //select y axis on game window
+
+	SDL_RenderCopyEx(pRenderer, texture, &srcRect, &destRect, 0, 0, flip); //Load image to render buffer.
+}
 
 int main(int argc, char* args[])
 {
@@ -27,6 +69,8 @@ int main(int argc, char* args[])
 	{
 		return 1; // sdl could not initialize
 	}
+
+	SDL_Texture* warrior = loadTexture("files/warrior.png", g_pRenderer);
 
 	//***************************************ImGui
 	//setup Dear ImGui context
@@ -128,32 +172,16 @@ int main(int argc, char* args[])
 			//another window
 			ImGui::Begin("Second window");
 			ImGui::Text("this is another window");
+			//ImGui::Image((ImTextureID)textureId, ImVec2(33, 33), ImVec2(0, 0), ImVec2(1, 1), ImVec4(1.0f, 1.0f, 1.0f, 1.0f), ImVec4(1.0f, 1.0f, 1.0f, 0.5f));
+			ImGui::Image((ImTextureID)warrior, ImVec2(33,33));
 			ImGui::End();
-
-			//render a scene to texture and show it as a imgui::image
-			//First you need to render you scene to a Frame Buffer Object(here is a good course on FBO : https://learnopengl.com/#!Advanced-OpenGL/Framebuffers)
-
-			//After that you will end up with a Texture(of type GLuint) containing your rendered scene.To print it into Dear imGUI, just call a Draw Image Command.
-
-			//	EDIT New(simpler) Example :
-
-			//	ImGui::Begin("GameWindow");
-			//{
-			//	// Using a Child allow to fill all the space of the window.
-			//	// It also alows customization
-			//	ImGui::BeginChild("GameRender");
-			//	// Get the size of the child (i.e. the whole draw size of the windows).
-			//	ImVec2 wsize = ImGui::GetWindowSize();
-			//	// Because I use the texture from OpenGL, I need to invert the V from the UV.
-			//	ImGui::Image((ImTextureID)tex, wsize, ImVec2(0, 1), ImVec2(1, 0));
-			//	ImGui::EndChild();
-			//}
-			//ImGui::End();
 
 			//rendering
 			ImGui::Render();
 			ImGui_ImplSDLRenderer_RenderDrawData(ImGui::GetDrawData());
 		}
+
+		draw(warrior, 40, 40, 33, 33, g_pRenderer, SDL_FLIP_NONE);
 
 		// show the window
 		SDL_RenderPresent(g_pRenderer);
