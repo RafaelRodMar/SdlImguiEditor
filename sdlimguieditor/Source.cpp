@@ -1,7 +1,5 @@
-//compile in release mode.
 #include<SDL.h>
 #include<SDL_image.h>
-#include<SDL_opengl.h> //for GLuint definition. Need to include opengl32.lib library
 #include<iostream>
 #include<string>
 #include "dearimgui/imgui.h"
