@@ -55,7 +55,7 @@ int main(int argc, char* args[])
 		// if succeeded create our window
 		g_pWindow = SDL_CreateWindow("SDL imGui editor",
 			SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-			640, 480,
+			1024, 768,
 			SDL_WINDOW_SHOWN);
 		// if the window creation succeeded create our renderer
 		if (g_pWindow != 0)
@@ -153,33 +153,35 @@ int main(int argc, char* args[])
 			static int counter = 0;
 
 			//one window
-			ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
-
-			ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-
+			ImGui::Begin("Project");                          // Create a window with name and append into it.
+			ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too.
 			ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-
 			if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
 				counter++;
 			ImGui::SameLine();
 			ImGui::Text("counter = %d", counter);
-
 			ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 			ImGui::End();
 
 			//another window
-			ImGui::Begin("Second window");
+			ImGui::Begin("Inspector");
 			ImGui::Text("this is another window");
-			//ImGui::Image((ImTextureID)textureId, ImVec2(33, 33), ImVec2(0, 0), ImVec2(1, 1), ImVec4(1.0f, 1.0f, 1.0f, 1.0f), ImVec4(1.0f, 1.0f, 1.0f, 0.5f));
-			ImGui::Image((ImTextureID)warrior, ImVec2(33,33));
 			ImGui::End();
+
+			ImGui::Begin("Assets");
+			ImGui::End();
+
+			ImGui::Begin("View");
+			ImGui::Image((ImTextureID)warrior, ImVec2(33, 33));
+			ImGui::End();
+
 
 			//rendering
 			ImGui::Render();
 			ImGui_ImplSDLRenderer_RenderDrawData(ImGui::GetDrawData());
 		}
 
-		draw(warrior, 40, 40, 33, 33, g_pRenderer, SDL_FLIP_NONE);
+		//draw(warrior, 40, 40, 33, 33, g_pRenderer, SDL_FLIP_NONE);
 
 		// show the window
 		SDL_RenderPresent(g_pRenderer);
