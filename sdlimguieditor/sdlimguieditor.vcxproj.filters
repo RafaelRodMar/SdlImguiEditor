@@ -71,5 +71,8 @@
     <ClInclude Include="dearimgui\imstb_truetype.h">
       <Filter>Archivos de encabezado\Imgui</Filter>
     </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

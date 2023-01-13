@@ -2,9 +2,12 @@
 #include<SDL_image.h>
 #include<iostream>
 #include<string>
+#include<vector>
 #include "dearimgui/imgui.h"
 #include "dearimgui/imgui_impl_sdl.h"
 #include "dearimgui/imgui_impl_sdlrenderer.h"
+#include "entity.h"
+#include <time.h>
 
 SDL_Window* g_pWindow = 0;
 SDL_Renderer* g_pRenderer = 0;
@@ -49,6 +52,8 @@ void draw(SDL_Texture* texture, int x, int y, int width, int height, SDL_Rendere
 
 int main(int argc, char* args[])
 {
+	srand(time(nullptr));
+
 	// initialize SDL
 	if (SDL_Init(SDL_INIT_EVERYTHING) >= 0)
 	{
@@ -88,6 +93,16 @@ int main(int argc, char* args[])
 	ImGui_ImplSDL2_InitForSDLRenderer(g_pWindow, g_pRenderer);
 	ImGui_ImplSDLRenderer_Init(g_pRenderer);
 	//***************************************
+
+	std::vector<Entity> ventities;
+
+	std::string types[] = {"sonido", "imagen", "fondo"};
+	std::string names = "nombre";
+	int num = 0;
+	for (int i = 0; i < 100; i++) {
+		ventities.push_back(Entity(names + std::to_string(num), types[rand() % 3]));
+		num++;
+	}
 
 	bool quit = false;
 	SDL_Event e;
@@ -161,6 +176,44 @@ int main(int argc, char* args[])
 			ImGui::SameLine();
 			ImGui::Text("counter = %d", counter);
 			ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+			if (ImGui::TreeNode("project name"))
+			{
+				// 'selection_mask' is dumb representation of what may be user-side selection state.
+				//  You may retain selection state inside or outside your objects in whatever format you see fit.
+				// 'node_clicked' is temporary storage of what node we have clicked to process selection at the end
+				/// of the loop. May be a pointer to your own node type, etc.
+				static int selection_mask = (1 << 2);
+				int node_clicked = -1;
+				for (int i = 0; i < ventities.size(); i++) {
+					// Disable the default "open on single-click behavior" + set Selected flag according to our selection.
+					// To alter selection we use IsItemClicked() && !IsItemToggledOpen(), so clicking on an arrow doesn't alter selection.
+					ImGuiTreeNodeFlags node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
+					const bool is_selected = (selection_mask & (1 << i)) != 0;
+					if (is_selected)
+						node_flags |= ImGuiTreeNodeFlags_Selected;
+
+					bool node_open = ImGui::TreeNodeEx((void*)(intptr_t)i, node_flags, ventities[i].name.c_str());
+					if (ImGui::IsItemClicked() && !ImGui::IsItemToggledOpen())
+						node_clicked = i;
+					
+					if (node_open)
+					{
+						ImGui::BulletText("Blah blah\nBlah Blah");
+						ImGui::TreePop();
+					}
+				}
+				
+				if (node_clicked != -1)
+					{
+						// Update selection state
+						// (process outside of tree loop to avoid visual inconsistencies during the clicking frame)
+						if (ImGui::GetIO().KeyCtrl)
+							selection_mask ^= (1 << node_clicked);          // CTRL+click to toggle
+						else //if (!(selection_mask & (1 << node_clicked))) // Depending on selection behavior you want, may want to preserve selection when clicking on item that is part of the selection
+							selection_mask = (1 << node_clicked);           // Click to single-select
+					}
+				ImGui::TreePop();
+			}
 			ImGui::End();
 
 			//another window
