@@ -3,6 +3,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<bitset>
 #include "dearimgui/imgui.h"
 #include "dearimgui/imgui_impl_sdl.h"
 #include "dearimgui/imgui_impl_sdlrenderer.h"
@@ -183,6 +184,7 @@ int main(int argc, char* args[])
 				// 'node_clicked' is temporary storage of what node we have clicked to process selection at the end
 				/// of the loop. May be a pointer to your own node type, etc.
 				static int selection_mask = (1 << 2);
+				ImGui::Text("selection_mask: %s", std::bitset<sizeof(selection_mask) * 8>(selection_mask).to_string().insert(0, "0b").c_str());
 				int node_clicked = -1;
 				for (int i = 0; i < ventities.size(); i++) {
 					// Disable the default "open on single-click behavior" + set Selected flag according to our selection.
@@ -204,14 +206,14 @@ int main(int argc, char* args[])
 				}
 				
 				if (node_clicked != -1)
-					{
-						// Update selection state
-						// (process outside of tree loop to avoid visual inconsistencies during the clicking frame)
-						if (ImGui::GetIO().KeyCtrl)
-							selection_mask ^= (1 << node_clicked);          // CTRL+click to toggle
-						else //if (!(selection_mask & (1 << node_clicked))) // Depending on selection behavior you want, may want to preserve selection when clicking on item that is part of the selection
-							selection_mask = (1 << node_clicked);           // Click to single-select
-					}
+				{
+					// Update selection state
+					// (process outside of tree loop to avoid visual inconsistencies during the clicking frame)
+					if (ImGui::GetIO().KeyCtrl)
+						selection_mask ^= (1 << node_clicked);          // CTRL+click to toggle
+					else //if (!(selection_mask & (1 << node_clicked))) // Depending on selection behavior you want, may want to preserve selection when clicking on item that is part of the selection
+						selection_mask = (1 << node_clicked);           // Click to single-select
+				}
 				ImGui::TreePop();
 			}
 			ImGui::End();
