@@ -183,14 +183,13 @@ int main(int argc, char* args[])
 				//  You may retain selection state inside or outside your objects in whatever format you see fit.
 				// 'node_clicked' is temporary storage of what node we have clicked to process selection at the end
 				/// of the loop. May be a pointer to your own node type, etc.
-				static int selection_mask = (1 << 2);
-				ImGui::Text("selection_mask: %s", std::bitset<sizeof(selection_mask) * 8>(selection_mask).to_string().insert(0, "0b").c_str());
+				static std::vector<bool> selection_mask(ventities.size(), false);
 				int node_clicked = -1;
 				for (int i = 0; i < ventities.size(); i++) {
 					// Disable the default "open on single-click behavior" + set Selected flag according to our selection.
 					// To alter selection we use IsItemClicked() && !IsItemToggledOpen(), so clicking on an arrow doesn't alter selection.
 					ImGuiTreeNodeFlags node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
-					const bool is_selected = (selection_mask & (1 << i)) != 0;
+					const bool is_selected = selection_mask[i] != false;
 					if (is_selected)
 						node_flags |= ImGuiTreeNodeFlags_Selected;
 
@@ -210,9 +209,12 @@ int main(int argc, char* args[])
 					// Update selection state
 					// (process outside of tree loop to avoid visual inconsistencies during the clicking frame)
 					if (ImGui::GetIO().KeyCtrl)
-						selection_mask ^= (1 << node_clicked);          // CTRL+click to toggle
+						selection_mask[node_clicked] = !selection_mask[node_clicked];          // CTRL+click to toggle
 					else //if (!(selection_mask & (1 << node_clicked))) // Depending on selection behavior you want, may want to preserve selection when clicking on item that is part of the selection
-						selection_mask = (1 << node_clicked);           // Click to single-select
+					{
+						std::fill(selection_mask.begin(), selection_mask.end(), 0);
+						selection_mask[node_clicked] = true;           // Click to single-select
+					}
 				}
 				ImGui::TreePop();
 			}
