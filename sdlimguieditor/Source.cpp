@@ -169,14 +169,15 @@ int main(int argc, char* args[])
 			static int counter = 0;
 
 			//one window
+			static int last_selected = -1;
 			ImGui::Begin("Project");                          // Create a window with name and append into it.
-			ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too.
-			ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-			if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-				counter++;
-			ImGui::SameLine();
-			ImGui::Text("counter = %d", counter);
-			ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+			//ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too.
+			//ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
+			//if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
+			//	counter++;
+			//ImGui::SameLine();
+			//ImGui::Text("counter = %d", counter);
+			//ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 			if (ImGui::TreeNode("project name"))
 			{
 				// 'selection_mask' is dumb representation of what may be user-side selection state.
@@ -195,7 +196,10 @@ int main(int argc, char* args[])
 
 					bool node_open = ImGui::TreeNodeEx((void*)(intptr_t)i, node_flags, ventities[i].name.c_str());
 					if (ImGui::IsItemClicked() && !ImGui::IsItemToggledOpen())
+					{
 						node_clicked = i;
+						last_selected = i;
+					}
 					
 					if (node_open)
 					{
@@ -223,6 +227,12 @@ int main(int argc, char* args[])
 			//another window
 			ImGui::Begin("Inspector");
 			ImGui::Text("this is another window");
+			if (last_selected != -1)
+			{
+				ImGui::Text("Project element : %d", last_selected);
+				ImGui::Text("Name : %s", ventities[last_selected].name);
+				ImGui::Text("Type : %s", ventities[last_selected].type);
+			}
 			ImGui::End();
 
 			ImGui::Begin("Assets");
