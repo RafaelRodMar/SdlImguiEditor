@@ -135,6 +135,7 @@
     <ClCompile Include="dearimgui\imgui_draw.cpp" />
     <ClCompile Include="dearimgui\imgui_impl_sdl.cpp" />
     <ClCompile Include="dearimgui\imgui_impl_sdlrenderer.cpp" />
+    <ClCompile Include="dearimgui\imgui_stdlib.cpp" />
     <ClCompile Include="dearimgui\imgui_tables.cpp" />
     <ClCompile Include="dearimgui\imgui_widgets.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="dearimgui\imgui_impl_sdl.h" />
     <ClInclude Include="dearimgui\imgui_impl_sdlrenderer.h" />
     <ClInclude Include="dearimgui\imgui_internal.h" />
+    <ClInclude Include="dearimgui\imgui_stdlib.h" />
     <ClInclude Include="dearimgui\imstb_rectpack.h" />
     <ClInclude Include="dearimgui\imstb_textedit.h" />
     <ClInclude Include="dearimgui\imstb_truetype.h" />

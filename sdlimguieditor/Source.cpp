@@ -7,6 +7,7 @@
 #include "dearimgui/imgui.h"
 #include "dearimgui/imgui_impl_sdl.h"
 #include "dearimgui/imgui_impl_sdlrenderer.h"
+#include "dearimgui/imgui_stdlib.h"  //for using std::string in some imgui funcions.
 #include "entity.h"
 #include <time.h>
 
@@ -97,11 +98,11 @@ int main(int argc, char* args[])
 
 	std::vector<Entity> ventities;
 
-	std::string types[] = {"sonido", "imagen", "fondo"};
-	std::string names = "nombre";
+	std::string types[] = {"sound", "image", "background"};
+	std::string names = "name";
 	int num = 0;
 	for (int i = 0; i < 10; i++) {
-		ventities.push_back(Entity(names + std::to_string(num), types[rand() % 3]));
+		ventities.push_back(Entity(names + std::to_string(num), types[rand() % 3], ""));
 		num++;
 	}
 
@@ -180,7 +181,7 @@ int main(int argc, char* args[])
 					{
 						if (ventities.size() < 256)
 						{
-							ventities.push_back(Entity(names + std::to_string(num), types[rand() % 3]));
+							ventities.push_back(Entity(names + std::to_string(num), types[rand() % 3], ""));
 							num++;
 						}
 					}
@@ -220,7 +221,7 @@ int main(int argc, char* args[])
 
 					if (node_open)
 					{
-						ImGui::BulletText("Blah blah\nBlah Blah");
+						//ImGui::BulletText("Blah blah\nBlah Blah");
 						ImGui::TreePop();
 					}
 				}
@@ -246,12 +247,13 @@ int main(int argc, char* args[])
 
 			//another window
 			ImGui::Begin("Inspector");
-			ImGui::Text("this is another window");
 			if (last_selected != -1)
 			{
 				ImGui::Text("Project element : %d", last_selected);
 				ImGui::Text("Name : %s", ventities[last_selected].name);
 				ImGui::Text("Type : %s", ventities[last_selected].type);
+				ImGui::Text("Position : %d, %d", ventities[last_selected].pos.x, ventities[last_selected].pos.y);
+				ImGui::InputText("archive", &ventities[last_selected].path);
 			}
 			ImGui::End();
 

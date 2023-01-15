@@ -45,6 +45,9 @@
     <ClCompile Include="dearimgui\imgui_widgets.cpp">
       <Filter>Archivos de origen\Imgui</Filter>
     </ClCompile>
+    <ClCompile Include="dearimgui\imgui_stdlib.cpp">
+      <Filter>Archivos de origen\Imgui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dearimgui\imconfig.h">
@@ -73,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="entity.h">
       <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="dearimgui\imgui_stdlib.h">
+      <Filter>Archivos de encabezado\Imgui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
