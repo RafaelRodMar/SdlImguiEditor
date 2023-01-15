@@ -171,20 +171,27 @@ int main(int argc, char* args[])
 			//one window
 			static int last_selected = -1;
 			ImGui::Begin("Project");                          // Create a window with name and append into it.
-			//ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too.
-			//ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-			//if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-			//	counter++;
-			//ImGui::SameLine();
-			//ImGui::Text("counter = %d", counter);
-			//ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+
 			if (ImGui::TreeNode("project name"))
 			{
+				if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
+				{
+					if (ImGui::MenuItem("Add entity"))
+					{
+						if (ventities.size() < 256)
+						{
+							ventities.push_back(Entity(names + std::to_string(num), types[rand() % 3]));
+							num++;
+						}
+					}
+					ImGui::EndPopup();
+				}
+
 				// 'selection_mask' is dumb representation of what may be user-side selection state.
 				//  You may retain selection state inside or outside your objects in whatever format you see fit.
 				// 'node_clicked' is temporary storage of what node we have clicked to process selection at the end
 				/// of the loop. May be a pointer to your own node type, etc.
-				static std::vector<bool> selection_mask(ventities.size(), false);
+				static std::vector<bool> selection_mask(256, false);
 				int node_clicked = -1;
 				for (int i = 0; i < ventities.size(); i++) {
 					// Disable the default "open on single-click behavior" + set Selected flag according to our selection.
@@ -199,6 +206,16 @@ int main(int argc, char* args[])
 					{
 						node_clicked = i;
 						last_selected = i;
+					}
+
+					//context menu
+					if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
+					{
+						if (ImGui::MenuItem("Remove entity"))
+						{
+							ventities.erase(ventities.begin() + i);
+						}
+						ImGui::EndPopup();
 					}
 
 					if (node_open)
@@ -223,6 +240,8 @@ int main(int argc, char* args[])
 				
 				ImGui::TreePop();
 			}
+
+			
 			ImGui::End();
 
 			//another window
