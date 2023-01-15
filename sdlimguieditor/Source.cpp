@@ -100,7 +100,7 @@ int main(int argc, char* args[])
 	std::string types[] = {"sonido", "imagen", "fondo"};
 	std::string names = "nombre";
 	int num = 0;
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < 10; i++) {
 		ventities.push_back(Entity(names + std::to_string(num), types[rand() % 3]));
 		num++;
 	}
@@ -200,7 +200,7 @@ int main(int argc, char* args[])
 						node_clicked = i;
 						last_selected = i;
 					}
-					
+
 					if (node_open)
 					{
 						ImGui::BulletText("Blah blah\nBlah Blah");
@@ -220,6 +220,7 @@ int main(int argc, char* args[])
 						selection_mask[node_clicked] = true;           // Click to single-select
 					}
 				}
+				
 				ImGui::TreePop();
 			}
 			ImGui::End();
