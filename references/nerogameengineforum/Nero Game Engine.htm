@@ -1,0 +1,1512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  
+  <link rel="stylesheet" type="text/css" href="https://en.sfml-dev.org/forums/Themes/ds-natural_20/css/index.css?fin20" />
+
+  
+  <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=VI3mJxPpcgkjE3FMKk7XAtgFXyGfJBI4cxborLKg5FYIfp8LtGgP8Iz6_24ths8a9aRVGTbOc6vcT7yBJzzXOmV0tBmbleJbpTdu8raUaqo" charset="UTF-8">
+  <script type="text/javascript"
+ src="https://en.sfml-dev.org/forums/Themes/default/scripts/script.js?fin20" />
+  <script type="text/javascript"
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/scripts/theme.js?fin20" />
+  <script type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "https://en.sfml-dev.org/forums/Themes/ds-natural_20";
+		var smf_default_theme_url = "https://en.sfml-dev.org/forums/Themes/default";
+		var smf_images_url = "https://en.sfml-dev.org/forums/Themes/ds-natural_20/images";
+		var smf_scripturl = "https://en.sfml-dev.org/forums/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "UTF-8";
+		var ajax_notification_text = "Loading...";
+		var ajax_notification_cancel_text = "Cancel";
+	// ]]></script>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  
+  <meta name="description" content="Nero Game Engine" />
+  <title>Nero Game Engine</title>
+
+  
+  
+  <link rel="canonical" href="https://en.sfml-dev.org/forums/index.php?topic=21019.0" />
+
+  
+  <link rel="icon" type="image/ico" href="https://www.sfml-dev.org/images/favicon.ico" />
+
+  
+  <link rel="help" href="https://en.sfml-dev.org/forums/index.php?action=help" />
+
+  
+  <link rel="search" href="https://en.sfml-dev.org/forums/index.php?action=search" />
+
+  
+  <link rel="contents" href="https://en.sfml-dev.org/forums/index.php" />
+
+  
+  <link rel="alternate" type="application/rss+xml" title="SFML community forums - RSS" href="https://en.sfml-dev.org/forums/index.php?type=rss;action=.xml" />
+
+  
+  <link rel="prev" href="https://en.sfml-dev.org/forums/index.php?topic=21019.0;prev_next=prev" />
+
+  
+  <link rel="next" href="https://en.sfml-dev.org/forums/index.php?topic=21019.0;prev_next=next" />
+
+  
+  <link rel="index" href="https://en.sfml-dev.org/forums/index.php?board=10.0" />
+
+  
+  <script src="https://www.google.com/recaptcha/api.js" />
+  
+  <link rel="stylesheet" type="text/css" id="recaptcha_css" href="https://en.sfml-dev.org/forums/Themes/default/css/recaptcha.css" />
+
+</head><body>
+<div id="toparea">
+<div id="topbox" class="wrapper">
+<div id="userarea">Welcome, <strong>Guest</strong>. Please <a href="?action=login">login</a> or <a href="?action=register">register</a>.
+Did you miss your <a href="https://en.sfml-dev.org/forums/index.php?action=activate">activation
+email?</a> </div>
+</div>
+</div>
+
+<div id="mainarea">
+<div id="header">
+<div id="header-inside">
+<div id="logo"> <a class="goto-index" href="https://www.sfml-dev.org/index.php" title="">
+</a><div>
+
+<div class="otherforum" id="otherforum-fr"> <a href="https://fr.sfml-dev.org/forums" title="Go to the french forum">
+French forum </a> </div>
+<div id="searcharea">
+<form action="https://en.sfml-dev.org/forums/index.php?action=search2" method="post" accept-charset="UTF-8"> <input class="inputbox" name="search" value="Search..." onfocus="this.value = '';" onblur="if(this.value=='') this.value='Search...';" type="text" /> <input name="topic" value="21019" type="hidden" /> </form>
+</div>
+</div>
+</div>
+</div>
+<div class="wrapper">
+<div id="toolbar-l">
+<div id="toolbar-r">
+<div id="toolbar">
+<ul id="topnav">
+  <li id="button_home"> <a class="active" href="https://en.sfml-dev.org/forums/index.php"><span>Home</span></a> </li>
+  <li id="button_help"> <a class="" href="https://en.sfml-dev.org/forums/index.php?action=help"><span>Help</span></a>
+  </li>
+  <li id="button_search"> <a class="" href="https://en.sfml-dev.org/forums/index.php?action=search"><span>Search</span></a>
+  </li>
+  <li id="button_login"> <a class="" href="https://en.sfml-dev.org/forums/index.php?action=login"><span>Login</span></a>
+  </li>
+  <li id="button_register"> <a class="" href="https://en.sfml-dev.org/forums/index.php?action=register"><span>Register</span></a>
+  </li>
+</ul>
+</div>
+</div>
+</div>
+<div id="bodybox">
+<div id="bdybox-l">
+<div id="bdybox-b">
+<div id="bdybox-br">
+<div id="bdybox-bl">
+<div id="bdybox-t">
+<div id="bdybox-tr">
+<div id="bdybox-tl">
+<div class="navigate_section">
+<ul>
+  <li> <a href="https://en.sfml-dev.org/forums/index.php"><span>SFML
+community forums</span></a> » </li>
+  <li> <a href="https://en.sfml-dev.org/forums/index.php#c2"><span>General</span></a>
+» </li>
+  <li> <a href="https://en.sfml-dev.org/forums/index.php?board=10.0"><span>SFML
+projects</span></a> » </li>
+  <li class="last"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.0"><span>Nero
+Game Engine</span></a> </li>
+</ul>
+</div>
+<a id="top"> </a><a id="msg150321">
+</a><div class="pagesection">
+<div class="nextlinks">
+<div class="buttonlist floatright">
+<ul>
+<a id="msg150321">  </a><li><a class="button_strip_print" href="https://en.sfml-dev.org/forums/index.php?action=printpage;topic=21019.0" rel="new_win nofollow"><span class="last">Print</span></a></li>
+</ul>
+</div>
+<div class="pagelinks floatleft">Pages: [<strong>1</strong>] <a class="navPages" href="https://en.sfml-dev.org/forums/index.php?topic=21019.15">2</a> <a class="navPages" href="https://en.sfml-dev.org/forums/index.php?topic=21019.30">3</a> <span style="font-weight: bold;" onclick="expandPages(this, 'https://en.sfml-dev.org/forums/index.php?topic=21019.%1$d', 45, 105, 15);" onmouseover="this.style.cursor='pointer';"> ... </span><a class="navPages" href="https://en.sfml-dev.org/forums/index.php?topic=21019.105">8</a> <a class="navPages" href="https://en.sfml-dev.org/forums/index.php?topic=21019.15"> </a></div>
+</div>
+<div id="forumposts">
+<div class="cat_bar">
+<h3 class="catbg"><a class="navPages" href="https://en.sfml-dev.org/forums/index.php?topic=21019.15"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/topic/veryhot_post.gif" alt="" align="bottom" /> <span id="author">Author</span> Topic: Nero
+Game Engine &nbsp;(Read 105415 times) </a></h3>
+</div>
+<p id="whoisviewing" class="smalltext"><a class="navPages" href="https://en.sfml-dev.org/forums/index.php?topic=21019.15">0 Members and 1 Guest are
+viewing this topic. </a></p>
+<form action="https://en.sfml-dev.org/forums/index.php?action=quickmod2;topic=21019.0" method="post" accept-charset="UTF-8" name="quickModForm" id="quickModForm" style="margin: 0pt;" onsubmit="return oQuickModify.bInEditMode ? oQuickModify.modifySave('1ede412f6922dfa0845de2503885dfb8', 'a7f67091dd88') : false">
+<a class="navPages" href="https://en.sfml-dev.org/forums/index.php?topic=21019.15">  </a><div class="windowbg"><a class="navPages" href="https://en.sfml-dev.org/forums/index.php?topic=21019.15"> <span class="topslice"><span />
+  <div class="post_wrapper">
+  <div class="poster">
+  <h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
+  <ul class="reset smalltext" id="msg_150321_extra_info">
+    <li class="postgroup">Jr. Member</li>
+    <li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*" /><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*" /></li>
+    <li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
+      <img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt="" /> </a> </li>
+    <li class="postcount">Posts: 95</li>
+    <li class="blurb">Build games is simple</li>
+    <li class="profile">
+      <ul>
+        <li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" /></a></li>
+        <li><a href="https://www.nero-games.com" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine" /></a></li>
+        <li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=150321" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email" /></a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+  <div class="postarea">
+  <div class="flow_hidden">
+  <div class="keyinfo">
+  <div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt="" /> </div>
+  <h5 id="subject_150321"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg150321#msg150321" rel="nofollow">Nero Game Engine</a> </h5>
+  <div class="smalltext">« <strong> on:</strong> October 22, 2016,
+05:58:22 pm »</div>
+  <div id="msg_150321_quick_mod">
+  </div>
+  </div>
+  <div class="post">
+  <div class="inner" id="msg_150321"><img src="nero%20game%20engine_files/github_readme_engine_v2.png" alt="" class="bbc_img resized" width="720" /><br />
+  <br />
+  <br />
+Hi everyone, In this topic, I want to present you <strong>Project Nero</strong><br />
+  <br />
+The goal of the project is to build a Game Engine using SFML and Box2D.
+I decided to focus on the development of platform games. Build a Game
+Engine with a lot of features is really tough. The first step in
+building my engine was to integrate Box2D with SFML, I've thought of a
+lot of way to do that, and then I've discovered the Box2D TestBed, The
+Box2D TestBed offers many features, but it uses GLUI and FreeGlUT
+instead of SFML. So, I've decided to replicate it, suppress all the
+GLUI, FreeGlUT and OpenGL code and then get only some SFML and SFGUI
+code : This gave me the "Nero&nbsp; Game Engine 0.1"<br />
+  <br />
+For the moment the engine is split into two parts, a Render_Engine and
+a Dev_Engine<br />
+  <br />
+The goal of the Render Engine is to test a game scene: you create a new
+Scene (a new class that inherits from nero::Scene), set the scene to
+the engine, and run the engine. The Render Engine offers to reset and
+pause the scene. <br />
+Here is a screenshot that run the "Tumbler" example from the Box2D
+TestBed <br />
+  <br />
+  <img src="http://s-media-cache-ak0.pinimg.com/originals/bf/71/28/bf7128041c725a42c0f4fe574aa5255c.png" alt="" class="bbc_img resized" width="740" /><br />
+  <br />
+The goal of the Dev_Engine is to help in a Scene building, at this
+stage of development it's a complete replication of the Box2D Testbed.
+The features it offers are :<br />
+&nbsp;- Automatic drawing : when you create a box2d object, it draws
+automatically no need to create an SFML shape<br />
+- Move objects with the mouse<br />
+- See object center of mass, bounding rectangle, etc<br />
+- See statistic (number of body in the scene etc)<br />
+  <br />
+Here is a Screen shoot with the "Conveyor Belt" example from Box2D
+Testbed <br />
+  <img src="http://s-media-cache-ak0.pinimg.com/originals/9d/a7/42/9da74271f904d7687b4e4d3284f4b795.png" alt="" class="bbc_img resized" width="740" /><br />
+  <br />
+When you create a Scene by inheriting from (nero::Scene or
+nero::DevScene), you get access to the camera and some functions to
+process keyboard and mouse input</div>
+  </div>
+  </div>
+  <div class="moderatorbar">
+  <div class="smalltext modified" id="modified_150321"> « <em>Last
+Edit: May 06, 2022, 03:56:21 pm by NeroGames</em> » </div>
+  <div class="smalltext reportlinks"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif" alt="" /> Logged </div>
+  <div class="signature" id="msg_150321_signature"><a href="https://github.com/NeroGames/nero-game-engine" class="bbc_link" target="_blank" rel="noopener noreferrer">git hub repository</a><br />
+  <a href="https://nero-games.com" class="bbc_link" target="_blank" rel="noopener noreferrer">nero-games.com</a></div>
+  </div>
+  </div>
+  <span class="botslice"><span /> </span></div>
+  <hr class="post_separator" /> </span></a><a id="msg150339">
+  </a><div class="windowbg2"><a id="msg150339"> <span class="topslice"><span />
+  <div class="post_wrapper">
+  <div class="poster">
+  <h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=3045" title="View the profile of ratzlaff">ratzlaff</a> </h4>
+  <ul class="reset smalltext" id="msg_150339_extra_info">
+    <li class="postgroup">Newbie</li>
+    <li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*" /></li>
+    <li class="postcount">Posts: 33</li>
+    <li class="profile">
+      <ul>
+        <li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=3045"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" /></a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+  <div class="postarea">
+  <div class="flow_hidden">
+  <div class="keyinfo">
+  <div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt="" /> </div>
+  <h5 id="subject_150339"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg150339#msg150339" rel="nofollow">Re: Nero Game Engine</a> </h5>
+  <div class="smalltext">« <strong>Reply #1 on:</strong> October 24,
+2016, 06:45:41 pm »</div>
+  <div id="msg_150339_quick_mod">
+  </div>
+  </div>
+  <div class="post">
+  <div class="inner" id="msg_150339">Nice!<br />
+  <br />
+Do you have your code up somewhere accessible?</div>
+  </div>
+  </div>
+  <div class="moderatorbar">
+  <div class="smalltext modified" id="modified_150339"> </div>
+  <div class="smalltext reportlinks"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif" alt="" /> Logged </div>
+  </div>
+  </div>
+  <span class="botslice"><span /> </span></div>
+  <hr class="post_separator" /> </span></a><a id="msg150347">
+  </a><div class="windowbg"><a id="msg150347"> <span class="topslice"><span />
+  <div class="post_wrapper">
+  <div class="poster">
+  <h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
+  <ul class="reset smalltext" id="msg_150347_extra_info">
+    <li class="postgroup">Jr. Member</li>
+    <li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*" /><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*" /></li>
+    <li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
+      <img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt="" /> </a> </li>
+    <li class="postcount">Posts: 95</li>
+    <li class="blurb">Build games is simple</li>
+    <li class="profile">
+      <ul>
+        <li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" /></a></li>
+        <li><a href="https://www.nero-games.com" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine" /></a></li>
+        <li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=150347" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email" /></a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+  <div class="postarea">
+  <div class="flow_hidden">
+  <div class="keyinfo">
+  <div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt="" /> </div>
+  <h5 id="subject_150347"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg150347#msg150347" rel="nofollow">Re: Nero Game Engine</a> </h5>
+  <div class="smalltext">« <strong>Reply #2 on:</strong> October 25,
+2016, 12:33:04 pm »</div>
+  <div id="msg_150347_quick_mod">
+  </div>
+  </div>
+  <div class="post">
+  <div class="inner" id="msg_150347">Hi " ratzlaff ", thanks for your
+interest <img src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif" alt=":)" title="Smiley" class="smiley" />, the code is not on a
+repository yet, i'll made that this week.<br />
+  <br />
+Also, i'm already working in some new features.&nbsp; the step 2 in
+building my engine is the map editor. It will be possible to load
+sprites and map them on the physic scene build with Box2D. I'll present
+those new features by the end of this month, so, stay tuned <img src="https://www.sfml-dev.org/forums/Smileys/default/cool.gif" alt="8)" title="Cool" class="smiley" />.</div>
+  </div>
+  </div>
+  <div class="moderatorbar">
+  <div class="smalltext modified" id="modified_150347"> </div>
+  <div class="smalltext reportlinks"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif" alt="" /> Logged </div>
+  <div class="signature" id="msg_150347_signature"><a href="https://github.com/NeroGames/nero-game-engine" class="bbc_link" target="_blank" rel="noopener noreferrer">git hub repository</a><br />
+  <a href="https://nero-games.com" class="bbc_link" target="_blank" rel="noopener noreferrer">nero-games.com</a></div>
+  </div>
+  </div>
+  <span class="botslice"><span /> </span></div>
+  <hr class="post_separator" /> </span></a><a id="msg150454">
+  </a><div class="windowbg2"><a id="msg150454"> <span class="topslice"><span />
+  <div class="post_wrapper">
+  <div class="poster">
+  <h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
+  <ul class="reset smalltext" id="msg_150454_extra_info">
+    <li class="postgroup">Jr. Member</li>
+    <li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*" /><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*" /></li>
+    <li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
+      <img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt="" /> </a> </li>
+    <li class="postcount">Posts: 95</li>
+    <li class="blurb">Build games is simple</li>
+    <li class="profile">
+      <ul>
+        <li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" /></a></li>
+        <li><a href="https://www.nero-games.com" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine" /></a></li>
+        <li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=150454" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email" /></a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+  <div class="postarea">
+  <div class="flow_hidden">
+  <div class="keyinfo">
+  <div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt="" /> </div>
+  <h5 id="subject_150454"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg150454#msg150454" rel="nofollow">Re: Nero Game Engine</a> </h5>
+  <div class="smalltext">« <strong>Reply #3 on:</strong> October 30,
+2016, 08:58:16 pm »</div>
+  <div id="msg_150454_quick_mod">
+  </div>
+  </div>
+  <div class="post">
+  <div class="inner" id="msg_150454">Hi everyone ! I'm going to present
+the new features in the Nero&nbsp; Dev_Engine&nbsp; <img src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif" alt=":)" title="Smiley" class="smiley" />.<br />
+  <br />
+I've added the possibility to add and manipulate sprites on the Scene.
+And when all it's done, the physics (Box2D stuff) and the graphics
+(sprites) can be saved separately in two files in a JSON format. Before
+I explain, here is a video<br />
+  <br />
+  <iframe src="//www.youtube.com/embed/segLJa93ujs?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640">&lt;br /&gt;
+  &lt;br /&gt;
+Now let's see the new features in more detail.&lt;br /&gt;
+  &lt;br /&gt;
+Feature 1 : Texture loading and sprite recognition&lt;br /&gt;
+For each texture, we need a ".txt" file with the same name. The ".txt"
+file describes all the sprites we want to extract from that texture. &lt;br /&gt;
+the format of the ".txt" file is " Sprite_Id - BoundRect_Left -
+BoundRect_Top - BoundRect_Width - BoundRect_Height ". After that, the
+Engine just needs the path to the folder where textures are located.&lt;br /&gt;
+  &lt;img
+ src="http://s-media-cache-ak0.pinimg.com/originals/59/71/1f/59711f5cd1fda02ffb62fe2b2faff2c2.png"
+ alt="" class="bbc_img resized" width="740" /&gt;&lt;br /&gt;
+  &lt;br /&gt;
+Feature 2 : Sprite preview&lt;br /&gt;
+When textures have been loaded and sprites detected, The engine offers
+a preview of each sprite. During the preview, it's possible to zoom in
+and out.&lt;br /&gt;
+  &lt;br /&gt;
+Feature 3 : Sprite manipulation&lt;br /&gt;
+Here are manipulations we can apply on sprites, there will be more
+later!&lt;br /&gt;
+&amp;nbsp;- add/remove sprite in/from the canvas&lt;br /&gt;
+&amp;nbsp;- select sprite one by one&lt;br /&gt;
+&amp;nbsp;- move sprites with the mouse&lt;br /&gt;
+&amp;nbsp;- rotate and scale sprites&lt;br /&gt;
+  &lt;br /&gt;
+Feature 4 : Working directory and saving&lt;br /&gt;
+When several scenes are added to the Dev_Engine, the engine creates a
+directory for each scene. The physics and the graphics are saved in the
+directory of each scene. This allows us to work on several scenes at
+the same time.&lt;br /&gt;
+Physics and Graphics are in JSON format and can be easily loaded in a
+Nero Render_Engine.&lt;br /&gt;
+  &lt;br /&gt;
+That's all for now,&amp;nbsp; if anyone has feedback, please let me know,
+your critics will help to improve the engine&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="moderatorbar"&gt;
+  &lt;div class="smalltext modified" id="modified_150454"&gt; « &lt;em&gt;Last
+Edit: May 06, 2022, 03:56:51 pm by NeroGames&lt;/em&gt; » &lt;/div&gt;
+  &lt;div class="smalltext reportlinks"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+ alt="" /&gt; Logged &lt;/div&gt;
+  &lt;div class="signature" id="msg_150454_signature"&gt;&lt;a
+ href="https://github.com/NeroGames/nero-game-engine" class="bbc_link"
+ target="_blank" rel="noopener noreferrer"&gt;git hub repository&lt;/a&gt;&lt;br /&gt;
+  &lt;a href="https://nero-games.com" class="bbc_link" target="_blank"
+ rel="noopener noreferrer"&gt;nero-games.com&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt;
+  &lt;hr class="post_separator" /&gt; &lt;a id="msg150471" /&gt;
+  &lt;div class="windowbg"&gt; &lt;span class="topslice"&gt;&lt;span /&gt;&lt;/span&gt;
+  &lt;div class="post_wrapper"&gt;
+  &lt;div class="poster"&gt;
+  &lt;h4&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"
+ title="View the profile of NeroGames"&gt;NeroGames&lt;/a&gt; &lt;/h4&gt;
+  &lt;ul class="reset smalltext" id="msg_150471_extra_info"&gt;
+    &lt;li class="postgroup"&gt;Jr. Member&lt;/li&gt;
+    &lt;li class="stars"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;/li&gt;
+    &lt;li class="avatar"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;
+      &lt;img class="avatar"
+ src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar"
+ alt="" /&gt; &lt;/a&gt; &lt;/li&gt;
+    &lt;li class="postcount"&gt;Posts: 95&lt;/li&gt;
+    &lt;li class="blurb"&gt;Build games is simple&lt;/li&gt;
+    &lt;li class="profile"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif"
+ alt="View Profile" title="View Profile" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.nero-games.com"
+ title="Nero Game Engine" target="_blank" rel="noopener noreferrer"
+ class="new_win"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif"
+ alt="Nero Game Engine" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=150471"
+ rel="nofollow"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif"
+ alt="Email" title="Email" /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="postarea"&gt;
+  &lt;div class="flow_hidden"&gt;
+  &lt;div class="keyinfo"&gt;
+  &lt;div class="messageicon"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif"
+ alt="" /&gt; &lt;/div&gt;
+  &lt;h5 id="subject_150471"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg150471#msg150471"
+ rel="nofollow"&gt;Re: Nero Game Engine&lt;/a&gt; &lt;/h5&gt;
+  &lt;div class="smalltext"&gt;« &lt;strong&gt;Reply #4 on:&lt;/strong&gt; November 01,
+2016, 12:09:29 am »&lt;/div&gt;
+  &lt;div id="msg_150471_quick_mod" /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="post"&gt;
+  &lt;div class="inner" id="msg_150471"&gt;Hi! everyone &lt;br /&gt;
+  &lt;br /&gt;
+The code of the Engine is now on Github, here is a link : &lt;a
+ href="https://github.com/NeroGames/Nero-Game-Engine" class="bbc_link"
+ target="_blank" rel="noopener noreferrer"&gt;https://github.com/NeroGames/Nero-Game-Engine&lt;/a&gt;&lt;br /&gt;
+  &lt;br /&gt;
+The Engine is a API, but there is no way to compile it currently. I
+will need some help to write a CmakeMake file.&lt;br /&gt;
+The Engine use c++11 and some shared libraries&lt;br /&gt;
+&amp;nbsp;- SFML&lt;br /&gt;
+&amp;nbsp;- SFGUI &lt;br /&gt;
+&amp;nbsp;- Box2D&lt;br /&gt;
+&amp;nbsp;- Boost (system, filesystem)&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="moderatorbar"&gt;
+  &lt;div class="smalltext modified" id="modified_150471"&gt; « &lt;em&gt;Last
+Edit: May 06, 2022, 03:57:08 pm by NeroGames&lt;/em&gt; » &lt;/div&gt;
+  &lt;div class="smalltext reportlinks"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+ alt="" /&gt; Logged &lt;/div&gt;
+  &lt;div class="signature" id="msg_150471_signature"&gt;&lt;a
+ href="https://github.com/NeroGames/nero-game-engine" class="bbc_link"
+ target="_blank" rel="noopener noreferrer"&gt;git hub repository&lt;/a&gt;&lt;br /&gt;
+  &lt;a href="https://nero-games.com" class="bbc_link" target="_blank"
+ rel="noopener noreferrer"&gt;nero-games.com&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt;
+  &lt;hr class="post_separator" /&gt; &lt;a id="msg150472" /&gt;
+  &lt;div class="windowbg2"&gt; &lt;span class="topslice"&gt;&lt;span /&gt;&lt;/span&gt;
+  &lt;div class="post_wrapper"&gt;
+  &lt;div class="poster"&gt;
+  &lt;h4&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=15071"
+ title="View the profile of DarkRoku12"&gt;DarkRoku12&lt;/a&gt; &lt;/h4&gt;
+  &lt;ul class="reset smalltext" id="msg_150472_extra_info"&gt;
+    &lt;li class="postgroup"&gt;Full Member&lt;/li&gt;
+    &lt;li class="stars"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;/li&gt;
+    &lt;li class="avatar"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=15071"&gt;
+      &lt;img class="avatar"
+ src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=3481;type=avatar"
+ alt="" /&gt; &lt;/a&gt; &lt;/li&gt;
+    &lt;li class="postcount"&gt;Posts: 203&lt;/li&gt;
+    &lt;li class="blurb"&gt;Lua coder.&lt;/li&gt;
+    &lt;li class="profile"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=15071"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif"
+ alt="View Profile" title="View Profile" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=150472"
+ rel="nofollow"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif"
+ alt="Email" title="Email" /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="postarea"&gt;
+  &lt;div class="flow_hidden"&gt;
+  &lt;div class="keyinfo"&gt;
+  &lt;div class="messageicon"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif"
+ alt="" /&gt; &lt;/div&gt;
+  &lt;h5 id="subject_150472"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg150472#msg150472"
+ rel="nofollow"&gt;Re: Nero Game Engine&lt;/a&gt; &lt;/h5&gt;
+  &lt;div class="smalltext"&gt;« &lt;strong&gt;Reply #5 on:&lt;/strong&gt; November 01,
+2016, 01:16:04 am »&lt;/div&gt;
+  &lt;div id="msg_150472_quick_mod" /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="post"&gt;
+  &lt;div class="inner" id="msg_150472"&gt;Great progress, the GUI is very
+intuitive.&lt;br /&gt;
+  &lt;br /&gt;
+The engine is focus mostly on physics?&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="moderatorbar"&gt;
+  &lt;div class="smalltext modified" id="modified_150472"&gt; &lt;/div&gt;
+  &lt;div class="smalltext reportlinks"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+ alt="" /&gt; Logged &lt;/div&gt;
+  &lt;div class="signature" id="msg_150472_signature"&gt;I would like a
+spanish/latin community...&lt;br /&gt;
+  &lt;a href="http://goo.gl/zn8bBb" class="bbc_link" target="_blank"
+ rel="noopener noreferrer"&gt;Problems building for Android? Look here&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt;
+  &lt;hr class="post_separator" /&gt; &lt;a id="msg150477" /&gt;
+  &lt;div class="windowbg"&gt; &lt;span class="topslice"&gt;&lt;span /&gt;&lt;/span&gt;
+  &lt;div class="post_wrapper"&gt;
+  &lt;div class="poster"&gt;
+  &lt;h4&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"
+ title="View the profile of NeroGames"&gt;NeroGames&lt;/a&gt; &lt;/h4&gt;
+  &lt;ul class="reset smalltext" id="msg_150477_extra_info"&gt;
+    &lt;li class="postgroup"&gt;Jr. Member&lt;/li&gt;
+    &lt;li class="stars"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;/li&gt;
+    &lt;li class="avatar"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;
+      &lt;img class="avatar"
+ src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar"
+ alt="" /&gt; &lt;/a&gt; &lt;/li&gt;
+    &lt;li class="postcount"&gt;Posts: 95&lt;/li&gt;
+    &lt;li class="blurb"&gt;Build games is simple&lt;/li&gt;
+    &lt;li class="profile"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif"
+ alt="View Profile" title="View Profile" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.nero-games.com"
+ title="Nero Game Engine" target="_blank" rel="noopener noreferrer"
+ class="new_win"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif"
+ alt="Nero Game Engine" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=150477"
+ rel="nofollow"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif"
+ alt="Email" title="Email" /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="postarea"&gt;
+  &lt;div class="flow_hidden"&gt;
+  &lt;div class="keyinfo"&gt;
+  &lt;div class="messageicon"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif"
+ alt="" /&gt; &lt;/div&gt;
+  &lt;h5 id="subject_150477"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg150477#msg150477"
+ rel="nofollow"&gt;Re: Nero Game Engine&lt;/a&gt; &lt;/h5&gt;
+  &lt;div class="smalltext"&gt;« &lt;strong&gt;Reply #6 on:&lt;/strong&gt; November 01,
+2016, 10:29:26 am »&lt;/div&gt;
+  &lt;div id="msg_150477_quick_mod" /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="post"&gt;
+  &lt;div class="inner" id="msg_150477"&gt;
+  &lt;div class="quoteheader"&gt;
+  &lt;div class="topslice_quote"&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg150472#msg150472"&gt;Quote
+from: DarkRoku on November 01, 2016, 01:16:04 am&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;blockquote class="bbc_standard_quote"&gt;Great progress, the GUI is
+very intuitive.&lt;br /&gt;
+    &lt;br /&gt;
+The engine is focus mostly on physics?&lt;br /&gt;
+  &lt;/blockquote&gt;
+  &lt;div class="quotefooter"&gt;
+  &lt;div class="botslice_quote" /&gt;
+  &lt;/div&gt;
+  &lt;br /&gt;
+you're right, i expect games to be built using box2d features, the
+graphics are just there to give a more pleasant view&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="moderatorbar"&gt;
+  &lt;div class="smalltext modified" id="modified_150477"&gt; &lt;/div&gt;
+  &lt;div class="smalltext reportlinks"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+ alt="" /&gt; Logged &lt;/div&gt;
+  &lt;div class="signature" id="msg_150477_signature"&gt;&lt;a
+ href="https://github.com/NeroGames/nero-game-engine" class="bbc_link"
+ target="_blank" rel="noopener noreferrer"&gt;git hub repository&lt;/a&gt;&lt;br /&gt;
+  &lt;a href="https://nero-games.com" class="bbc_link" target="_blank"
+ rel="noopener noreferrer"&gt;nero-games.com&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt;
+  &lt;hr class="post_separator" /&gt; &lt;a id="msg150975" /&gt;
+  &lt;div class="windowbg2"&gt; &lt;span class="topslice"&gt;&lt;span /&gt;&lt;/span&gt;
+  &lt;div class="post_wrapper"&gt;
+  &lt;div class="poster"&gt;
+  &lt;h4&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"
+ title="View the profile of NeroGames"&gt;NeroGames&lt;/a&gt; &lt;/h4&gt;
+  &lt;ul class="reset smalltext" id="msg_150975_extra_info"&gt;
+    &lt;li class="postgroup"&gt;Jr. Member&lt;/li&gt;
+    &lt;li class="stars"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;/li&gt;
+    &lt;li class="avatar"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;
+      &lt;img class="avatar"
+ src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar"
+ alt="" /&gt; &lt;/a&gt; &lt;/li&gt;
+    &lt;li class="postcount"&gt;Posts: 95&lt;/li&gt;
+    &lt;li class="blurb"&gt;Build games is simple&lt;/li&gt;
+    &lt;li class="profile"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif"
+ alt="View Profile" title="View Profile" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.nero-games.com"
+ title="Nero Game Engine" target="_blank" rel="noopener noreferrer"
+ class="new_win"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif"
+ alt="Nero Game Engine" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=150975"
+ rel="nofollow"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif"
+ alt="Email" title="Email" /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="postarea"&gt;
+  &lt;div class="flow_hidden"&gt;
+  &lt;div class="keyinfo"&gt;
+  &lt;div class="messageicon"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/grin.gif"
+ alt="" /&gt; &lt;/div&gt;
+  &lt;h5 id="subject_150975"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg150975#msg150975"
+ rel="nofollow"&gt;Re: Nero Game Engine&lt;/a&gt; &lt;/h5&gt;
+  &lt;div class="smalltext"&gt;« &lt;strong&gt;Reply #7 on:&lt;/strong&gt; November 18,
+2016, 10:20:19 pm »&lt;/div&gt;
+  &lt;div id="msg_150975_quick_mod" /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="post"&gt;
+  &lt;div class="inner" id="msg_150975"&gt;Hi everyone !, I'm back, let me
+present you &lt;strong&gt;Nero Game Engine 0.3.0 &lt;/strong&gt;&lt;br /&gt;
+  &lt;br /&gt;
+I've added many new features, the most important are Sprite_Layers and
+some news Sprites Manipulations&lt;br /&gt;
+Here is a video &lt;br /&gt;
+  &lt;br /&gt;
+  &lt;iframe src="//www.youtube.com/embed/e7msdIuvBmA?fs=1&amp;amp;start="
+ allowfullscreen="true" frameborder="0" height="385" width="640" /&gt;&lt;br /&gt;
+  &lt;br /&gt;
+The new features are presented below, but I want to say now what I'm
+going to do for the next.&lt;br /&gt;
+I will work mostly on Box2d, I first thought to build a Box2d editor,
+but I think it will build a scripting system instead. Box2d stuff will
+be described in a Lua script and the engine will build every using the
+script.&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;img
+ src="http://s-media-cache-ak0.pinimg.com/originals/1f/c5/d9/1fc5d9db27b98caebcc087d4f882660f.jpg"
+ alt="" class="bbc_img resized" width="740" /&gt;&lt;br /&gt;
+  &lt;br /&gt;
+Now let's see the new features in more detail.&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;strong&gt;Sprite_Layers&lt;/strong&gt;&lt;br /&gt;
+there are now layers in the engine with some classic functions&lt;br /&gt;
+&amp;nbsp;- add/delete layer&lt;br /&gt;
+&amp;nbsp;- move layer up/down&lt;br /&gt;
+&amp;nbsp;- show/hide layer&lt;br /&gt;
+&amp;nbsp;- change the color of all sprites in a layer&lt;br /&gt;
+&amp;nbsp;- move the entire layer horizontally/vertically&lt;br /&gt;
+&amp;nbsp;- each layer is saved in a different JSON file and can be
+recovered as a std::vector&amp;lt;sf::sprite&amp;gt;&lt;br /&gt;
+the system I've built allows to add an infinite number of layer, but
+I've restricted the number to 10, I think it's enough, and there is
+always at least one layer&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;strong&gt;Sprite Manipulations&lt;/strong&gt;&lt;br /&gt;
+there are new sprite manipulations that allow to build scenes quickly
+and with intuitiveness&lt;br /&gt;
+&amp;nbsp;- copy a selected sprite (the copy can be made in any direction :
+left, right, up, down, diagonal), it useful for tilemap scene&lt;br /&gt;
+&amp;nbsp;- precision move (move sprite pixel by pixel, more accurate than
+using the mouse)&lt;br /&gt;
+&amp;nbsp;- change color&lt;br /&gt;
+&amp;nbsp;- flip horizontally/vertically&lt;br /&gt;
+&amp;nbsp;- delete by mouse click&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;strong&gt;Canvas Color&lt;/strong&gt;&lt;br /&gt;
+the canvas color can be changed using some pre-configure buttons or the
+RGB system&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;strong&gt;Log&lt;/strong&gt;&lt;br /&gt;
+there is now a log that describes what's happening, the log is saved in
+a .txt file at the same time than graphics and physics&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;strong&gt;Auto_Save&lt;/strong&gt;&lt;br /&gt;
+the auto-saving saves everything every 30 seconds, I don't know if it's
+a good interval of time.&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;strong&gt;Load&lt;/strong&gt;&lt;br /&gt;
+to load something, the files just need to be in the working directory
+of the Scene.&amp;nbsp; When Engine the startup, it tries to load
+Layers(graphics) and physics. So it's possible to begin a work, save
+it, close the engine and come back to continue&lt;br /&gt;
+  &lt;br /&gt;
+I think it's all, the last thing to remark is that the mouse position
+on the canvas and in the world appears on top on the Canvas.&lt;br /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="moderatorbar"&gt;
+  &lt;div class="smalltext modified" id="modified_150975"&gt; « &lt;em&gt;Last
+Edit: May 06, 2022, 03:57:25 pm by NeroGames&lt;/em&gt; » &lt;/div&gt;
+  &lt;div class="smalltext reportlinks"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+ alt="" /&gt; Logged &lt;/div&gt;
+  &lt;div class="signature" id="msg_150975_signature"&gt;&lt;a
+ href="https://github.com/NeroGames/nero-game-engine" class="bbc_link"
+ target="_blank" rel="noopener noreferrer"&gt;git hub repository&lt;/a&gt;&lt;br /&gt;
+  &lt;a href="https://nero-games.com" class="bbc_link" target="_blank"
+ rel="noopener noreferrer"&gt;nero-games.com&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt;
+  &lt;hr class="post_separator" /&gt; &lt;a id="msg150982" /&gt;
+  &lt;div class="windowbg"&gt; &lt;span class="topslice"&gt;&lt;span /&gt;&lt;/span&gt;
+  &lt;div class="post_wrapper"&gt;
+  &lt;div class="poster"&gt;
+  &lt;h4&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16918"
+ title="View the profile of grumpaladin"&gt;grumpaladin&lt;/a&gt; &lt;/h4&gt;
+  &lt;ul class="reset smalltext" id="msg_150982_extra_info"&gt;
+    &lt;li class="postgroup"&gt;Newbie&lt;/li&gt;
+    &lt;li class="stars"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;/li&gt;
+    &lt;li class="postcount"&gt;Posts: 7&lt;/li&gt;
+    &lt;li class="profile"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16918"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif"
+ alt="View Profile" title="View Profile" /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="postarea"&gt;
+  &lt;div class="flow_hidden"&gt;
+  &lt;div class="keyinfo"&gt;
+  &lt;div class="messageicon"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif"
+ alt="" /&gt; &lt;/div&gt;
+  &lt;h5 id="subject_150982"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg150982#msg150982"
+ rel="nofollow"&gt;Re: Nero Game Engine&lt;/a&gt; &lt;/h5&gt;
+  &lt;div class="smalltext"&gt;« &lt;strong&gt;Reply #8 on:&lt;/strong&gt; November 19,
+2016, 07:03:25 am »&lt;/div&gt;
+  &lt;div id="msg_150982_quick_mod" /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="post"&gt;
+  &lt;div class="inner" id="msg_150982"&gt;Looks like you've got a lot of
+work done on this! Looking good so far. Your GitHub link is broken
+though, did you move the repo somewhere?&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="moderatorbar"&gt;
+  &lt;div class="smalltext modified" id="modified_150982"&gt; &lt;/div&gt;
+  &lt;div class="smalltext reportlinks"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+ alt="" /&gt; Logged &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt;
+  &lt;hr class="post_separator" /&gt; &lt;a id="msg151021" /&gt;
+  &lt;div class="windowbg2"&gt; &lt;span class="topslice"&gt;&lt;span /&gt;&lt;/span&gt;
+  &lt;div class="post_wrapper"&gt;
+  &lt;div class="poster"&gt;
+  &lt;h4&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"
+ title="View the profile of NeroGames"&gt;NeroGames&lt;/a&gt; &lt;/h4&gt;
+  &lt;ul class="reset smalltext" id="msg_151021_extra_info"&gt;
+    &lt;li class="postgroup"&gt;Jr. Member&lt;/li&gt;
+    &lt;li class="stars"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;/li&gt;
+    &lt;li class="avatar"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;
+      &lt;img class="avatar"
+ src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar"
+ alt="" /&gt; &lt;/a&gt; &lt;/li&gt;
+    &lt;li class="postcount"&gt;Posts: 95&lt;/li&gt;
+    &lt;li class="blurb"&gt;Build games is simple&lt;/li&gt;
+    &lt;li class="profile"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif"
+ alt="View Profile" title="View Profile" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.nero-games.com"
+ title="Nero Game Engine" target="_blank" rel="noopener noreferrer"
+ class="new_win"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif"
+ alt="Nero Game Engine" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=151021"
+ rel="nofollow"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif"
+ alt="Email" title="Email" /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="postarea"&gt;
+  &lt;div class="flow_hidden"&gt;
+  &lt;div class="keyinfo"&gt;
+  &lt;div class="messageicon"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif"
+ alt="" /&gt; &lt;/div&gt;
+  &lt;h5 id="subject_151021"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg151021#msg151021"
+ rel="nofollow"&gt;Re: Nero Game Engine&lt;/a&gt; &lt;/h5&gt;
+  &lt;div class="smalltext"&gt;« &lt;strong&gt;Reply #9 on:&lt;/strong&gt; November 20,
+2016, 12:12:09 pm »&lt;/div&gt;
+  &lt;div id="msg_151021_quick_mod" /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="post"&gt;
+  &lt;div class="inner" id="msg_151021"&gt;
+  &lt;div class="quoteheader"&gt;
+  &lt;div class="topslice_quote"&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg150982#msg150982"&gt;Quote
+from: grumpaladin on November 19, 2016, 07:03:25 am&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;blockquote class="bbc_standard_quote"&gt;Your GitHub link is broken
+though, did you move the repo somewhere?&lt;br /&gt;
+  &lt;/blockquote&gt;
+  &lt;div class="quotefooter"&gt;
+  &lt;div class="botslice_quote" /&gt;
+  &lt;/div&gt;
+  &lt;br /&gt;
+Hi!, i've deleted the repo, the code was published with no license and
+no author name, i was in hurry and i've forgotten all those
+stuffs&amp;nbsp; &lt;img
+ src="https://www.sfml-dev.org/forums/Smileys/default/embarrassed.gif"
+ alt=":-[" title="Embarrassed" class="smiley" /&gt;, i will recreate the
+repo soon &lt;img
+ src="https://www.sfml-dev.org/forums/Smileys/default/cool.gif" alt="8)"
+ title="Cool" class="smiley" /&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="moderatorbar"&gt;
+  &lt;div class="smalltext modified" id="modified_151021"&gt; &lt;/div&gt;
+  &lt;div class="smalltext reportlinks"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+ alt="" /&gt; Logged &lt;/div&gt;
+  &lt;div class="signature" id="msg_151021_signature"&gt;&lt;a
+ href="https://github.com/NeroGames/nero-game-engine" class="bbc_link"
+ target="_blank" rel="noopener noreferrer"&gt;git hub repository&lt;/a&gt;&lt;br /&gt;
+  &lt;a href="https://nero-games.com" class="bbc_link" target="_blank"
+ rel="noopener noreferrer"&gt;nero-games.com&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt;
+  &lt;hr class="post_separator" /&gt; &lt;a id="msg155152" /&gt;
+  &lt;div class="windowbg"&gt; &lt;span class="topslice"&gt;&lt;span /&gt;&lt;/span&gt;
+  &lt;div class="post_wrapper"&gt;
+  &lt;div class="poster"&gt;
+  &lt;h4&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"
+ title="View the profile of NeroGames"&gt;NeroGames&lt;/a&gt; &lt;/h4&gt;
+  &lt;ul class="reset smalltext" id="msg_155152_extra_info"&gt;
+    &lt;li class="postgroup"&gt;Jr. Member&lt;/li&gt;
+    &lt;li class="stars"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;/li&gt;
+    &lt;li class="avatar"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;
+      &lt;img class="avatar"
+ src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar"
+ alt="" /&gt; &lt;/a&gt; &lt;/li&gt;
+    &lt;li class="postcount"&gt;Posts: 95&lt;/li&gt;
+    &lt;li class="blurb"&gt;Build games is simple&lt;/li&gt;
+    &lt;li class="profile"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif"
+ alt="View Profile" title="View Profile" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.nero-games.com"
+ title="Nero Game Engine" target="_blank" rel="noopener noreferrer"
+ class="new_win"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif"
+ alt="Nero Game Engine" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=155152"
+ rel="nofollow"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif"
+ alt="Email" title="Email" /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="postarea"&gt;
+  &lt;div class="flow_hidden"&gt;
+  &lt;div class="keyinfo"&gt;
+  &lt;div class="messageicon"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif"
+ alt="" /&gt; &lt;/div&gt;
+  &lt;h5 id="subject_155152"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg155152#msg155152"
+ rel="nofollow"&gt;Re: Nero Game Engine&lt;/a&gt; &lt;/h5&gt;
+  &lt;div class="smalltext"&gt;« &lt;strong&gt;Reply #10 on:&lt;/strong&gt; May 01,
+2017, 12:23:03 pm »&lt;/div&gt;
+  &lt;div id="msg_155152_quick_mod" /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="post"&gt;
+  &lt;div class="inner" id="msg_155152"&gt;&amp;nbsp;&lt;img
+ src="https://www.sfml-dev.org/forums/Smileys/default/cool.gif" alt="8)"
+ title="Cool" class="smiley" /&gt; Hi every one!&amp;nbsp; &lt;img
+ src="https://www.sfml-dev.org/forums/Smileys/default/cool.gif" alt="8)"
+ title="Cool" class="smiley" /&gt; &lt;br /&gt;
+  &lt;br /&gt;
+I have been busy those last couple of months, so the project has fallen
+behind. But But, it keep going &lt;img
+ src="https://www.sfml-dev.org/forums/Smileys/default/grin.gif" alt=";D"
+ title="Grin" class="smiley" /&gt;.&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;strong&gt;Code repository&lt;/strong&gt;&lt;br /&gt;
+The github repository has been reactivated : &lt;a
+ href="https://github.com/NeroGames/Nero-Game-Engine" class="bbc_link"
+ target="_blank" rel="noopener noreferrer"&gt;https://github.com/NeroGames/Nero-Game-Engine&lt;/a&gt;&lt;br /&gt;
+At the moment of this post, there is not any code on repository.&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;strong&gt;Licence&lt;/strong&gt;&lt;br /&gt;
+The project will be under the MIT Licence&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;strong&gt;Updates&lt;/strong&gt;&lt;br /&gt;
+The shape of the engine has changed a bit, &lt;br /&gt;
+  &lt;br /&gt;
+The most interresting new feature is the &lt;strong&gt;Mesh Editor&lt;/strong&gt;,
+the engine let you edit Physical Object in a flexible way.&lt;br /&gt;
+  &lt;br /&gt;
+I will talk more about that later, you can look at the video bellow to
+get an idea&lt;br /&gt;
+  &lt;br /&gt;
+  &lt;iframe src="//www.youtube.com/embed/cQfgAfqybpI?fs=1&amp;amp;start="
+ allowfullscreen="true" frameborder="0" height="385" width="640" /&gt;&lt;br /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="moderatorbar"&gt;
+  &lt;div class="smalltext modified" id="modified_155152"&gt; « &lt;em&gt;Last
+Edit: May 06, 2022, 03:57:46 pm by NeroGames&lt;/em&gt; » &lt;/div&gt;
+  &lt;div class="smalltext reportlinks"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+ alt="" /&gt; Logged &lt;/div&gt;
+  &lt;div class="signature" id="msg_155152_signature"&gt;&lt;a
+ href="https://github.com/NeroGames/nero-game-engine" class="bbc_link"
+ target="_blank" rel="noopener noreferrer"&gt;git hub repository&lt;/a&gt;&lt;br /&gt;
+  &lt;a href="https://nero-games.com" class="bbc_link" target="_blank"
+ rel="noopener noreferrer"&gt;nero-games.com&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt;
+  &lt;hr class="post_separator" /&gt; &lt;a id="msg155202" /&gt;
+  &lt;div class="windowbg2"&gt; &lt;span class="topslice"&gt;&lt;span /&gt;&lt;/span&gt;
+  &lt;div class="post_wrapper"&gt;
+  &lt;div class="poster"&gt;
+  &lt;h4&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=15314"
+ title="View the profile of ToyAuthor"&gt;ToyAuthor&lt;/a&gt; &lt;/h4&gt;
+  &lt;ul class="reset smalltext" id="msg_155202_extra_info"&gt;
+    &lt;li class="postgroup"&gt;Newbie&lt;/li&gt;
+    &lt;li class="stars"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;/li&gt;
+    &lt;li class="postcount"&gt;Posts: 21&lt;/li&gt;
+    &lt;li class="profile"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=15314"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif"
+ alt="View Profile" title="View Profile" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=155202"
+ rel="nofollow"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif"
+ alt="Email" title="Email" /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="postarea"&gt;
+  &lt;div class="flow_hidden"&gt;
+  &lt;div class="keyinfo"&gt;
+  &lt;div class="messageicon"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif"
+ alt="" /&gt; &lt;/div&gt;
+  &lt;h5 id="subject_155202"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg155202#msg155202"
+ rel="nofollow"&gt;Re: Nero Game Engine&lt;/a&gt; &lt;/h5&gt;
+  &lt;div class="smalltext"&gt;« &lt;strong&gt;Reply #11 on:&lt;/strong&gt; May 03,
+2017, 06:13:52 am »&lt;/div&gt;
+  &lt;div id="msg_155202_quick_mod" /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="post"&gt;
+  &lt;div class="inner" id="msg_155202"&gt;Good job. Really good job!&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="moderatorbar"&gt;
+  &lt;div class="smalltext modified" id="modified_155202"&gt; &lt;/div&gt;
+  &lt;div class="smalltext reportlinks"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+ alt="" /&gt; Logged &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt;
+  &lt;hr class="post_separator" /&gt; &lt;a id="msg155208" /&gt;
+  &lt;div class="windowbg"&gt; &lt;span class="topslice"&gt;&lt;span /&gt;&lt;/span&gt;
+  &lt;div class="post_wrapper"&gt;
+  &lt;div class="poster"&gt;
+  &lt;h4&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=3414"
+ title="View the profile of eXpl0it3r"&gt;eXpl0it3r&lt;/a&gt; &lt;/h4&gt;
+  &lt;ul class="reset smalltext" id="msg_155208_extra_info"&gt;
+    &lt;li class="membergroup"&gt;SFML Team&lt;/li&gt;
+    &lt;li class="postgroup"&gt;Hero Member&lt;/li&gt;
+    &lt;li class="stars"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/stargmod.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/stargmod.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/stargmod.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/stargmod.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/stargmod.gif"
+ alt="*" /&gt;&lt;/li&gt;
+    &lt;li class="avatar"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=3414"&gt;
+      &lt;img class="avatar" src="https://my-gate.net/pub/eXpl0it3r.png"
+ alt="" /&gt; &lt;/a&gt; &lt;/li&gt;
+    &lt;li class="postcount"&gt;Posts: 10370&lt;/li&gt;
+    &lt;li class="profile"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=3414"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif"
+ alt="View Profile" title="View Profile" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://dev.my-gate.net/" title="development blog"
+ target="_blank" rel="noopener noreferrer" class="new_win"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif"
+ alt="development blog" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=155208"
+ rel="nofollow"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif"
+ alt="Email" title="Email" /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="postarea"&gt;
+  &lt;div class="flow_hidden"&gt;
+  &lt;div class="keyinfo"&gt;
+  &lt;div class="messageicon"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif"
+ alt="" /&gt; &lt;/div&gt;
+  &lt;h5 id="subject_155208"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg155208#msg155208"
+ rel="nofollow"&gt;Re: Nero Game Engine&lt;/a&gt; &lt;/h5&gt;
+  &lt;div class="smalltext"&gt;« &lt;strong&gt;Reply #12 on:&lt;/strong&gt; May 03,
+2017, 12:37:01 pm »&lt;/div&gt;
+  &lt;div id="msg_155208_quick_mod" /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="post"&gt;
+  &lt;div class="inner" id="msg_155208"&gt;This looks awesome! &lt;img
+ src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif"
+ alt=":)" title="Smiley" class="smiley" /&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="moderatorbar"&gt;
+  &lt;div class="smalltext modified" id="modified_155208"&gt; &lt;/div&gt;
+  &lt;div class="smalltext reportlinks"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+ alt="" /&gt; Logged &lt;/div&gt;
+  &lt;div class="signature" id="msg_155208_signature"&gt;&lt;span
+ style="color: rgb(255, 43, 43);" class="bbc_color"&gt;Official FAQ:&lt;/span&gt;
+  &lt;a href="https://www.sfml-dev.org/faq.php" class="bbc_link"
+ target="_blank" rel="noopener noreferrer"&gt;https://www.sfml-dev.org/faq.php&lt;/a&gt;&lt;br /&gt;
+  &lt;span style="color: rgb(255, 43, 43);" class="bbc_color"&gt;Official
+Discord Server:&lt;/span&gt; &lt;a href="https://discord.gg/nr4X7Fh"
+ class="bbc_link" target="_blank" rel="noopener noreferrer"&gt;https://discord.gg/nr4X7Fh&lt;/a&gt;&lt;br /&gt;
+——————————————————————&lt;br /&gt;
+  &lt;span style="color: rgb(11, 117, 27);" class="bbc_color"&gt;Dev Blog:&lt;/span&gt;
+  &lt;a href="https://dev.my-gate.net/" class="bbc_link" target="_blank"
+ rel="noopener noreferrer"&gt;https://dev.my-gate.net/&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt;
+  &lt;hr class="post_separator" /&gt; &lt;a id="msg156705" /&gt;
+  &lt;div class="windowbg2"&gt; &lt;span class="topslice"&gt;&lt;span /&gt;&lt;/span&gt;
+  &lt;div class="post_wrapper"&gt;
+  &lt;div class="poster"&gt;
+  &lt;h4&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"
+ title="View the profile of NeroGames"&gt;NeroGames&lt;/a&gt; &lt;/h4&gt;
+  &lt;ul class="reset smalltext" id="msg_156705_extra_info"&gt;
+    &lt;li class="postgroup"&gt;Jr. Member&lt;/li&gt;
+    &lt;li class="stars"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif"
+ alt="*" /&gt;&lt;/li&gt;
+    &lt;li class="avatar"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;
+      &lt;img class="avatar"
+ src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar"
+ alt="" /&gt; &lt;/a&gt; &lt;/li&gt;
+    &lt;li class="postcount"&gt;Posts: 95&lt;/li&gt;
+    &lt;li class="blurb"&gt;Build games is simple&lt;/li&gt;
+    &lt;li class="profile"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif"
+ alt="View Profile" title="View Profile" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.nero-games.com"
+ title="Nero Game Engine" target="_blank" rel="noopener noreferrer"
+ class="new_win"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif"
+ alt="Nero Game Engine" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=156705"
+ rel="nofollow"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif"
+ alt="Email" title="Email" /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="postarea"&gt;
+  &lt;div class="flow_hidden"&gt;
+  &lt;div class="keyinfo"&gt;
+  &lt;div class="messageicon"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif"
+ alt="" /&gt; &lt;/div&gt;
+  &lt;h5 id="subject_156705"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg156705#msg156705"
+ rel="nofollow"&gt;Re: Nero Game Engine&lt;/a&gt; &lt;/h5&gt;
+  &lt;div class="smalltext"&gt;« &lt;strong&gt;Reply #13 on:&lt;/strong&gt; July 05,
+2017, 10:16:21 pm »&lt;/div&gt;
+  &lt;div id="msg_156705_quick_mod" /&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="post"&gt;
+  &lt;div class="inner" id="msg_156705"&gt;
+  &lt;div class="quoteheader"&gt;
+  &lt;div class="topslice_quote"&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg155208#msg155208"&gt;Quote
+from: eXpl0it3r on May 03, 2017, 12:37:01 pm&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;blockquote class="bbc_standard_quote"&gt;This looks awesome! &lt;img
+ src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif"
+ alt=":)" title="Smiley" class="smiley" /&gt;&lt;br /&gt;
+  &lt;/blockquote&gt;
+  &lt;div class="quotefooter"&gt;
+  &lt;div class="botslice_quote" /&gt;
+  &lt;/div&gt;
+  &lt;br /&gt;
+  &lt;div class="quoteheader"&gt;
+  &lt;div class="topslice_quote"&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg155202#msg155202"&gt;Quote
+from: ToyAuthor on May 03, 2017, 06:13:52 am&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;blockquote class="bbc_standard_quote"&gt;Good job. Really good job!&lt;br /&gt;
+  &lt;/blockquote&gt;
+  &lt;div class="quotefooter"&gt;
+  &lt;div class="botslice_quote" /&gt;
+  &lt;/div&gt;
+  &lt;br /&gt;
+hi! guys, it took a long time to say it, but thank you for your
+support&amp;nbsp; &lt;img
+ src="https://www.sfml-dev.org/forums/Smileys/default/cool.gif" alt="8)"
+ title="Cool" class="smiley" /&gt; &lt;img
+ src="https://www.sfml-dev.org/forums/Smileys/default/cool.gif" alt="8)"
+ title="Cool" class="smiley" /&gt;, i realy appreciate.&lt;br /&gt;
+  &lt;br /&gt;
+I have been busy those last couple of months, i know i've already said
+that, but let's say it again.&lt;br /&gt;
+  &lt;br /&gt;
+The great new, it's now i get some time to work on project, i plan to
+finish the first working version of my engine/framework within two
+months.&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="moderatorbar"&gt;
+  &lt;div class="smalltext modified" id="modified_156705"&gt; &lt;/div&gt;
+  &lt;div class="smalltext reportlinks"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+ alt="" /&gt; Logged &lt;/div&gt;
+  &lt;div class="signature" id="msg_156705_signature"&gt;&lt;a
+ href="https://github.com/NeroGames/nero-game-engine" class="bbc_link"
+ target="_blank" rel="noopener noreferrer"&gt;git hub repository&lt;/a&gt;&lt;br /&gt;
+  &lt;a href="https://nero-games.com" class="bbc_link" target="_blank"
+ rel="noopener noreferrer"&gt;nero-games.com&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt;
+  &lt;hr class="post_separator" /&gt; &lt;a id="msg156776" /&gt;
+  &lt;div class="windowbg"&gt; &lt;span class="topslice"&gt;&lt;span /&gt;&lt;/span&gt;
+  &lt;div class="post_wrapper"&gt;
+  &lt;div class="poster"&gt;
+  &lt;h4&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=545"
+ title="View the profile of Tank"&gt;Tank&lt;/a&gt; &lt;/h4&gt;
+  &lt;ul class="reset smalltext" id="msg_156776_extra_info"&gt;
+    &lt;li class="membergroup"&gt;SFML Team&lt;/li&gt;
+    &lt;li class="postgroup"&gt;Hero Member&lt;/li&gt;
+    &lt;li class="stars"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/stargmod.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/stargmod.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/stargmod.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/stargmod.gif"
+ alt="*" /&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/stargmod.gif"
+ alt="*" /&gt;&lt;/li&gt;
+    &lt;li class="avatar"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=545"&gt; &lt;img
+ class="avatar" src="http://optank.org/files/tmp/boxbox_logo-100.png"
+ alt="" /&gt; &lt;/a&gt; &lt;/li&gt;
+    &lt;li class="postcount"&gt;Posts: 1485&lt;/li&gt;
+    &lt;li class="profile"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=profile;u=545"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif"
+ alt="View Profile" title="View Profile" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://stschindler.io/" title="Blog"
+ target="_blank" rel="noopener noreferrer" class="new_win"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif"
+ alt="Blog" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a
+ href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=156776"
+ rel="nofollow"&gt;&lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif"
+ alt="Email" title="Email" /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="postarea"&gt;
+  &lt;div class="flow_hidden"&gt;
+  &lt;div class="keyinfo"&gt;
+  &lt;div class="messageicon"&gt; &lt;img
+ src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif"
+ alt="" /&gt; &lt;/div&gt;
+  &lt;h5 id="subject_156776"&gt; &lt;a
+ href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg156776#msg156776"
+ rel="nofollow"&gt;Re: Nero Game Engine&lt;/a&gt; &lt;/h5&gt;
+  &lt;div class="smalltext"&gt;« &lt;strong&gt;Reply #14 on:&lt;/strong&gt;
+July 10,
+2017, 08:20:59 pm »&lt;/div&gt; &lt;div id="msg_156776_quick_mod" /&gt;
+&lt;/div&gt; &lt;/div&gt; &lt;div class="post"&gt; &lt;div
+class="inner" id="msg_156776"&gt;Wow, the GUI looks so crisp! Just
+kidding, your project looks nice. ;-)&lt;/div&gt; &lt;/div&gt;
+&lt;/div&gt; &lt;div class="moderatorbar"&gt; &lt;div class="smalltext
+modified" id="modified_156776"&gt; &lt;/div&gt; &lt;div
+class="smalltext reportlinks"&gt; &lt;img
+src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/ip.gif"
+alt="" /&gt; Logged &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;span
+class="botslice"&gt;&lt;span /&gt;&lt;/span&gt; &lt;/div&gt; &lt;hr
+class="post_separator" /&gt; &lt;/form&gt;
+&lt;/div&gt;
+&lt;a id="lastPost" /&gt;
+&lt;div class="pagesection"&gt;
+&lt;div class="buttonlist floatright"&gt;
+&lt;ul&gt; &lt;li&gt;&lt;a class="button_strip_print"
+href="https://en.sfml-dev.org/forums/index.php?action=printpage;topic=21019.0"
+rel="new_win nofollow"&gt;&lt;span
+class="last"&gt;Print&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="pagelinks floatleft"&gt;Pages:
+[&lt;strong&gt;1&lt;/strong&gt;] &lt;a class="navPages"
+href="https://en.sfml-dev.org/forums/index.php?topic=21019.15"&gt;2&lt;/a&gt;
+&lt;a class="navPages"
+href="https://en.sfml-dev.org/forums/index.php?topic=21019.30"&gt;3&lt;/a&gt;
+&lt;span style="font-weight: bold;" onclick="expandPages(this,
+'https://en.sfml-dev.org/forums/index.php?topic=21019.%1$d', 45, 105,
+15);" onmouseover="this.style.cursor='pointer';"&gt; ...
+&lt;/span&gt;&lt;a class="navPages"
+href="https://en.sfml-dev.org/forums/index.php?topic=21019.105"&gt;8&lt;/a&gt;
+&lt;a class="navPages"
+href="https://en.sfml-dev.org/forums/index.php?topic=21019.15" /&gt;
+&lt;/div&gt;
+&lt;div class="nextlinks_bottom" /&gt;
+&lt;/div&gt;
+&lt;div class="navigate_section"&gt;
+&lt;ul&gt; &lt;li&gt; &lt;a
+href="https://en.sfml-dev.org/forums/index.php"&gt;&lt;span&gt;SFML
+community forums&lt;/span&gt;&lt;/a&gt; » &lt;/li&gt; &lt;li&gt; &lt;a
+href="https://en.sfml-dev.org/forums/index.php#c2"&gt;&lt;span&gt;General&lt;/span&gt;&lt;/a&gt;
+» &lt;/li&gt; &lt;li&gt; &lt;a
+href="https://en.sfml-dev.org/forums/index.php?board=10.0"&gt;&lt;span&gt;SFML
+projects&lt;/span&gt;&lt;/a&gt; » &lt;/li&gt; &lt;li class="last"&gt;
+&lt;a
+href="https://en.sfml-dev.org/forums/index.php?topic=21019.0"&gt;&lt;span&gt;Nero
+Game Engine&lt;/span&gt;&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id="moderationbuttons" /&gt;
+&lt;div class="plainbox" id="display_jump_to"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;br class="clear" /&gt;
+&lt;script type="text/javascript"
+src="https://en.sfml-dev.org/forums/Themes/default/scripts/topic.js"
+/&gt;
+&lt;script type="text/javascript"&gt;&lt;!-- // --&gt;&lt;![CDATA[ if
+('XMLHttpRequest' in window) { var oQuickModify = new QuickModify({
+sScriptUrl: smf_scripturl, bShowModify: true, iTopicId: 21019,
+sTemplateBodyEdit: '\n\t\t\t\t\t\t\t\t&lt;div
+id="quick_edit_body_container" style="width:
+90%"&gt;\n\t\t\t\t\t\t\t\t\t&lt;div id="error_box" style="padding:
+4px;" class="error"&gt;&lt;' +
+'/div&gt;\n\t\t\t\t\t\t\t\t\t&lt;textarea class="editor" name="message"
+rows="12" style="width: 100%; margin-bottom: 10px;"
+tabindex="1"&gt;%body%&lt;' + '/textarea&gt;&lt;br
+/&gt;\n\t\t\t\t\t\t\t\t\t&lt;input type="hidden" name="a7f67091dd88"
+value="1ede412f6922dfa0845de2503885dfb8"
+/&gt;\n\t\t\t\t\t\t\t\t\t&lt;input type="hidden" name="topic"
+value="21019" /&gt;\n\t\t\t\t\t\t\t\t\t&lt;input type="hidden"
+name="msg" value="%msg_id%" /&gt;\n\t\t\t\t\t\t\t\t\t&lt;div
+class="righttext"&gt;\n\t\t\t\t\t\t\t\t\t\t&lt;input type="submit"
+name="post" value="Save" tabindex="2" onclick="return
+oQuickModify.modifySave(\'1ede412f6922dfa0845de2503885dfb8\',
+\'a7f67091dd88\');" accesskey="s" class="button_submit"
+/&gt;&amp;nbsp;&amp;nbsp;&lt;input type="submit" name="cancel"
+value="Cancel" tabindex="3" onclick="return
+oQuickModify.modifyCancel();" class="button_submit"
+/&gt;\n\t\t\t\t\t\t\t\t\t&lt;' + '/div&gt;\n\t\t\t\t\t\t\t\t&lt;' +
+'/div&gt;', sTemplateSubjectEdit: '&lt;input type="text" style="width:
+90%;" name="subject" value="%subject%" size="80" maxlength="80"
+tabindex="4" class="input_text" /&gt;', sTemplateBodyNormal: '%body%',
+sTemplateSubjectNormal: '&lt;a
+hr'+'ef="https://en.sfml-dev.org/forums/index.php'+'?topic=21019.msg%msg_id%#msg%msg_id%"
+rel="nofollow"&gt;%subject%&lt;' + '/a&gt;', sTemplateTopSubject:
+'Topic: %subject% &amp;nbsp;(Read 105415 times)', sErrorBorderStyle:
+'1px solid red' }); aJumpTo[aJumpTo.length] = new JumpTo({
+sContainerId: "display_jump_to", sJumpToTemplate: "&lt;label class=\"smalltext\" for=\"%select_id%\"&gt;Jump to:&lt;" + "/label&gt; %dropdown_list%",
+							iCurBoardId: 10,
+							iCurBoardChildLevel: 0,
+							sCurBoardName: "SFML projects",
+							sBoardChildLevelIndicator: "==",
+							sBoardPrefix: "=&gt; ",
+							sCatSeparator: "-----------------------------",
+							sCatPrefix: "",
+							sGoButtonLabel: "go"
+						});
+
+						aIconLists[aIconLists.length] = new IconList({
+							sBackReference: "aIconLists[" + aIconLists.length + "]",
+							sIconIdPrefix: "msg_icon_",
+							sScriptUrl: smf_scripturl,
+							bShowModify: true,
+							iBoardId: 10,
+							iTopicId: 21019,
+							sSessionId: "1ede412f6922dfa0845de2503885dfb8",
+							sSessionVar: "a7f67091dd88",
+							sLabelIconList: "Message Icon",
+							sBoxBackground: "transparent",
+							sBoxBackgroundHover: "#ffffff",
+							iBoxBorderWidthHover: 1,
+							sBoxBorderColorHover: "#adadad" ,
+							sContainerBackground: "#ffffff",
+							sContainerBorder: "1px solid #adadad",
+							sItemBorder: "1px solid #ffffff",
+							sItemBorderHover: "1px dotted gray",
+							sItemBackground: "transparent",
+							sItemBackgroundHover: "#e0e0f0"
+						});
+					}
+				// ]]&gt;&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="bottomarea"&gt;
+&lt;div id="footer"&gt;
+&lt;div id="footerarea"&gt; &lt;span class="smalltext"&gt;DS-Natural designed by &lt;b&gt;DzinerStudio&lt;/b&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span class="smalltext"
+ style="display: inline; visibility: visible; font-family: Verdana,Arial,sans-serif;"&gt;&lt;a
+ href="?action=credits" title="Simple Machines Forum" target="_blank"
+ class="new_win"&gt;SMF 2.0.18&lt;/a&gt; | &lt;a
+ href="https://www.simplemachines.org/about/smf/license.php"
+ title="License" target="_blank" class="new_win"&gt;SMF © 2021&lt;/a&gt;, &lt;a
+ href="https://www.simplemachines.org" title="Simple Machines"
+ target="_blank" class="new_win"&gt;Simple Machines&lt;/a&gt;&lt;br /&gt;
+&lt;a href="http://www.createaforum.com" target="_blank"&gt;Simple Audio
+Video Embedder&lt;/a&gt; &lt;/span&gt;&lt;/span&gt; &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;a href="https://www.sfml-dev.org/honeypot/miscellaneouswindbl.php"
+ style="display: none;"&gt;anything&lt;/a&gt;&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+	var _paq = _paq || [];
+	_paq.push(["setCookieDomain", "*.sfml-dev.org"]);
+	_paq.push(["setDomains", ["*.sfml-dev.org","*.en.sfml-dev.org","*.fr.sfml-dev.org","*.www.sfml-dev.org"]]);
+	_paq.push(["trackPageView"]);
+	_paq.push(["enableLinkTracking"]);
+	(function() {
+		var u="https://www.sfml-dev.org/piwik/";
+		_paq.push(["setTrackerUrl", u+"piwik.php"]);
+		_paq.push(["setSiteId", "1"]);
+		var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0];
+		g.type="text/javascript"; g.async=true; g.defer=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+	})();
+&lt;/script&gt;&lt;noscript&gt;
+&lt;p&gt;&lt;img src="https://www.sfml-dev.org/piwik/piwik.php?idsite=1&amp;rec=1"
+ style="border: 0pt none ;" alt="" /&gt;&lt;/p&gt;
+&lt;/noscript&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</iframe></div></div></div></div></div></span></a></div></div></div></div></form></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</body></html>
