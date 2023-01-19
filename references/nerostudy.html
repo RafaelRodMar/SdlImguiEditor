@@ -2,8 +2,9 @@
 <html><head>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>nerostudy</title>
 
-</head><body>
-Nero game engine is based on box2d Testbed.<br>
+</head>
+<body>
+<br>Nero game engine is based on box2d Testbed.<br>
 <br>
 <br>
 <br>
@@ -291,8 +292,8 @@ MeshObjects. In that mode the following actions can be perform<br>
 <br>
 <span style="font-size: 10pt;" class="bbc_size"><strong>Next
 Time</strong></span><br>
-I will post a Cool Video in the next hours&nbsp; <img src="https://www.sfml-dev.org/forums/Smileys/default/cool.gif" alt="8)" title="Cool" class="smiley"><br>
-The video will show the outcome of my work and the power of the Nero
+I will post a Cool Video in the next hours&nbsp; The video will
+show the outcome of my work and the power of the Nero
 Game Engine.<br>
 <br>
 <div class="post">
@@ -354,14 +355,12 @@ may notice three types of users.<br>
 <br>
 That is the default behavior of the engine, you can use Bodies,
 Fixtures, Joints, Collisions, everything from Box2D<br>
-<br>
 </li>
 <li><strong>Users 2 : I don't want to use Box2d at all</strong><br>
 <br>
 You just have to destroy all Box2d Bodies and Joints and then nullify
 the b2_world (m_World = nullptr). Of corse you won't have to do it
 yourself, i will add a Macro to handle that.<br>
-<br>
 </li>
 <li><strong>Users 3 : I want to use Box2D collisions but,
 I don't want Box2D Physics simulation</strong><br>
@@ -402,7 +401,6 @@ I've already re-implemented most of those features. The remaining one
 is the way Scenes are Saved and Loaded.<br>
 Good news, I&#8217;ve already solved that in Pseudo code, I just need to make
 the implementation.<br>
-<br>
 </li>
 <li><span style="font-size: 12pt;" class="bbc_size"><strong>Task
 2: Add a window that let edit Physic_Objects properties </strong></span><br>
@@ -414,7 +412,6 @@ choosed. But for those you know Box2D, Box2D bodies are made of one
 Body (b2Body) and somes Fixtures (b2Fixture). Bodies and Fixtures have
 properties like density, velocity, fix rotation etc. that can be
 customized. So there will be a window to handle that.<br>
-<br>
 </li>
 <li><span style="font-size: 12pt;" class="bbc_size"><strong>Task
 3: Add a way to give a "Name" and a "Category" to each Object </strong></span><br>
@@ -436,7 +433,6 @@ category. In the code it'll be possible to write something like:<br>
 <br>
 Internally the engine will configure Box2D Collision <strong>Filtering
 </strong> for you.<br>
-<br>
 </li>
 <li><span style="font-size: 12pt;" class="bbc_size"><strong>Task
 4: Process Box2D Collisions </strong></span><br>
@@ -469,7 +465,6 @@ engine.process(b2Contact, b2ContactImpulse</strong></li>
 That way you will only have to deal with nero::Collision, the
 nero::Collision will give you the two nero::Object that are colliding
 and all other information concerning the collision.<br>
-<br>
 </li>
 <li><span style="font-size: 12pt;" class="bbc_size"><strong>Task
 5: Build a game prototype </strong></span><br>
@@ -483,7 +478,7 @@ It&#8217;ll be a platformer, the Player will be a simple Cube or Circle that
 can move right/left, jump, double jump and dash.<br>
 <br>
 This prototype will be used to test the engine fluidity but also its
-limits.<br>
+limits.
 </li>
 </ul>
 <br>
@@ -546,7 +541,8 @@ Game Engine Happy Release&nbsp; </strong></span><br>
 Hi! everyone, in a&nbsp; previous post, i've said that i will be
 busy on the next days, so i'll need to slow down the development, but
 guess what, i suddenly get some days off! what allows me to make a
-great progress on the Engine. Therefore i'm pretty happy now&nbsp; . Instead
+great progress on the Engine. Therefore i'm pretty happy now&nbsp;
+. Instead
 of making a post on the new features or make a video, i've thought, it
 would be better if you can try the engine yourself.<br>
 <br>
@@ -1613,7 +1609,6 @@ SpriteActionObject / SpriteAction&nbsp; &nbsp; &nbsp;
 LayerActionObject /&nbsp; LayerAction&nbsp; &nbsp;
 &nbsp; &nbsp; // handle a nero::LayerObject<br>
 <br>
-<br>
 </strong></div>
 </div>
 <br>
@@ -1727,7 +1722,7 @@ goal will be to make the following snippet of code work. <br>
 &nbsp; &nbsp; nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">DevEngine</span>
 engine<span style="color: rgb(0, 128, 128);">;</span><br>
 &nbsp; &nbsp; engine.<span style="color: rgb(0, 119, 136);">run</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
-<span style="color: rgb(0, 128, 0);">}</span><br>
+<span style="color: rgb(0, 128, 0);">}</span>
 &nbsp;</div>
 <br>
 This tutorial will focus on Windows, CodeBlocks and MinGW, if you are
@@ -1937,8 +1932,9 @@ All</strong></span><br>
 <br>
 This post described all the steps you'll need to get start with the
 Engine. Build and Link libraries is one of the most difficult part when
-working on C++ programs. It may give you some headaches&nbsp; &nbsp;
-<img src="https://www.sfml-dev.org/forums/Smileys/default/shocked.gif" alt=":o" title="Shocked" class="smiley"> . So
+working on C++ programs. It may give you some headaches&nbsp;
+&nbsp;
+. So
 try again and again if it does not work and feel free to ask any
 question in case of difficulties. <br>
 <br>
@@ -2029,7 +2025,7 @@ nero_log<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255
 engine<span style="color: rgb(0, 128, 128);">;</span><br>
 &nbsp; &nbsp; engine.<span style="color: rgb(0, 119, 136);">addScene</span><span style="color: rgb(0, 0, 128);">&lt;</span>MyScene<span style="color: rgb(0, 0, 128);">&gt;</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"My Scene"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 &nbsp; &nbsp; engine.<span style="color: rgb(0, 119, 136);">run</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
-<span style="color: rgb(0, 128, 0);">}</span><br>
+<span style="color: rgb(0, 128, 0);">}</span>
 &nbsp;</div>
 <br>
 <span style="font-size: 11pt;" class="bbc_size"><strong>2-
@@ -2089,7 +2085,7 @@ toString method; the "s" is for String, the "n" is for Nero Object</span><br>
 engine<span style="color: rgb(0, 128, 128);">;</span><br>
 &nbsp; &nbsp; engine.<span style="color: rgb(0, 119, 136);">addScene</span><span style="color: rgb(0, 0, 128);">&lt;</span>MyScene<span style="color: rgb(0, 0, 128);">&gt;</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"My Scene"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 &nbsp; &nbsp; engine.<span style="color: rgb(0, 119, 136);">run</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
-<span style="color: rgb(0, 128, 0);">}</span><br>
+<span style="color: rgb(0, 128, 0);">}</span>
 &nbsp;</div>
 <br>
 <span style="font-size: 11pt;" class="bbc_size"><strong>3-
@@ -2153,7 +2149,7 @@ toString method; the "s" is for String, the "n" is for Nero Object</span><br>
 engine<span style="color: rgb(0, 128, 128);">;</span><br>
 &nbsp; &nbsp; engine.<span style="color: rgb(0, 119, 136);">setScene</span><span style="color: rgb(0, 0, 128);">&lt;</span>MyScene<span style="color: rgb(0, 0, 128);">&gt;</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"My Scene"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 &nbsp; &nbsp; engine.<span style="color: rgb(0, 119, 136);">run</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
-<span style="color: rgb(0, 128, 0);">}</span><br>
+<span style="color: rgb(0, 128, 0);">}</span>
 &nbsp;</div>
 <br>
 <span style="font-size: 11pt;" class="bbc_size"><strong>4-
@@ -2231,7 +2227,6 @@ Part 2 : Let's finish that Prototype <br>
 &nbsp;&nbsp;&nbsp;1/ the Second part<br>
 &nbsp;&nbsp;&nbsp;2/ The Third part<br>
 &nbsp;&nbsp;&nbsp;3/ The Last part<br>
-<br>
 </strong>
 <div class="post">
 <div class="inner" id="msg_162285"><span style="font-size: 12pt;" class="bbc_size"><strong>How
@@ -2258,7 +2253,7 @@ level<span style="color: rgb(0, 128, 0);">)</span><br>
 nero_log_if<span style="color: rgb(0, 128, 0);">(</span>message,
 boolean<span style="color: rgb(0, 128, 0);">)</span><br>
 nero_log_if<span style="color: rgb(0, 128, 0);">(</span>message,
-boolean, level<span style="color: rgb(0, 128, 0);">)</span><br>
+boolean, level<span style="color: rgb(0, 128, 0);">)</span>
 &nbsp;</div>
 <br>
 Two levels are availabled. Not specifing a level is equivalent to use
@@ -2270,7 +2265,7 @@ nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 1
 Warning level will give the File, the Line and the Method where the log
 has been called</span><br>
 <span style="color: rgb(0, 128, 0);">[</span>DEBUG <span style="color: rgb(0, 0, 64);">|</span> main.<span style="color: rgb(0, 119, 136);">cpp</span> <span style="color: rgb(0, 0, 64);">|</span> Line <span style="color: rgb(0, 0, 221);">21</span> <span style="color: rgb(0, 0, 64);">|</span> <span style="color: rgb(0, 0, 255);">virtual</span> <span style="color: rgb(0, 0, 255);">void</span> MyScene<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">init</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span> <span style="color: rgb(0, 128, 0);">]</span> <span style="color: rgb(0, 0, 64);">--</span><span style="color: rgb(0, 0, 128);">&gt;</span> Hello
-world<br>
+world
 &nbsp;</div>
 <br>
 In addition to the logger Macros, you also got some toString Macros<br>
@@ -2283,7 +2278,7 @@ _sn<span style="color: rgb(0, 128, 0);">(</span>object<span style="color: rgb(0,
 &nbsp; <br>
 &nbsp;<span style="color: rgb(102, 102, 102);">//call
 the toString method of the object, equtivalent to
-object-&gt;toString()</span><br>
+object-&gt;toString()</span>
 &nbsp;</div>
 <br>
 Things&nbsp; are always more easy with examples, so here are some<br>
@@ -2298,7 +2293,7 @@ nero_log<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255
 nero_log_if<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"whatever"</span>, x <span style="color: rgb(0, 0, 128);">&lt;</span> <span style="color: rgb(0, 0, 221);">10</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 nero_log_if<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"whatever"</span>, x <span style="color: rgb(0, 0, 128);">&gt;</span> <span style="color: rgb(0, 0, 221);">0</span>, nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Debug</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 nero_log<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"step : "</span> <span style="color: rgb(0, 0, 64);">+</span> _s<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 0, 221);">10</span><span style="color: rgb(0, 128, 0);">)</span> <span style="color: rgb(0, 0, 64);">+</span> <span style="color: rgb(255, 0, 0);">"the winner is : "</span>
-<span style="color: rgb(0, 0, 64);">+</span> _sn<span style="color: rgb(0, 128, 0);">(</span>myPlayer<span style="color: rgb(0, 128, 0);">)</span>, nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Debug</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
+<span style="color: rgb(0, 0, 64);">+</span> _sn<span style="color: rgb(0, 128, 0);">(</span>myPlayer<span style="color: rgb(0, 128, 0);">)</span>, nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Debug</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span>
 &nbsp;</div>
 </div>
 </div>
@@ -2393,7 +2388,7 @@ _NamePool &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 <span style="color: rgb(0, 0, 255);">const</span>
 _CategoryPool &nbsp; &nbsp; &nbsp; &nbsp; CategoryPool<span style="color: rgb(0, 128, 128);">;</span><br>
 <span style="color: rgb(0, 0, 255);">const</span>
-_PlayerActionPool &nbsp; &nbsp; PlayerActionPool<span style="color: rgb(0, 128, 128);">;</span><br>
+_PlayerActionPool &nbsp; &nbsp; PlayerActionPool<span style="color: rgb(0, 128, 128);">;</span>
 &nbsp;</div>
 </div>
 </div>
@@ -2482,7 +2477,7 @@ Object<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0,
 Object<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Ptr</span> &nbsp;
 &nbsp; findPhysicObject<span style="color: rgb(0, 128, 0);">(</span>sf<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">String</span> name<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 Object<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Ptr</span> &nbsp;
-&nbsp; findSolidObject<span style="color: rgb(0, 128, 0);">(</span>sf<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">String</span> name<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
+&nbsp; findSolidObject<span style="color: rgb(0, 128, 0);">(</span>sf<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">String</span> name<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span>
 &nbsp;</div>
 <br>
 <span style="font-size: 10pt;" class="bbc_size"><strong>2-
@@ -2499,7 +2494,7 @@ Object<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0,
 Object<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Ptr</span> &nbsp;
 &nbsp; moveSpriteObject<span style="color: rgb(0, 128, 0);">(</span>sf<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">String</span> name<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 Object<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Ptr</span> &nbsp;
-&nbsp; moveSolidObject<span style="color: rgb(0, 128, 0);">(</span>sf<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">String</span> name<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
+&nbsp; moveSolidObject<span style="color: rgb(0, 128, 0);">(</span>sf<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">String</span> name<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span>
 &nbsp;</div>
 <br>
 <span style="font-size: 10pt;" class="bbc_size"><strong>3-
@@ -2512,7 +2507,7 @@ methods do not find the object you want to remove they return <strong>false</str
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;removeObject<span style="color: rgb(0, 128, 0);">(</span>Object<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Ptr</span> object<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 <span style="color: rgb(0, 0, 255);">bool</span>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp;removeObject<span style="color: rgb(0, 128, 0);">(</span>sf<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">String</span> name<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
+&nbsp;removeObject<span style="color: rgb(0, 128, 0);">(</span>sf<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">String</span> name<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span>
 &nbsp;</div>
 <br>
 <span style="font-size: 10pt;" class="bbc_size"><strong>4-
@@ -2527,7 +2522,7 @@ method for that.<br>
 <div class="cpp geshi" style="font-family: monospace;">nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Object</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><br>
 nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">LayerObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><br>
 nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">SpriteObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><br>
-nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">PhysicObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><br>
+nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">PhysicObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span>
 &nbsp;</div>
 <br>
 Example<br>
@@ -2543,7 +2538,7 @@ sprite_object <span style="color: rgb(0, 0, 128);">=</span>
 nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">SptriteObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span>my_cloud_sprite<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">PhysicObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Ptr</span>
 physic_object <span style="color: rgb(0, 0, 128);">=</span>
-nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">PhysicObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span>my_ground<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
+nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">PhysicObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span>my_ground<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span>
 &nbsp;</div>
 <br>
 A <strong>Solid_Object</strong> is a Physic_Object with a
@@ -2557,7 +2552,7 @@ physic_object <span style="color: rgb(0, 0, 128);">=</span>
 nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">PhysicObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span>object<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">SpriteObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Ptr</span>
 sprite_object <span style="color: rgb(0, 0, 128);">=</span>
-nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">SptriteObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span>object<span style="color: rgb(0, 0, 64);">-</span><span style="color: rgb(0, 0, 128);">&gt;</span>getFirstChild<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
+nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">SptriteObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span>object<span style="color: rgb(0, 0, 64);">-</span><span style="color: rgb(0, 0, 128);">&gt;</span>getFirstChild<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span>
 &nbsp;</div>
 </div>
 </div>
@@ -3000,7 +2995,6 @@ engine<span style="color: rgb(0, 128, 128);">;</span><br>
 &nbsp; &nbsp; engine.<span style="color: rgb(0, 119, 136);">addScene</span><span style="color: rgb(0, 0, 128);">&lt;</span>MyScene<span style="color: rgb(0, 0, 128);">&gt;</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"My Scene"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 &nbsp; &nbsp; engine.<span style="color: rgb(0, 119, 136);">run</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
 <span style="color: rgb(0, 128, 0);">}<br>
-<br>
 </span><span style="font-size: 12pt;" class="bbc_size"><strong>How
 to code with the engine Part 1-7 : Build a simple player</strong></span><br>
 <br>
@@ -3187,13 +3181,7 @@ engine I can.<br>
 Hi everyone ! it's been a long time since my last post. Hope you are
 doing well&nbsp; .<br>
 <br>
-<span style="font-size: 11pt;" class="bbc_size"><strong>A
-new logo design</strong></span><br>
-<br>
-Here is the new design I made for the logo. Let me know what you think.<br>
-<br>
-<img src="http://i.pinimg.com/originals/70/2e/95/702e95afbb92820e8226cba51449aa42.png" alt="" class="bbc_img resized" style="cursor: pointer;" width="600"><br>
-<br>
+<span style="font-size: 11pt;" class="bbc_size"><strong></strong></span><br>
 <span style="font-size: 11pt;" class="bbc_size"><strong>TexturePacker</strong></span><br>
 <br>
 Do you know TexturePacker from CodeAndWeb. It's a tool that easy the
@@ -3546,7 +3534,6 @@ present other new features. <br>
 Here is a video that shows how Animation looks like<br>
 <br>
 <iframe src="https://www.youtube.com/embed/My_IQXcQ1Dw?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe><br>
-<br>
 </div>
 </div>
 <div class="moderatorbar">
@@ -3561,7 +3548,8 @@ Here is a video that shows how Animation looks like<br>
 <div class="windowbg2"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
 <div class="poster">
-<h4> <a href="" title="View the profile of NeroGames">NeroGames</a> </h4>
+<h4> <a href="" title="View the profile of NeroGames">NeroGames</a>
+</h4>
 <ul class="reset smalltext" id="msg_164913_extra_info">
 <li class="postgroup">Jr. Member</li>
 <li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
@@ -3678,7 +3666,7 @@ If you like the project don't forget to give a start to the project on
 Github<br>
 <br>
 <br>
-That's all for now. thank you for reading my posts and see you later.<br>
+That's all for now. thank you for reading my posts and see you later.
 </div>
 </div>
 </div>
@@ -3695,31 +3683,9 @@ That's all for now. thank you for reading my posts and see you later.<br>
 </div>
 <div class="windowbg"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_165003_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=165003" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_165003"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg165003#msg165003" rel="nofollow">Re: Nero Game Engine</a> </h5>
-<div class="smalltext">« <strong>Reply #62 on:</strong>
-September 27, 2018, 08:57:13 am »</div>
+<div class="keyinfo"><br>
 <div id="msg_165003_quick_mod"></div>
 </div>
 </div>
@@ -3763,29 +3729,9 @@ Here is a first look of the main character <br>
 </div>
 <div class="windowbg2"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_165924_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=165924" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_165924"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg165924#msg165924" rel="nofollow">Re: Nero Game Engine</a> </h5>
+<div class="keyinfo"><br>
 <div class="smalltext">« <strong>Reply #63 on:</strong>
 November 24, 2018, 11:41:42 am »</div>
 <div id="msg_165924_quick_mod"></div>
@@ -3934,8 +3880,6 @@ shutdown.<br>
 <br>
 <strong>That's all for this post. There are more changes in the
 Engine, but those will be for another post. Have a good day !</strong>&nbsp;
-<img src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif" alt=":)" title="Smiley" class="smiley"><br>
-<br>
 </div>
 </div>
 </div>
@@ -3952,29 +3896,9 @@ Engine, but those will be for another post. Have a good day !</strong>&nbsp;
 </div>
 <div class="windowbg"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_165988_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=165988" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_165988"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg165988#msg165988" rel="nofollow">Re: Nero Game Engine</a> </h5>
+<div class="keyinfo"><br>
 <div class="smalltext">« <strong>Reply #64 on:</strong>
 November 27, 2018, 02:15:11 pm »</div>
 <div id="msg_165988_quick_mod"></div>
@@ -4060,7 +3984,7 @@ added to the Engine : <strong>Screens and Screens Stack</strong>.
 The Grid plays an important role for Screens so I needed to present it
 before.<br>
 <br>
-<iframe src="https://www.youtube.com/embed/Gr2NlSX5hQI?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe><br>
+<iframe src="https://www.youtube.com/embed/Gr2NlSX5hQI?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe>
 </div>
 </div>
 </div>
@@ -4075,29 +3999,9 @@ before.<br>
 </div>
 <div class="windowbg2"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_166167_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=166167" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_166167"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg166167#msg166167" rel="nofollow">Re: Nero Game Engine</a> </h5>
+<div class="keyinfo"><br>
 <div class="smalltext">« <strong>Reply #65 on:</strong>
 December 09, 2018, 07:03:16 pm »</div>
 <div id="msg_166167_quick_mod"></div>
@@ -4105,7 +4009,7 @@ December 09, 2018, 07:03:16 pm »</div>
 </div>
 <div class="post">
 <div class="inner" id="msg_166167">Hi everyone, how
-do you do, Hope your are doing great.&nbsp; <img src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif" alt=":)" title="Smiley" class="smiley"><br>
+do you do, Hope your are doing great.&nbsp;
 <br>
 <span style="font-size: 11pt;" class="bbc_size"><strong>Twitter
 account</strong></span><br>
@@ -4242,29 +4146,9 @@ Adventure Scene.<br>
 </div>
 <div class="windowbg"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_166200_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=166200" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_166200"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg166200#msg166200" rel="nofollow">Re: Nero Game Engine</a> </h5>
+<div class="keyinfo"><br>
 <div class="smalltext">« <strong>Reply #66 on:</strong>
 December 12, 2018, 11:33:18 pm »</div>
 <div id="msg_166200_quick_mod"></div>
@@ -4272,8 +4156,7 @@ December 12, 2018, 11:33:18 pm »</div>
 </div>
 <div class="post">
 <div class="inner" id="msg_166200">Hi everyone!
-Hope you are doing great.&nbsp; <img src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif" alt=":)" title="Smiley" class="smiley"><br>
-<br>
+Hope you are doing great.&nbsp; <br>
 In this post I will present more stuffs concerning Screens, and review
 the state of the project.<br>
 <br>
@@ -4395,8 +4278,7 @@ important thing remains to be done : Build an actual game.<br>
 <br>
 Now that I have the skeleton of the Adventure Scene set up, It's time
 to comes up with a Game Play. I think it will be the coolest part of
-the project&nbsp; <img src="https://www.sfml-dev.org/forums/Smileys/default/cool.gif" alt="8)" title="Cool" class="smiley">.<br>
-<br>
+the project&nbsp; <br>
 <iframe src="https://www.youtube.com/embed/HSnR_NJk7qk?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe></div>
 </div>
 </div>
@@ -4413,29 +4295,9 @@ the project&nbsp; <img src="https://www.sfml-dev.org/forums/Smileys/default/cool
 </div>
 <div class="windowbg2"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_166337_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=166337" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_166337"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg166337#msg166337" rel="nofollow">Re: Nero Game Engine</a> </h5>
+<div class="keyinfo"><br>
 <div class="smalltext">« <strong>Reply #67 on:</strong>
 December 29, 2018, 11:12:30 am »</div>
 <div id="msg_166337_quick_mod"></div>
@@ -4482,7 +4344,7 @@ ooooooooooooh, waaaaah !!!, this is too too powerfull !!. So I quickly
 start to learn how it works and decided to integrate its Color Picker
 in the Engine.<br>
 <br>
-Yeah, now there is a Color Picker&nbsp; <img src="https://www.sfml-dev.org/forums/Smileys/default/cool.gif" alt="8)" title="Cool" class="smiley"> . By
+Yeah, now there is a Color Picker&nbsp; . By
 default the Color Picker is Hidden, but when you go to the <strong>Color_Tab</strong>
 it appears automatically.<br>
 <br>
@@ -4531,29 +4393,9 @@ see you in 2019. Have a good day&nbsp; <img src="https://www.sfml-dev.org/forums
 </div>
 <div class="windowbg"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_166714_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=166714" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_166714"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg166714#msg166714" rel="nofollow">Re: Nero Game Engine</a> </h5>
+<div class="keyinfo"><br>
 <div class="smalltext">« <strong>Reply #68 on:</strong>
 January 21, 2019, 11:25:36 am »</div>
 <div id="msg_166714_quick_mod"></div>
@@ -4602,7 +4444,7 @@ shaking, bullet firing and maybe more)<br>
 &nbsp;&nbsp;&nbsp;3- Run a complet test of the Engine.
 Track bugs and solve everything that can besolved<br>
 <br>
-That's all, hope you'll enjoy the new SDK. Have a good day&nbsp; <img src="https://www.sfml-dev.org/forums/Smileys/default/cheesy.gif" alt=":D" title="Cheesy" class="smiley"><br>
+That's all, hope you'll enjoy the new SDK. Have a good day&nbsp; <img src="https://www.sfml-dev.org/forums/Smileys/default/cheesy.gif" alt=":D" title="Cheesy" class="smiley">
 </div>
 </div>
 </div>
@@ -4619,29 +4461,9 @@ That's all, hope you'll enjoy the new SDK. Have a good day&nbsp; <img src="https
 </div>
 <div class="windowbg2"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_166911_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=166911" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_166911"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg166911#msg166911" rel="nofollow">Re: Nero Game Engine</a> </h5>
+<div class="keyinfo"><br>
 <div class="smalltext">« <strong>Reply #69 on:</strong>
 February 10, 2019, 03:13:11 pm »</div>
 <div id="msg_166911_quick_mod"></div>
@@ -4710,38 +4532,15 @@ following<br>
 </div>
 <div class="windowbg"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_167038_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=167038" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_167038"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg167038#msg167038" rel="nofollow">Re: Nero Game Engine</a> </h5>
-<div class="smalltext">« <strong>Reply #70 on:</strong>
-February 23, 2019, 03:49:54 pm »</div>
+<div class="keyinfo"><br>
 <div id="msg_167038_quick_mod"></div>
 </div>
 </div>
 <div class="post">
 <div class="inner" id="msg_167038">Hi everyone,
-hope you are doing great ! <img src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif" alt=":)" title="Smiley" class="smiley"><br>
-<br>
+hope you are doing great ! <br>
 <span style="font-size: 12pt;" class="bbc_size"><strong>Engine
 Update</strong></span><br>
 <br>
@@ -4859,7 +4658,6 @@ first version is released. <br>
 <br>
 <br>
 <strong>That's all, have a good day ! <img src="https://www.sfml-dev.org/forums/Smileys/default/cool.gif" alt="8)" title="Cool" class="smiley"></strong><br>
-<br>
 </div>
 </div>
 </div>
@@ -4876,31 +4674,9 @@ first version is released. <br>
 </div>
 <div class="windowbg2"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_167510_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=167510" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
 <div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_167510"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg167510#msg167510" rel="nofollow">Re: Nero Game Engine</a> </h5>
-<div class="smalltext">« <strong>Reply #71 on:</strong>
-April 01, 2019, 11:07:49 pm »</div>
 <div id="msg_167510_quick_mod"></div>
 </div>
 </div>
@@ -4939,7 +4715,6 @@ IOS and Nintendo Switch (or its successor);<br>
 lauguage<br>
 &nbsp;&nbsp;&nbsp;3- A more powerfull Editor and more
 features in a Scene<br>
-<br>
 </div>
 </div>
 </div>
@@ -4956,38 +4731,15 @@ features in a Scene<br>
 </div>
 <div class="windowbg"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_167729_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=167729" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_167729"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg167729#msg167729" rel="nofollow">Re: Nero Game Engine</a> </h5>
-<div class="smalltext">« <strong>Reply #72 on:</strong>
-April 21, 2019, 01:05:17 pm »</div>
+<div class="keyinfo"><br>
 <div id="msg_167729_quick_mod"></div>
 </div>
 </div>
 <div class="post">
 <div class="inner" id="msg_167729">Hi everyone how
-do you do ! <img src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif" alt=":)" title="Smiley" class="smiley"><br>
-<br>
+do you do ! <br>
 <span style="font-size: 11pt;" class="bbc_size"><strong>Engine
 Update 1.0.1</strong></span><br>
 <br>
@@ -5060,7 +4812,7 @@ Game Engine 2.0 Github Branch</strong></span><br>
 A new branch as been created on Github for the <a href="https://github.com/NeroGames/Nero-Game-Engine" class="bbc_link" target="_blank" rel="noopener noreferrer">Engine second version</a>.
 While the development of the second version is not a priority now, its
 design has already begun. You can stay updated to the progress by
-checking this branch from time to time.<br>
+checking this branch from time to time.
 </div>
 </div>
 </div>
@@ -5077,38 +4829,15 @@ checking this branch from time to time.<br>
 </div>
 <div class="windowbg2"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_168746_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=168746" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_168746"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg168746#msg168746" rel="nofollow">Re: Nero Game Engine</a> </h5>
-<div class="smalltext">« <strong>Reply #73 on:</strong>
-July 23, 2019, 03:13:01 pm »</div>
+<div class="keyinfo"><br>
 <div id="msg_168746_quick_mod"></div>
 </div>
 </div>
 <div class="post">
 <div class="inner" id="msg_168746">Hello everyone
-!&nbsp; <img src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif" alt=":)" title="Smiley" class="smiley"><br>
-<br>
+!&nbsp; <br>
 <span style="font-size: 11pt;" class="bbc_size"><strong>Engine
 Update 1.0.2</strong></span><br>
 <br>
@@ -5143,28 +4872,8 @@ log message.</li>
 <span class="botslice"><span></span></span>
 </div>
 <span class="topslice"><span></span></span>
-<div class="poster">
-<h4> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845" title="View the profile of NeroGames">NeroGames</a> </h4>
-<ul class="reset smalltext" id="msg_169576_extra_info">
-<li class="postgroup">Jr. Member</li>
-<li class="stars"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/star.gif" alt="*"></li>
-<li class="avatar"> <a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845">
-<img class="avatar" src="https://en.sfml-dev.org/forums/index.php?action=dlattach;attach=4229;type=avatar" alt=""> </a> </li>
-<li class="postcount">Posts: 95</li>
-<li class="blurb">Build games is simple</li>
-<li class="profile">
-<ul>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=profile;u=16845"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/icons/profile_sm.gif" alt="View Profile" title="View Profile"></a></li>
-<li><a href="https://www.nero-games.com/" title="Nero Game Engine" target="_blank" rel="noopener noreferrer" class="new_win"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/www_sm.gif" alt="Nero Game Engine"></a></li>
-<li><a href="https://en.sfml-dev.org/forums/index.php?action=emailuser;sa=email;msg=169576" rel="nofollow"><img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/email_sm.gif" alt="Email" title="Email"></a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="flow_hidden">
-<div class="keyinfo">
-<div class="messageicon"> <img src="https://en.sfml-dev.org/forums/Themes/ds-natural_20/images/post/xx.gif" alt=""> </div>
-<h5 id="subject_169576"> <a href="https://en.sfml-dev.org/forums/index.php?topic=21019.msg169576#msg169576" rel="nofollow">Re: Nero Game Engine</a> </h5>
+<div class="keyinfo"><br>
 <div class="smalltext">« <strong>Reply #74 on:</strong>
 September 14, 2019, 06:51:36 pm »</div>
 <div id="msg_169576_quick_mod"></div>
@@ -5173,8 +4882,7 @@ September 14, 2019, 06:51:36 pm »</div>
 <span style="font-size: 16pt;" class="bbc_size"><strong>Project
 Status</strong></span><br>
 <br>
-Hi everyone ! How do you do. <img src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif" alt=":)" title="Smiley" class="smiley"><br>
-I've been silent for the last few months, I've been really busy. I
+Hi everyone ! How do you do. I've been silent for the last few months, I've been really busy. I
 recently moved to Montréal in order to complete a degree. this took off
 all my free time. The good thing with that is that I will be following
 a class on Video Game AI. The class is offered by people from Ubisoft.
@@ -5511,7 +5219,7 @@ nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 1
 &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(102, 102, 102);">//print the percentage [0
 - 100]</span><br>
 &nbsp; &nbsp; &nbsp; &nbsp; nero_log<span style="color: rgb(0, 128, 0);">(</span>progression<span style="color: rgb(0, 0, 64);">-</span><span style="color: rgb(0, 0, 128);">&gt;</span>getPercentage<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
-<span style="color: rgb(0, 128, 0);">}</span><br>
+<span style="color: rgb(0, 128, 0);">}</span>
 &nbsp;</div>
 <br>
 <strong><span style="font-size: 12pt;" class="bbc_size">A
@@ -5560,7 +5268,6 @@ nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 1
 <span style="color: rgb(0, 0, 255);">auto</span>
 my_task <span style="color: rgb(0, 0, 128);">=</span>
 nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">BTManager</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">findTaskByName</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"compile_project"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
-<br>
 <br>
 &nbsp;</div>
 <br>
@@ -5875,7 +5582,8 @@ activation only work in object_mode<br>
 &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 0, 64);">-</span> add doxygen
 documentation generation in CMakelists.<span style="color: rgb(0, 119, 136);">txt</span><br>
 &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 0, 64);">-</span> add Doxygen and
-Graphviz <span style="color: rgb(0, 128, 0);">(</span>dot<span style="color: rgb(0, 128, 0);">)</span> binaries in SDK<br>
+Graphviz <span style="color: rgb(0, 128, 0);">(</span>dot<span style="color: rgb(0, 128, 0);">)</span> binaries in
+SDK
 &nbsp;</div>
 </div>
 </div>
@@ -6100,7 +5808,7 @@ createGateOneGameLevel<span style="color: rgb(0, 128, 0);">)</span><br>
 <span style="color: rgb(0, 128, 0);">}</span><br>
 <br>
 <span style="color: rgb(51, 153, 0);">#endif //
-GATEONEGAMELEVEL_H</span><br>
+GATEONEGAMELEVEL_H</span>
 &nbsp;</div>
 <br>
 <strong><span style="font-size: 11pt;" class="bbc_size">What's
@@ -6112,8 +5820,7 @@ Chunks<br>
 <strong><span style="font-size: 13pt;" class="bbc_size">Nero
 Game Engine v2 Update : Game Levels (part 2)</span></strong><br>
 <br>
-Hi everyone!, how do you do&nbsp; <img src="https://www.sfml-dev.org/forums/Smileys/default/smiley.gif" alt=":)" title="Smiley" class="smiley"><br>
-<br>
+Hi everyone!, how do you do&nbsp; <br>
 <strong><span style="font-size: 11pt;" class="bbc_size">Managing
 Game Levels</span></strong><br>
 <br>
