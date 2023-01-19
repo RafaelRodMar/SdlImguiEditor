@@ -88,6 +88,8 @@ int main(int argc, char* args[])
 	//io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable; //not with sdl renderer
 	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable; //download the imgui docking version
 
+	io.ConfigWindowsMoveFromTitleBarOnly = true;
+
 	//setup Dear ImGui style
 	ImGui::StyleColorsDark();
 
