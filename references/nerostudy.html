@@ -556,14 +556,12 @@ may notice three types of users.<br>
   <li><strong>Users 1 : I want to use all Box2d features</strong><br>
     <br>
 That is the default behavior of the engine, you can use Bodies,
-Fixtures, Joints, Collisions, everything from Box2D
-  </li>
+Fixtures, Joints, Collisions, everything from Box2D </li>
   <li><strong>Users 2 : I don't want to use Box2d at all</strong><br>
     <br>
 You just have to destroy all Box2d Bodies and Joints and then nullify
 the b2_world (m_World = nullptr). Of corse you won't have to do it
-yourself, i will add a Macro to handle that.
-  </li>
+yourself, i will add a Macro to handle that. </li>
   <li><strong>Users 3 : I want to use Box2D collisions but,
 I don't want Box2D Physics simulation</strong><br>
     <br>
@@ -616,8 +614,7 @@ the canvas, the way things get selected, the way the layers work, etc.
 I've already re-implemented most of those features. The remaining one
 is the way Scenes are Saved and Loaded.<br>
 Good news, I&#8217;ve already solved that in Pseudo code, I just need to make
-the implementation.
-  </li>
+the implementation. </li>
   <li><span style="font-size: 12pt;" class="bbc_size"><strong>Task
 2: Add a window that let edit Physic_Objects properties </strong></span><br>
     <br>
@@ -627,8 +624,7 @@ Currently only the type (Dynamic, Kinematic, Static) of the mesh can be
 choosed. But for those you know Box2D, Box2D bodies are made of one
 Body (b2Body) and somes Fixtures (b2Fixture). Bodies and Fixtures have
 properties like density, velocity, fix rotation etc. that can be
-customized. So there will be a window to handle that.
-  </li>
+customized. So there will be a window to handle that. </li>
   <li><span style="font-size: 12pt;" class="bbc_size"><strong>Task
 3: Add a way to give a "Name" and a "Category" to each Object </strong></span><br>
     <br>
@@ -648,8 +644,7 @@ category. In the code it'll be possible to write something like:<br>
     </ul>
     <br>
 Internally the engine will configure Box2D Collision <strong>Filtering
-    </strong> for you.
-  </li>
+    </strong> for you. </li>
   <li><span style="font-size: 12pt;" class="bbc_size"><strong>Task
 4: Process Box2D Collisions </strong></span><br>
     <br>
@@ -680,8 +675,7 @@ engine.process(b2Contact, b2ContactImpulse</strong></li>
     <br>
 That way you will only have to deal with nero::Collision, the
 nero::Collision will give you the two nero::Object that are colliding
-and all other information concerning the collision.
-  </li>
+and all other information concerning the collision. </li>
   <li><span style="font-size: 12pt;" class="bbc_size"><strong>Task
 5: Build a game prototype </strong></span><br>
     <br>
@@ -2343,7 +2337,6 @@ SpriteActionObject / SpriteAction&nbsp; &nbsp; &nbsp;
 &nbsp;// handle a nero::SpriteObject<br>
 LayerActionObject /&nbsp; LayerAction&nbsp; &nbsp;
 &nbsp; &nbsp; // handle a nero::LayerObject
-
 </strong></div>
 </div>
 
@@ -4876,10 +4869,8 @@ Here is a video that shows how Animation looks like<br>
 </h4>
 <ul class="reset smalltext" id="msg_164913_extra_info">
   <li class="postgroup">Jr. Member</li>
-  <li class="profile">
-    
-  <br>
-</li>
+  <li class="profile"> <br>
+  </li>
 </ul>
 </div>
 <div class="postarea">
@@ -4999,8 +4990,6 @@ That's all for now. thank you for reading my posts and see you later.
 <div class="post_wrapper">
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-</div>
 </div>
 <div class="post">
 <div class="inner" id="msg_165003"><span style="font-size: 12pt;" class="bbc_size"><strong>The
@@ -5814,7 +5803,6 @@ following<br>
 &nbsp;&nbsp;&nbsp;Library/lib/libnero.dll.a<br>
 &nbsp;&nbsp;&nbsp;Library/bin/libnero.dll<br>
 &nbsp;&nbsp;&nbsp;Library/include/Nero/[all files]
-
 </div>
 </div>
 </div>
@@ -5832,8 +5820,6 @@ following<br>
 <div class="post_wrapper">
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo">
-</div>
 </div>
 <div class="post">
 <div class="inner" id="msg_167038">Hi everyone,
@@ -5969,9 +5955,6 @@ first version is released. <br>
 </strong>
 <div class="post_wrapper">
 <div class="postarea">
-<div class="flow_hidden">
-
-</div>
 <div class="post">
 <div class="inner" id="msg_167510"><strong>Hi everyone,
 hope you are doing great&nbsp;
@@ -6024,8 +6007,7 @@ features in a Scene
 <div class="post_wrapper">
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo"><strong>
-</strong></div>
+<div class="keyinfo"><strong></strong></div>
 </div>
 <div class="post">
 <div class="inner" id="msg_167729"><strong>Hi everyone how
@@ -6048,7 +6030,6 @@ the changes, please read this file before to install the Update.<br>
 When you render a Scene from the Dev_Engine using the <strong>[Render_Button]</strong>
 on top of the Canvas, a new Window opens up with a certain size. This
 size is specified in your Scene with the code below
-
 </strong>
 <div class="cpp geshi" style="font-family: monospace;"><span style="color: rgb(0, 0, 255);"><strong>void</strong></span><strong>
 MyScene<span style="color: rgb(0, 128, 128);">:</span>init<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><br>
@@ -6062,7 +6043,6 @@ width, height <span style="color: rgb(0, 128, 0);">)</span><span style="color: r
 The problem ? it does not work&nbsp; &nbsp;&nbsp;
 <br>
 The Update removes the two methods
-
 </strong>
 <div class="cpp geshi" style="font-family: monospace;"><span style="color: rgb(102, 102, 102);"><strong>//Methods removed.</strong></span><strong><br>
 setResolution<span style="color: rgb(0, 128, 0);">(</span>
@@ -6070,7 +6050,6 @@ width, height <span style="color: rgb(0, 128, 0);">)</span><span style="color: r
 getResolution<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span></strong></div>
 <strong><br>
 The Scene Renderer window Resolution is now manage by a new method
-
 </strong>
 <div class="cpp geshi" style="font-family: monospace;"><strong>sf<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Vector2f</span>
 MyScene<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">getSceneResolution</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><br>
@@ -6093,7 +6072,8 @@ the init() method</span><br>
 <span style="font-size: 11pt;" class="bbc_size"><strong>Engine
 API Documentation</strong></span><br>
 <br>
-The Doxygen documentation is now availabled on the<a href="" class="bbc_link" target="_blank" rel="noopener noreferrer"> Website Documentation Page</a>.<br>
+The Doxygen documentation is now availabled on the<a href="" class="bbc_link" target="_blank" rel="noopener noreferrer"> Website
+Documentation Page</a>.<br>
 This page is accessible via The Dev_Engine using the button <strong>[
 Engine API ]</strong> on the left. <br>
 <br>
@@ -6124,8 +6104,7 @@ checking this branch from time to time.
 <div class="post_wrapper">
 <div class="postarea">
 <div class="flow_hidden">
-<div class="keyinfo"><strong>
-</strong></div>
+<div class="keyinfo"><strong></strong></div>
 </div>
 <div class="post">
 <div class="inner" id="msg_168746"><strong>Hello everyone
@@ -6133,8 +6112,7 @@ checking this branch from time to time.
 <span style="font-size: 11pt;" class="bbc_size"><strong>Engine
 Update 1.0.2</strong></span><br>
 <br>
-The Update can be downloaded from the <a href="https://www.nero-games.com/download" class="bbc_link" target="_blank" rel="noopener noreferrer">Website
-Download Page</a><br>
+<br>
 <br>
 To install, copy the content of the Update Folder into The Engine SDK
 Folder and overwrite the current files.<br>
@@ -6167,8 +6145,7 @@ log message.</strong></li>
 </div>
 <span class="topslice"><span></span></span>
 <div class="flow_hidden">
-<div class="keyinfo"><strong>
-</strong>
+<div class="keyinfo"><strong></strong>
 <div class="smalltext"><strong>« <strong>Reply #74 on:</strong>
 September 14, 2019, 06:51:36 pm »</strong></div>
 </div>
@@ -6205,7 +6182,7 @@ a particular feature or if you have an issue with the Engine.<br>
 The default registration link available on the Forum page will not
 work. I've received many spams since the Forum has been online. Since I
 don't have a lot of time to manage the Forum and remove spammers, a
-Registration Form as been made availabled on the Website <a href="https://nero-games.com/forum-registration/" class="bbc_link" target="_blank" rel="noopener noreferrer"><span style="font-size: 10pt;" class="bbc_size"><strong>[link here]</strong></span></a>.<br>
+Registration Form as been made availabled on the Website .<br>
 <br>
 <img src="https://i.pinimg.com/originals/c6/74/ed/c674ed42ce8f2f895fd55f30159d3eb5.png" alt="" class="bbc_img resized" style="cursor: pointer;" width="740"><br>
 <br>
@@ -6496,7 +6473,6 @@ The first feature is to retrieve the size of a file on the internet
 using a HTTPS request.<br>
 The second feature is to download a file on the internet and monitor
 the download progression.
-
 </strong></strong>
 <div class="cpp geshi" style="font-family: monospace;"><span style="color: rgb(102, 102, 102);"><strong><strong>//get a file size</strong></strong></span><strong><strong><br>
 <span style="color: rgb(0, 0, 255);">float</span>
@@ -6541,7 +6517,6 @@ or simply <strong>nero::BTManager</strong>. The class is
 used like that <strong>nero::BTManager::startTask(callable,
 task_name, task_category)</strong>, The callable can be a
 function pointer, a lambda or a class method.
-
 </strong></strong>
 <div class="cpp geshi" style="font-family: monospace;"><span style="color: rgb(0, 0, 255);"><strong><strong>class</strong></strong></span><strong><strong>
 MyClass<br>
@@ -6570,7 +6545,6 @@ nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 1
 <span style="color: rgb(0, 0, 255);">auto</span>
 my_task <span style="color: rgb(0, 0, 128);">=</span>
 nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">BTManager</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">findTaskByName</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"compile_project"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span>
-
 &nbsp;</strong></strong></div>
 <strong><strong><br>
 <strong><span style="font-size: 12pt;" class="bbc_size">That's
@@ -6583,7 +6557,6 @@ with the <strong>Nero Game Engine 1</strong>, you have the
 mouse position on top of the canvas and the four buttons to change the
 canvas color&nbsp; <br>
 <img style="width: 1920px; height: 1038px;" alt="" src="426c93fcbf081a33e67af6cb9399463e.png">
-
 </strong></strong>
 <div class="post">
 <div class="inner" id="msg_173292"><span style="font-size: 12pt;" class="bbc_size"><strong><strong><strong>Nero
@@ -6594,7 +6567,7 @@ happy to announce the release of the Engine Demo version
 2.0.1&nbsp; <br>
 The Engine is provided with a <strong>BSD Licence</strong><br>
 <br>
-You can download it here : <a href="https://nero-games.com/download" class="bbc_link" target="_blank" rel="noopener noreferrer">https://nero-games.com/download</a><br>
+You can download it here : <br>
 <br>
 It's my first time releasing an installable software, if you find any
 problem please let me known.<br>
@@ -6704,8 +6677,7 @@ You can download the full SDK already updated (Nero Game
 Engine&nbsp; SDK 1.0.3) or you can download the update only (Engine
 Update 1.0.3) and copy its content in your current installation <br>
 <br>
-<a href="https://nero-games.com/download/" class="bbc_link" target="_blank" rel="noopener noreferrer">download
-page here</a><br>
+<br>
 <br>
 <span style="font-size: 12pt;" class="bbc_size"><strong>What
 next</strong></span><br>
@@ -6804,8 +6776,8 @@ Game Engine SDK v1.0.6 Released</strong></strong></strong></span><strong><strong
 <br>
 Hi everyone ! How do you do ?&nbsp; Happy
 new year&nbsp; <br>
-The Engine SDK v1.0.6 has been released, you can <a href="https://nero-games.com/download/" class="bbc_link" target="_blank" rel="noopener noreferrer"><span style="font-size: 10pt;" class="bbc_size"><strong>download
-it here</strong></span></a>. I made a few bugs fixes
+The Engine SDK v1.0.6 has been released, you can . I made a few bugs
+fixes
 and some improvement<br>
 <br>
 <span style="font-size: 11pt;" class="bbc_size"><strong>Here
@@ -6910,7 +6882,6 @@ SDK
 </div>
 </div>
 <strong><strong>
-
 </strong></strong>
 <div class="post">
 <div class="inner" id="msg_175561"><span style="font-size: 12pt;" class="bbc_size"><strong><strong><strong>Build
@@ -6933,9 +6904,7 @@ difficult part</strong></span><br>
 Since the Engine uses Box2D for physics, the most difficult issue will
 be to sync all clients with the server so they can have the same exact
 physic simulation. In a series of articles, <a href="https://gafferongames.com/post/introduction_to_networked_physics/" class="bbc_link" target="_blank" rel="noopener noreferrer">https://gafferongames.com/post/introduction_to_networked_physics/</a>
-Glenn Fiedler presents three techniques.&nbsp; 
-
-</strong></strong>
+Glenn Fiedler presents three techniques.&nbsp; </strong></strong>
 <ul class="bbc_list">
   <strong><strong> </strong></strong>
   <li><strong><strong>Deterministic Lockstep</strong></strong></li>
@@ -7008,8 +6977,7 @@ I work directly on GitHub now, the latest code is on the branch <a href="https:/
 <span style="font-size: 11pt;" class="bbc_size"><strong>Coding
 Level</strong></span><br>
 <br>
-The Engine will offer three (3) levels of coding. 
-</strong></strong>
+The Engine will offer three (3) levels of coding. </strong></strong>
 <ul class="bbc_list">
   <strong><strong> </strong></strong>
   <li><strong><strong>The first level is your Scene class (like in the
@@ -7047,7 +7015,7 @@ Level</strong>", when you click on it a popup will open up and
 let you create a new level. The <strong>Level View</strong>
 at the button shows you the list of existing levels.<br>
 <br>
-<img style="width: 1920px; height: 1040px;" alt="" src="create_game_level.png"><img src="https://nero-games.com/resource/artwork/sfml_forum/26june2021/create_game_level.png" alt="" class="bbc_img resized" style="cursor: pointer;" width="700"><br>
+<img style="width: 1920px; height: 1040px;" alt="" src="create_game_level.png"><img src="create_game_level.png" alt="" class="bbc_img resized" style="cursor: pointer;" width="700"><br>
 <br>
 <span style="font-size: 11pt;" class="bbc_size"><strong>Game
 Level Directory</strong></span><br>
@@ -7056,14 +7024,13 @@ When a new level is created, a new directory is also created under "<strong>Proj
 Folder/Scene/level/level_name</strong>". The directory contains
 all the data relative to the level : game assets, settings, etc.<br>
 <br>
-<img src="https://nero-games.com/resource/artwork/sfml_forum/26june2021/level_directory.jpg" alt="" class="bbc_img"><br>
+<img src="level_directory.jpg" alt="" class="bbc_img"><br>
 <img style="width: 632px; height: 207px;" alt="" src="level_directory.jpg"><br>
 <span style="font-size: 11pt;" class="bbc_size"><strong>Game
 Level Class</strong></span><br>
 <br>
 The Engine generates automatically a new class for each level under <strong>"Project
 Folder/Source/Project Name/cpp/level/"</strong>.
-
 </strong></strong>
 <div class="cpp geshi" style="font-family: monospace;"><span style="color: rgb(102, 102, 102);"><strong><strong>////////////////////////////////////////////////////////////</strong></strong></span><strong><strong><br>
 <span style="color: rgb(102, 102, 102);">// Project One</span><br>
@@ -7227,7 +7194,6 @@ RoadMap</strong></span><br>
 <br>
 In order to reach the next release, I'll have to complete the following
 features
-
 </strong></strong>
 <ul class="bbc_list" style="list-style-type: decimal;">
   <strong><strong> </strong></strong>
@@ -7282,7 +7248,6 @@ next</strong></span><br>
 It's time to bring back the Mesh Editor, when that's done I'll bring
 back all game object types : Sprite, Animation, Mesh, Text, Light etc.<br>
 <br>
-
 </strong></strong></div>
 </div>
 
