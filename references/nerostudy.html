@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head>
 
+
   
   <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>nerostudy</title></head><body>
 Menu bar : file, edit, build, views, settings, tools, help.<br>
@@ -95,72 +96,11 @@ buttons on top the Canvas, the Log window bellow the Canvas<br>
 <strong>The Right</strong> : The right side of the Canvas :
 Layer, Mesh, Object, Scene, Draw Checkbuttons, etc.<br>
 <br><img style="cursor: pointer; width: 1307px; height: 686px;" class="bbc_img resized" alt="" src="1ed210e1ed0f508ffc324289e42096b6.png"><br>
-<span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><span style="font-size: 14pt;" class="bbc_size"><strong></strong></span><br><span style="font-size: 14pt;" class="bbc_size"><strong>Collision
-Management | Part II : Collision Handling</strong></span><br>
-<br>
-Handle collisions is one the most interresting part in game
-programming, this is where you can say I want that object to explode if
-it get touch my super missile&nbsp; . <br>
-<br>
-<span style="font-size: 11pt;" class="bbc_size"><strong>Four
-methods : Begin, End, PreSolve, PostSolve</strong></span><br>
-<br>
-A nero::Scene offers four methods to handle collision. <br>
-<br>
-<strong>void handleCollisionContactBegin(nero::Collision
-collision);<br>
-void handleCollisionContactEnd(nero::Collision collision);<br>
-void handleCollisionPreSolveContact(nero::Collision collision);<br>
-void handleCollisionPostSolveContact(nero::Collision collision);</strong><br>
-<br>
-Those four methods are called automatically when a collision occur. the
-<strong>nero::Collision</strong> object carries all
-information concerning the collision. For instance you can retrieve the
-two nero::PhyscicObject that are colliding like that:<br>
-<br>
-<strong>auto objectA = collision.getObjectA()<br>
-auto objectB = collision.getObjectB()</strong><br>
-<br>
-if you want to check what objects they are, just retrieve the category (<strong>sf::string
-cat = objectA-&gt;getCategory()</strong>) or the name (<strong>sf::string
-name = objectA-&gt;getName()</strong>)<br>
-<br>
-<br>
-<span style="font-size: 11pt;" class="bbc_size"><strong>More
-details on those four methods</strong></span><br>
-<br>
-In a previous post I have presented the four methods used by Box2D in
-order to process collisions, the four ones you are seeing here, is just
-a simplified version of the four methods provide by Box2D. <br>
-<br>
-<strong>How do they work ?</strong><br>
-<br>
-The <strong>Begin method /
-handleCollisionContactBegin(nero::Collision collision)</strong>,
-is called at the moment where two objects just collided. It means at
-the first moment of the collision. This is the method that you will use
-the most to process collisions.<br>
-<br>
-After the two objects just collided, there will be a little period of
-time where they will be overlapping. During this overlapping phase the
-two methods <strong>PreSolve</strong> and <strong>PostSolve</strong>
-will be called alternatively and repeatedly. Those two methods may be
-useful in a game logic but for now I'm not going into more details.<br>
-<br>
-After the overlapping phase, ours two objects are no longer colliding,
-so the <strong>End method / void
-handleCollisionContactEnd(nero::Collision collision)</strong>, is
-called, that method just let us know that a collision just ended and
-give us the opportunty to do some stuffs.<br>
-<br>
-<span style="font-size: 11pt;" class="bbc_size"><strong>That'
-all</strong></span><br>
-<br>
-That's all for collisions, Collisions allow you to add diversity in
-your game, you can use them in many ways, just let your imagination run
-free. I did not entered into details on how or when use collisions, I
-think the better way to anterstand collisions is to get our hand one it.<br>
-<br>
+<span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><span style="font-size: 14pt;" class="bbc_size"><strong></strong></span>Collisions:
+four methods: begin, end, presolve and postsolve. Begin and end are
+called when there is the first contact and when the contact ends. The
+other are called arternatively and repeatedly while the objects are
+overlapping.<br>
 <br>
 <div class="post">
 <div class="inner" id="msg_159373"><span style="font-size: 14pt;" class="bbc_size"><strong>Engine
