@@ -3,6 +3,7 @@
 
 
 
+
   
   <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>nerostudy</title></head><body>
 Menu bar : file, edit, build, views, settings, tools, help.<br>
@@ -102,114 +103,9 @@ four methods: begin, end, presolve and postsolve. Begin and end are
 called when there is the first contact and when the contact ends. The
 other are called arternatively and repeatedly while the objects are
 overlapping.<br>
-<br>
-<div class="post">
-<div class="inner" id="msg_159373"><span style="font-size: 14pt;" class="bbc_size"><strong>Engine
-update</strong></span><br>
-<br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>ActionObject
-and Action</strong></span><br>
-<br>
-<span style="font-size: 11pt;" class="bbc_size"><strong>The
-concept</strong></span><br>
-<br>
-<strong>ActionObject</strong> and <strong>Action</strong>
-is a interface that aim to simplify the manipulation of your game
-objects. Instead of manipulate your objects directly you can
-encapsulate them in a ActionObject. the ActionObject is then able to
-register several Actions that you can perfom later at any time.<br>
-<br>
-An <strong>Action</strong> is a just a class that must
-override the following method "<strong>void call(object)</strong>".
-My first idea is that Actions should be <strong>Functors (C++
-Function Object)</strong>, I've tried to override the "<strong>call
-operator</strong>" but didn't get the result expected, so I end
-up using the "<strong>void call(object)</strong>" instead.
-ActionObject and Action can be used to perform <strong>instant
-action like jump or dash</strong>, but they can also be used to
-perform<strong> long or infinite actions</strong> like
-controlling the trajectory of a moving platform.<br>
-<br>
-<span style="font-size: 11pt;" class="bbc_size"><strong>In
-Practice</strong></span><br>
-<br>
-The following code is just a pseudo code, it let you get an idea of how
-to use ActionObject and Action.<br>
-<br>
-class JumpAction : public Action<br>
-{<br>
-&nbsp;&nbsp;&nbsp;call(Object)<br>
-&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// do some
-stuff with the object, like apply a impulse upward<br>
-&nbsp;&nbsp;&nbsp;}<br>
-}<br>
-<br>
-class DashAction : public Action<br>
-{<br>
-&nbsp;&nbsp;&nbsp;call(Object)<br>
-&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// do some
-stuff with the object<br>
-&nbsp;&nbsp;&nbsp;}<br>
-}<br>
-<br>
-auto object = enigne.findObject("player"); // find object by name<br>
-ActionObject&nbsp; my_player;<br>
-my_player.setObject(object);<br>
-my_player.registerAction&lt;JumpAction&gt;("jump"); // the name
-of the Action is given as argument, you can put what you want<br>
-my_player.registerAction&lt;DashAction&gt;("dash");<br>
-<br>
-if(key J is pressed)<br>
-&nbsp;&nbsp;&nbsp;m_player.callAction("jump");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//
-make your player jump<br>
-else if (key D is pressed)<br>
-&nbsp;&nbsp;&nbsp;m_player.callAction("dash");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//
-make your player dash<br>
-<br>
-<span style="font-size: 11pt;" class="bbc_size"><strong>Different
-types of ActionObject / Action</strong></span><br>
-<br>
-As it already been said the code above is just a spseudo code, <strong>the
-classes ActionObject and Action do not exist</strong>. Instead
-you have a pair of classes for each type of objects that is manipulable.<br>
-<br>
-<strong>SimpleActionObject /
-ObjectAction&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//
-handle a generic nero::Object<br>
-PhysicActionObject / PhysicAction
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// handle a
-nero::PhysciObject <br>
-SpriteActionObject / SpriteAction&nbsp; &nbsp; &nbsp;
-&nbsp;// handle a nero::SpriteObject<br>
-LayerActionObject /&nbsp; LayerAction&nbsp; &nbsp;
-&nbsp; &nbsp; // handle a nero::LayerObject
-</strong></div>
-</div>
-<br>
-<br><span style="font-size: 12pt;" class="bbc_size"><strong>How
-is my game prototype doing !</strong></span><br>
-<br>
-I'm currently working on my game prototype, the objective is to simply
-test and improve the Engine. I'll be working on it all this month.<br>
-<br>
-As for now I've implemented the following features.<br>
-<ul class="bbc_list">
-  <li>Make the camera track my player</li>
-  <li>Move my player</li>
-  <li>Multi-Jump (double jump)</li>
-  <li>Dash</li>
-  <li>Moving platform</li>
-  <li>Go through Platforms when jumping from bottom</li>
-  <li>Make my player rotate to fit the ground slope, despite it
-is configured as Fixed_Rotation true</li>
-  <li>Remove objects at collision (It's like collecting coins or
-destroying enemies)</li>
-</ul>
-<br>
-<iframe src="https://www.youtube.com/embed/FvEnGTooAag?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe><br>
-<br><span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><br><span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><span style="font-size: 12pt;" class="bbc_size"><strong>How
+Actions: ActionObject, register actions in objects:
+my_player.registerAction&lt;JumpAction&gt;("jump") ---&gt;&nbsp; if(key
+j is pressed) m_player.callAction("jump").<br><span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><br><span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><span style="font-size: 12pt;" class="bbc_size"><strong>How
 to code with the Engine Series</strong></span><br>
 <br>
 Hi everyone, after the 101 (see the above post), we can now move
