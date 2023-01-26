@@ -5,6 +5,7 @@
 
 
 
+
   
   <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>nerostudy</title></head><body>
 Menu bar : file, edit, build, views, settings, tools, help.<br>
@@ -109,290 +110,6 @@ my_player.registerAction&lt;JumpAction&gt;("jump") ---&gt;&nbsp; if(key
 j is pressed) m_player.callAction("jump").<br>
 Objects in the hierarchy: find, move, remove.<br>
 Collisions: cancollide("obj1", "ojb2")<br><span style="font-size: 12pt;" class="bbc_size"></span><br>
-In this post I will show how to use an ActionObject and some Actions in
-order the build a simple player<br>
-<br>
-<span style="font-size: 10pt;" class="bbc_size"><strong>Step
-0 : Include the Nero GameLib header</strong></span><br>
-<br>
-<div class="cpp geshi" style="font-family: monospace;"><span style="color: rgb(51, 153, 0);">#include
-&lt;NERO/gamelib.h&gt;</span></div>
-<br>
-<span style="font-size: 10pt;" class="bbc_size"><strong>Step
-1 : Create the player object</strong></span><br>
-<br>
-The first step is to create the object that will be your player using
-the Dev_Engine_Interface. For this example we can take a simple cube or
-circle to be the player. So let's create a Physic_Object (Polygon Mesh)
-with the name <strong>"my_player"</strong> and the
-category <strong>"player"</strong> <br>
-<br>
-<span style="font-size: 10pt;" class="bbc_size"><strong>step
-2 : Use an ActionOject to represent the Player</strong></span><br>
-<br>
-<div class="cpp geshi" style="font-family: monospace;">nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">PhysicActionObject</span>
-my_Player<span style="color: rgb(0, 128, 128);">;</span><br>
-my_Player.<span style="color: rgb(0, 119, 136);">setObject</span><span style="color: rgb(0, 128, 0);">(</span>m_ObjectManager.<span style="color: rgb(0, 119, 136);">findObject</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"my_player"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span></div>
-<br>
-In the Howto on <strong>Moving Objects and Platforms</strong>,
-we used a Custom PhysicActionObject called SimpleMovingObject. The
-SimpleMovingObject inherit from PhysicActionObject in order to build a
-more complex interface. But as you can see the default interface of the
-PhysicActionObject is enough for certain cases. There are many ways to
-use ActionObject and Action, and for this tutorial we are using the
-most basic one.<br>
-<br>
-<span style="font-size: 10pt;" class="bbc_size"><strong>step
-3 : Give the player defferent capabilities </strong></span><br>
-<br>
-Let's say we want our player to be able to move right and left. we also
-want it to be able to jump.<br>
-<br>
-<div class="cpp geshi" style="font-family: monospace;"><span style="color: rgb(0, 0, 255);">float</span>
-move_velocity <span style="color: rgb(0, 0, 128);">=</span>
-<span style="color: rgb(0, 0, 221);">100</span>.<span style="color: rgb(0, 119, 136);">f</span><br>
-<span style="color: rgb(0, 0, 255);">float</span>
-jump_force &nbsp; <span style="color: rgb(0, 0, 128);">=</span>
-<span style="color: rgb(0, 0, 221);">150</span>.<span style="color: rgb(0, 119, 136);">f</span><br>
-<br>
-my_Player.<span style="color: rgb(0, 119, 136);">registerAction</span><span style="color: rgb(0, 0, 128);">&lt;</span>MoveAction<span style="color: rgb(0, 0, 128);">&gt;</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"move_left"</span>, nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">getMoveLeftAction</span><span style="color: rgb(0, 128, 0);">(</span>move_velocity<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
-my_Player.<span style="color: rgb(0, 119, 136);">registerAction</span><span style="color: rgb(0, 0, 128);">&lt;</span>MoveAction<span style="color: rgb(0, 0, 128);">&gt;</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"move_right"</span>,
-nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">getMoveRightAction</span><span style="color: rgb(0, 128, 0);">(</span>move_velocity<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
-my_PLayer.<span style="color: rgb(0, 119, 136);">registerAction</span><span style="color: rgb(0, 0, 128);">&lt;</span>JumpAction<span style="color: rgb(0, 0, 128);">&gt;</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"jump"</span>, nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">getJumpAction</span><span style="color: rgb(0, 128, 0);">(</span>jump_force<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span></div>
-<br>
-In the code above we've registered three Actions, the player can then
-perform those actions when ever it want.<br>
-<br>
-<div class="cpp geshi" style="font-family: monospace;"><span style="color: rgb(0, 0, 255);">void</span>
-handleKeyboardInput<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 0, 255);">const</span> sf<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Keyboard</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Key</span><span style="color: rgb(0, 0, 64);">&amp;</span> key, <span style="color: rgb(0, 0, 255);">const</span> <span style="color: rgb(0, 0, 255);">bool</span><span style="color: rgb(0, 0, 64);">&amp;</span>
-isPressed<span style="color: rgb(0, 128, 0);">)</span><br>
-<span style="color: rgb(0, 128, 0);">{</span><br>
-&nbsp; &nbsp; <span style="color: rgb(0, 0, 255);">if</span><span style="color: rgb(0, 128, 0);">(</span>isPressed<span style="color: rgb(0, 128, 0);">)</span> &nbsp; <br>
-&nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">{</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 0, 255);">switch</span><span style="color: rgb(0, 128, 0);">(</span>key<span style="color: rgb(0, 128, 0);">)</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">{</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 0, 255);">case</span>
-sf<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Keyboard</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">J</span><span style="color: rgb(0, 128, 128);">:</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">{</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp;my_PLayer.<span style="color: rgb(0, 119, 136);">callAction</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"jump"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">}</span><span style="color: rgb(0, 0, 255);">break</span><span style="color: rgb(0, 128, 128);">;</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">}</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp;<br>
-&nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">}</span>
-&nbsp; <br>
-<span style="color: rgb(0, 128, 0);">}</span></div>
-<br>
-If you want to see how Actions are built, click on the spoiler button.<br>
-<div class="spoiler">
-</div>
-<div class="spoiler">
-<div class="spoilerheader"> (click to show/hide)</div>
-</div>
-<br>
-<span style="font-size: 10pt;" class="bbc_size"><strong>Step
-4 : Make the camera follow your player</strong></span><br>
-<br>
-The nero::Scene offers a method called <strong>setCameratTarget</strong>,
-that you can used to make the camera follow any Physic_Object.<br>
-<br>
-<div class="cpp geshi" style="font-family: monospace;"><span style="color: rgb(0, 0, 255);">auto</span>
-player_object &nbsp; &nbsp;<span style="color: rgb(0, 0, 128);">=</span>
-m_ObjectManager.<span style="color: rgb(0, 119, 136);">findObject</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"my_player"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span> <span style="color: rgb(102, 102, 102);">//retrieve the object to
-follow</span><br>
-<span style="color: rgb(0, 0, 255);">auto</span>
-target &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 0, 128);">=</span>
-nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">PhysicObject</span><span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">Cast</span><span style="color: rgb(0, 128, 0);">(</span>player_object<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span> <span style="color: rgb(102, 102, 102);">// cast the object to a
-Physic_Object</span><br>
-<br>
-setCameraTarget<span style="color: rgb(0, 128, 0);">(</span>target<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span> <span style="color: rgb(102, 102, 102);">// set the target</span></div>
-<br>
-It's possible to disable and enable this feature at any moment with the
-following method<br>
-<br>
-<div class="cpp geshi" style="font-family: monospace;">setCameraFollowTarget<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 0, 255);">bool</span> flag<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span></div>
-<br>
-<br>
-This post showed how ActionObject and Action could be used to create a
-simple player, for a complet example you can check the code in the Kero
-project.<br>
-<br>
-<br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>How
-to code with the engine Part 1-8 : Anatomy of the Kero Scene</strong></span><br>
-<br>
-Hi everyone, how are you doing&nbsp; . I
-thought to change this post title, but I finally kept it.<br>
-<br>
-<span style="font-size: 10pt;" class="bbc_size"><strong>A
-litte story</strong></span><br>
-<br>
-There is the story of the Kero scene<br>
-<br>
-once upon a time, there was a little cube with the power to move left
-and right. After a long long run, the little cube find a blue arrow.
-The arrow was moving up and down. Intrigued by this arrow the little
-cube decided to touch it, when it did, some thing amazing happened, the
-little cube get the power to jump. With its new power the little cube
-continue its aventure, it later found a moving platform, that was a
-great opportunity to test its new power, It jumped on the platform
-which carried it to the beginning of a new aventure.<br>
-<br>
-<iframe src="https://www.youtube.com/embed/jXtW74kPTIA?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe><br>
-<br>
-<span style="font-size: 10pt;" class="bbc_size"><strong>Build
-a game with the Nero Game Engine</strong></span><br>
-<br>
-As you may have seen with the Kero Scene, there are basically&nbsp;
-two parts when developing a game with the Engine. I called them the<strong>
-Game Scene</strong> part and the <strong>Game Code</strong>
-part.<br>
-<ul class="bbc_list">
-  <li>The Game Scene</li>
-</ul>
-The game scene is built with the Dev Engine Interface, the game scene
-can be modified at any time without the need rewrite the code. That is
-great if you want to tweak the position or the shape of an object.
-Modifing the Game Scene also don't required to recompile your game
-program, and since the scene is represented as a simple json file, it's
-easy to share. If you think you are not good at Scene disign just ask a
-friend to build the scene for you and send you the json file (and also
-the sprites, ya don't forget them ).<br>
-<ul class="bbc_list">
-  <li>The Game Code</li>
-</ul>
-The game code is where the logic is built. In the game code you can
-retrieve the objects created in the game scene and manage collisions
-and events. The modification of the game code require the recompilation
-of the game program. With this series you get a look at the engine API.
-The API is pretty generic and does not target a game genre. If you like
-a specific game genre you can build your own API on top of the engine
-one like I did with the Nero Game Lib. I'm a fan of plaftormers so the
-Nero Game Lib will focus only on the platformer genre.<br>
-<br>
-<span style="font-size: 10pt;" class="bbc_size"><strong>Learn
-more and continue the development</strong></span><br>
-<br>
-The part 2 of the series is put in stand by. I won't have time to work
-on that in the following months. In place of that I will focus my time
-on learning game engine architecture and continue the development of
-the Engine (I will be working on Sound and Animation objects). <br>
-<br>
-I'm pretty happy with the current state of the project considering that
-I taught&nbsp; my self C++ programming, SFML and game programming.
-I'm not a game engine expert, I came to that stage of the project using
-my intuition and determination. But I think it's time to learn some key
-notions on engine development. I came accross that book Game Engine
-Architecture of Jason gregory and found it pretty amazing. I will
-gather many others books and learn a lot in order to produce the best
-engine I can.<br>
-<br>
-<br>
-Hi everyone ! it's been a long time since my last post. Hope you are
-doing well&nbsp; .<br>
-<br>
-<span style="font-size: 11pt;" class="bbc_size"><strong></strong></span><br>
-<span style="font-size: 11pt;" class="bbc_size"><strong>TexturePacker</strong></span><br>
-<br>
-Do you know TexturePacker from CodeAndWeb. It's a tool that easy the
-creation of Sprite Sheet. If you have a bunch of PNG files by example,
-you can import them in TexturePacker and it will "pack" them into one
-single PNG file. The geat thing, it's that it also provide you a JSON
-file (not only, there are other formats) describing the Sheet, so
-the&nbsp; Sprite Sheet can be easily "decoded" by a game engine.<br>
-<br>
-As I mention in my last post I'm currently working on Animation. Before
-I started implementing anything I searched over the internet if I could
-find a tool that will simplify the creation of animation. That lead me
-to TexturePacker. <br>
-<br>
-TexturePacker will be integrated in my Engine workflow. I will talk
-more about that when the integration with the engine it's done. For now
-you can learn more about <a href="https://www.codeandweb.com/texturepacker" class="bbc_link" target="_blank" rel="noopener noreferrer">TexturePacker
-here</a>.<br>
-<br>
-<span style="font-size: 11pt;" class="bbc_size"><strong>Development
-Progress</strong></span><br>
-<br>
-The development of the Engine progress very slowly these days since I
-don't have munch time to work on it. But with a little chance things
-can change in the upcoming months.<br>
-<br>
-<br>
-Hi everyone !, I'm back, how do you do ?<br>
-<br>
-During the last two weeks I got a lot of free time, so I worked on the
-Engine. The Engine has evolved, I added some new features and fixed
-some bugs. I've made a review of the features that will be availabled
-in the Engine first version. The first version will be ready by the end
-on this year. The integration of Lua as a scripting language will take
-a lot of time, so for the first version there will only be a very
-minimalist integration of Lua. C++ will be the main language to use the
-Engine. Finally I plan to open a website early next year, maybe on
-Junuary.&nbsp; <br>
-<br>
-that's said, Let's jump on the new features !!!<br>
-<br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>Startup
-Screen</strong></span><br>
-<br>
-The DevEngine now has a Startup Screen or a Loading Screen if you
-prefer. The Engine just use two threads on startup. While the main
-thread render the Loading Screen, a second thread load Resources and
-build the Engine_UI in background.<br>
-<br>
-<iframe src="https://www.youtube.com/embed/tshPLzr8JN8?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe><br>
-<br>
-<br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>Custom
-Startup Screen</strong></span><br>
-<br>
-While the DevEngine has a fix Startup Screen, the RenderEngine can take
-a custom Startup Screen. That allows you to create your own game
-loading screen. In order to create a Startup Screen you simply have to
-create a class that henerite from nero::StartupScreen<br>
-<br>
-<div class="spoiler">
-</div>
-<div class="spoiler">
-<div class="spoilerheader"> (click to show/hide)</div>
-</div>
-<br>
-All the methods in the class are virtual pure; you have to override all
-of them.<br>
-the getBackgroundColor() method return a color to clear the
-sf::RenderWindow; <br>
-the getMintime() method return a time in second. It allows you to
-choose if the LoadingScreen should last in 5 second or 10 second or
-whatever you want. <br>
-<br>
-the Custom Startup Screen is given to the RenderEngine via it's
-constructor.<br>
-<br>
-<div class="cpp geshi" style="font-family: monospace;">MyStartupScreen
-myStartupScreen<span style="color: rgb(0, 128, 128);">;</span><br>
-<br>
-nero<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">RenderEgine</span>
-engine<span style="color: rgb(0, 128, 0);">(</span>myStartupScreen<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
-engine.<span style="color: rgb(0, 119, 136);">setScene</span><span style="color: rgb(0, 0, 128);">&lt;</span>MyScene<span style="color: rgb(0, 0, 128);">&gt;</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"my scene name"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span><br>
-engine.<span style="color: rgb(0, 119, 136);">run</span><span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 128);">;</span></div>
-<br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>Sound
-and Music</strong></span><br>
-<br>
-The Engine can now load and manage Sound and Music. Like other
-resources the loading is automatic. Just copy some sounds in the folder
-"/Resource/Sound" and some musics in the folder "/Resource/Music", the
-Engine will take care the rest. In your Scene class, there is a
-instance of the class <strong>nero::SoundManager</strong>.
-this class let you play a sound or a music at any time in your game.<br>
-<br>
-The DevEngine allows to quickly access all your Musics and Sounds, so
-you can enjoy them while building a Scene.<br>
-<br>
-<iframe src="https://www.youtube.com/embed/2NmvLW6bSaY?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe><br>
-<br>
-<br>
 <span style="font-size: 12pt;" class="bbc_size"><strong>Configuration
 Files</strong></span><br>
 <br>
@@ -493,55 +210,8 @@ For Fonts, you can choose what Font to use as default.<br>
 <br>
 <span style="color: rgb(102, 204, 102);">}</span></div>
 <br>
-<br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>Bug
-fixed : RenderCanvas glitch</strong></span><br>
-<br>
-In the version of the Engine provided with the SDK (Startup Kit), there
-is a glitch on the Canvas when you remove a Layer or when the Redo and
-Undo buttons are used. It tooks me some time to find the reason of this
-glitch, but it's now fixed.<br>
-<br>
-that's all for this post, There are other new features like Animation
-and Grid, they are still in development, I will talk about them another
-day. <br>
-<br>
-<br>
-<br>
 <div class="post">
-<div class="inner" id="msg_164911">Hi everyone !,
-hope you are doing greet&nbsp; . Today
-let's talk about Animation.<br>
-<br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>Animation
-Tools</strong></span><br>
-<br>
-In order to simplify Animations management the Nero Engine relies on
-other tools. Texture Packer and ShoeBox.<br>
-<br>
-<strong>Texture packer</strong><br>
-<br>
-I've already talked about this one. It's a tool that let you pack
-several images in one Spritesheet.<br>
-When you use Texture Packer to pack your animation, you obtain two
-files. A image file (.png, .jpeg, etc) and a Json file. The Nero Engine
-relies on this two files to generate animations.<br>
-<br>
-<strong>ShoeBox</strong><br>
-<br>
-What is ShoeBox ? ShoeBox also allows to pack image files. But the
-great thing is that it also allows to <strong>Unpack Spritesheets</strong>.
-When you search for animations over the internet, most of the time you
-will find some animation SpriteSheets. And there come a question : The
-animation is already packed, how am I going to use it in Texture packer
-?. Well,&nbsp; ShoeBox can unpack SpriteSeets, it can also unpack
-GIF images. Yep, If you have an animation in GiF format, you can unpack
-it using an online service or with ShoeBox.<br>
-<br>
-<a href="https://renderhjs.net/shoebox/" class="bbc_link" target="_blank" rel="noopener noreferrer">ShoeBox is
-free, you can find it here.</a><br>
-<br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>Load
+<div class="inner" id="msg_164911"><span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><span style="font-size: 12pt;" class="bbc_size"><strong>Load
 Animation</strong></span><br>
 <br>
 When you obtain the two files generated by Texture Packer, you simply
@@ -647,9 +317,8 @@ complety broken let go to the last frame</span></div>
 <br>
 that's all for Animation, I will make a post later today in order to
 present other new features. <br>
-Here is a video that shows how Animation looks like<br>
 <br>
-<iframe src="https://www.youtube.com/embed/My_IQXcQ1Dw?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe>
+
 </div>
 </div><div class="windowbg2"><div class="post_wrapper"><div class="postarea"><div class="post"><div class="inner" id="msg_164913">Hi again ! Now
 the Engine have Animations (see the post above), but that's not all. In
@@ -715,11 +384,6 @@ move the Camera vertically or horizontally as you want, the Grid will
 adapt itself. But When the Grid is rotated, it becomes difficult to
 simulate "Infinity".<br>
 <br>
-For now I am just playing with this feature I don't know exactly what
-it will be.<br>
-<br>
-<iframe src="https://www.youtube.com/embed/oUJv06mcuLc?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe><br>
-<br>
 <span style="font-size: 10pt;" class="bbc_size"><strong>Lua
 Script</strong></span><br>
 <br>
@@ -740,20 +404,7 @@ done I will publish a new version of the SDK with all the new features.
 If you like the project don't forget to give a start to the project on
 Github<br>
 <br>
-<br>
-That's all for now. thank you for reading my posts and see you later.
-</div>
-</div>
-</div>
-<div class="moderatorbar">
-<div class="smalltext modified" id="modified_164913">«
-<em>Last Edit: May 06, 2022, 04:21:35 pm by NeroGames</em>
-» </div>
-<div class="signature" id="msg_164913_signature"><a href="https://github.com/NeroGames/nero-game-engine" class="bbc_link" target="_blank" rel="noopener noreferrer">git hub repository</a>
-</div>
-</div>
-</div>
-<span class="botslice"><span></span></span>
+<br></div></div></div><span class="botslice"><span></span></span></div>
 </div>
 <div class="windowbg"> <span class="topslice"><span></span></span>
 <div class="post_wrapper">
