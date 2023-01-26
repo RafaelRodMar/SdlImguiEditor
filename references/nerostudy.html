@@ -6,6 +6,7 @@
 
 
 
+
   
   <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>nerostudy</title></head><body>
 Menu bar : file, edit, build, views, settings, tools, help.<br>
@@ -109,106 +110,10 @@ Actions: ActionObject, register actions in objects:
 my_player.registerAction&lt;JumpAction&gt;("jump") ---&gt;&nbsp; if(key
 j is pressed) m_player.callAction("jump").<br>
 Objects in the hierarchy: find, move, remove.<br>
-Collisions: cancollide("obj1", "ojb2")<br><span style="font-size: 12pt;" class="bbc_size"></span><br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>Configuration
-Files</strong></span><br>
-<br>
-In order to make the Engine more flexible, many hard coded properties
-are now made evailable as configurations. Configuration files are JSON
-files, they are all located in the folder "/config"<br>
-<br>
-As a example, for each resource type (Texture, Sound, Music etc), you
-can now choose the folder where to put them, you can also choose the
-extensions you want to handle.<br>
-<br>
-For Fonts, you can choose what Font to use as default.<br>
-<br>
-<div class="lua geshi" style="font-family: monospace;"><span style="color: rgb(102, 204, 102);">{</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"font"</span>
-<span style="color: rgb(102, 204, 102);">:</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">{</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"folder"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(255, 102, 102);">"Resource/Font"</span><span style="color: rgb(102, 204, 102);">,</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"extension"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(255, 102, 102);">"ttf"</span><span style="color: rgb(102, 204, 102);">]</span><span style="color: rgb(102, 204, 102);">,</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"default"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(255, 102, 102);">"Sansation"</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">}</span><span style="color: rgb(102, 204, 102);">,</span><br>
-<br>
-&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"sound"</span>
-<span style="color: rgb(102, 204, 102);">:</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">{</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"folder"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(255, 102, 102);">"Resource/Sound"</span><span style="color: rgb(102, 204, 102);">,</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"extension"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(255, 102, 102);">"wav"</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(255, 102, 102);">"ogg"</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(255, 102, 102);">"flac"</span><span style="color: rgb(102, 204, 102);">]</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">}</span><span style="color: rgb(102, 204, 102);">,</span><br>
-<br>
-&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"music"</span>
-<span style="color: rgb(102, 204, 102);">:</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">{</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"folder"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(255, 102, 102);">"Resource/music"</span><span style="color: rgb(102, 204, 102);">,</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"extension"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(255, 102, 102);">"wav"</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(255, 102, 102);">"ogg"</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(255, 102, 102);">"flac"</span><span style="color: rgb(102, 204, 102);">]</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">}</span><span style="color: rgb(102, 204, 102);">,</span><br>
-<br>
-&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"texture"</span>
-<span style="color: rgb(102, 204, 102);">:</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">{</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"folder"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(255, 102, 102);">"Resource/Texture"</span><span style="color: rgb(102, 204, 102);">,</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"extension"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(255, 102, 102);">"png"</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(255, 102, 102);">"jpg"</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(255, 102, 102);">"bmp"</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(255, 102, 102);">"dds"</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(255, 102, 102);">"tga"</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(255, 102, 102);">"psd"</span><span style="color: rgb(102, 204, 102);">]</span><span style="color: rgb(102, 204, 102);">,</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"separator"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(255, 102, 102);">"-"</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">}</span><span style="color: rgb(102, 204, 102);">,</span><br>
-<br>
-&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"shader"</span>
-<span style="color: rgb(102, 204, 102);">:</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">{</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"folder"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(255, 102, 102);">"Resource/Shader"</span><span style="color: rgb(102, 204, 102);">,</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"shader-list"</span>
-<span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(255, 102, 102);">"Resource/Shader/shader.json"</span><span style="color: rgb(102, 204, 102);">,</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"extension"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(255, 102, 102);">"vert"</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(255, 102, 102);">"frag"</span><span style="color: rgb(102, 204, 102);">]</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">}</span><span style="color: rgb(102, 204, 102);">,</span><br>
-<br>
-&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"animation"</span>
-<span style="color: rgb(102, 204, 102);">:</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">{</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"folder"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(255, 102, 102);">"Resource/Animation"</span><span style="color: rgb(102, 204, 102);">,</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"extension"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(255, 102, 102);">"png"</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(255, 102, 102);">"jpg"</span><span style="color: rgb(102, 204, 102);">]</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">}</span><span style="color: rgb(102, 204, 102);">,</span><br>
-<br>
-&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"script"</span>
-<span style="color: rgb(102, 204, 102);">:</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">{</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"folder"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(255, 102, 102);">"Resource/Script"</span><span style="color: rgb(102, 204, 102);">,</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 102, 102);">"extension"</span> <span style="color: rgb(102, 204, 102);">:</span> <span style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(255, 102, 102);">"lua"</span><span style="color: rgb(102, 204, 102);">]</span><br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; <span style="color: rgb(102, 204, 102);">}</span><br>
-<br>
-<span style="color: rgb(102, 204, 102);">}</span></div>
+Collisions: cancollide("obj1", "ojb2")<br><span style="font-size: 12pt;" class="bbc_size"></span>Configuration
+files: JSON file with resources: name of the type of resource (font,
+sound, music, texture, etc), folder, extension, default.<br>
+
 <br>
 <div class="post">
 <div class="inner" id="msg_164911"><span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><span style="font-size: 12pt;" class="bbc_size"><strong>Load
@@ -404,62 +309,8 @@ done I will publish a new version of the SDK with all the new features.
 If you like the project don't forget to give a start to the project on
 Github<br>
 <br>
-<br></div></div></div><span class="botslice"><span></span></span></div>
-</div>
-<div class="windowbg"> <span class="topslice"><span></span></span>
-<div class="post_wrapper">
-<div class="postarea">
-<div class="post">
-<div class="inner" id="msg_165003"><span style="font-size: 12pt;" class="bbc_size"><strong>The
-Nero Adventure Scene</strong></span><br>
-<br>
-Hi everyone, how do you do.<br>
-<br>
-In order to complet the Engine and reach the first version, I needed to
-work on a concrete Game Scene. So I took the code of my game prototype
-and begin to update it. I gave up on the name "Kero", it's now call the
-"Nero Adventure Scene". The artwork I'am using is from the <a href="http://www.openpixelproject.com/" class="bbc_link" target="_blank" rel="noopener noreferrer">Open Pixel
-Project</a> and the <a href="http://www.kenney.nl/" class="bbc_link" target="_blank" rel="noopener noreferrer">Kenney Asset Store</a>.<br>
-<br>
-The Scene will be composed of 5 parts:<br>
-&nbsp;&nbsp;&nbsp;1- A Startup Screen (display when the
-Render Engine start)<br>
-&nbsp;&nbsp;&nbsp;2- A Game Menu Screen<br>
-&nbsp;&nbsp;&nbsp;3- A Game Scene (the actual game)<br>
-&nbsp;&nbsp;&nbsp;4- A Pause Screen<br>
-&nbsp;&nbsp;&nbsp;5- A Credit Screen (display when you
-finish the game) <br>
-<br>
-The idea is to cover most of the Engine features. The code develop in
-this game will be added in the "Nero Game Lib" library.<br>
-<br>
-Here is a first look of the main character <br>
-<br>
-<iframe src="https://www.youtube.com/embed/-ezBUcU_hyM?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe></div>
-</div>
-</div>
-<div class="moderatorbar">
-<div class="signature" id="msg_165003_signature"><a href="https://github.com/NeroGames/nero-game-engine" class="bbc_link" target="_blank" rel="noopener noreferrer">git hub repository</a>
-</div>
-</div>
-</div>
-<span class="botslice"><span></span></span>
-</div>
-<div class="windowbg2"> <span class="topslice"><span></span></span>
-<div class="post_wrapper">
-<div class="postarea">
-<div class="flow_hidden">
-<div class="keyinfo"><br>
-<div class="smalltext">« <strong>Reply #63 on:</strong>
-November 24, 2018, 11:41:42 am »</div>
-</div>
-</div>
-<div class="post">
-<div class="inner" id="msg_165924">Hi everyone !.
-Hope your are doing great.&nbsp; <br>
-I made a lot of progress on the Engine development, I had not enough
-time to write a post, so there will be a lot to say.<br>
-<br>
+</div></div></div></div></div><br>
+<div class="windowbg2"><div class="post_wrapper"><div class="postarea"><div class="post"><div class="inner" id="msg_165924">
 <span style="font-size: 12pt;" class="bbc_size"><strong>Text
 Object</strong></span><br>
 <br>
@@ -947,32 +798,7 @@ important thing remains to be done : Build an actual game.<br>
 <br>
 Now that I have the skeleton of the Adventure Scene set up, It's time
 to comes up with a Game Play. I think it will be the coolest part of
-the project&nbsp; <br>
-<iframe src="https://www.youtube.com/embed/HSnR_NJk7qk?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe></div>
-</div>
-Hi everyone!
-Hope you are doing great.&nbsp; <br>
-
-</div>
-<div class="moderatorbar">
-<div class="smalltext modified" id="modified_166200">«
-<em>Last Edit: May 06, 2022, 04:22:17 pm by NeroGames</em>
-» </div>
-<div class="signature" id="msg_166200_signature"><a href="https://github.com/NeroGames/nero-game-engine" class="bbc_link" target="_blank" rel="noopener noreferrer">git hub repository</a><br>
-<a href="https://nero-games.com/" class="bbc_link" target="_blank" rel="noopener noreferrer">nero-games.com</a></div>
-</div>
-</div>
-<span class="botslice"><span></span></span>
-</div>
-<div class="windowbg2"> <span class="topslice"><span></span></span>
-<div class="post_wrapper">
-<div class="postarea">
-<div class="flow_hidden">
-<div class="keyinfo"><br>
-<div class="smalltext">« <strong>Reply #67 on:</strong>
-December 29, 2018, 11:12:30 am »</div>
-</div>
-</div>
+the project&nbsp;&nbsp;</div></div></div></div></div><div class="windowbg2"><div class="post_wrapper"><div class="postarea"><br>
 <div class="post">
 <div class="inner" id="msg_166337"><span style="font-size: 12pt;" class="bbc_size"><strong>Engine
 Update</strong></span><br>
@@ -1037,39 +863,7 @@ that, you can indicate a Namespace, some Class Names and CodeBlocks
 will create a complet project to start with.<br>
 <br>
 <iframe src="https://www.youtube.com/embed/gvjSmse6y5U?fs=1&amp;start=" allowfullscreen="true" frameborder="0" height="385" width="640"></iframe><br>
-<br>
-<br>
-<span style="font-size: 11pt;" class="bbc_size"><strong>Release
-of Version 0.9.0</strong></span><br>
-<br>
-In two or three weeks I will release a new version of the SDK, it will
-contains all the updates since the last one (version 0.7.1). The
-Adventure Scene will be included as an example.<br>
-<br>
-That's all for this post. I think it will be my last post for 2018. So
-see you in 2019. Have a good day&nbsp; </div>
-</div>
-<div class="moderatorbar">
-<div class="smalltext modified" id="modified_166337">«
-<em>Last Edit: May 06, 2022, 04:22:48 pm by NeroGames</em>
-» </div>
-<div class="signature" id="msg_166337_signature"><a href="https://github.com/NeroGames/nero-game-engine" class="bbc_link" target="_blank" rel="noopener noreferrer">git hub repository</a><br>
-<a href="https://nero-games.com/" class="bbc_link" target="_blank" rel="noopener noreferrer">nero-games.com</a></div>
-</div>
-</div>
-<span class="botslice"><span></span></span>
-</div>
-<div class="windowbg"> <span class="topslice"><span></span></span>
-<div class="post_wrapper">
-<div class="postarea">
-<div class="flow_hidden">
-<div class="keyinfo"><br>
-<div class="smalltext">« <strong>Reply #68 on:</strong>
-January 21, 2019, 11:25:36 am »</div>
-</div>
-</div>
-<div class="post">
-<div class="inner" id="msg_166714"><span style="font-size: 14pt;" class="bbc_size"><strong>Nero
+<span style="font-size: 11pt;" class="bbc_size"><strong></strong></span><br></div></div></div></div><div class="windowbg"><div class="post_wrapper"><div class="postarea"><div class="post"><div class="inner" id="msg_166714"><span style="font-size: 14pt;" class="bbc_size"><strong>Nero
 Game Engine 0.9.0 Released</strong></span><br>
 <br>
 Hi ! everyone. How do you do. I'm happy to announce the release of
@@ -1110,31 +904,7 @@ shaking, bullet firing and maybe more)<br>
 &nbsp; &nbsp;2- Build a complet game that will serve as a Demo<br>
 &nbsp;&nbsp;&nbsp;3- Run a complet test of the Engine.
 Track bugs and solve everything that can besolved<br>
-<br>
-That's all, hope you'll enjoy the new SDK. Have a good day&nbsp; </div>
-</div>
-</div>
-<div class="moderatorbar">
-<div class="smalltext modified" id="modified_166714">«
-<em>Last Edit: May 06, 2022, 04:23:05 pm by NeroGames</em>
-» </div>
-<div class="signature" id="msg_166714_signature"><a href="https://github.com/NeroGames/nero-game-engine" class="bbc_link" target="_blank" rel="noopener noreferrer">git hub repository</a><br>
-<a href="https://nero-games.com/" class="bbc_link" target="_blank" rel="noopener noreferrer">nero-games.com</a></div>
-</div>
-</div>
-<span class="botslice"><span></span></span>
-</div>
-<div class="windowbg2"> <span class="topslice"><span></span></span>
-<div class="post_wrapper">
-<div class="postarea">
-<div class="flow_hidden">
-<div class="keyinfo"><br>
-<div class="smalltext">« <strong>Reply #69 on:</strong>
-February 10, 2019, 03:13:11 pm »</div>
-</div>
-</div>
-<div class="post">
-<div class="inner" id="msg_166911"><span style="font-size: 12pt;" class="bbc_size"><strong>Engine
+<br></div></div></div></div></div><div class="windowbg2"><div class="post_wrapper"><div class="postarea"><div class="post"><div class="inner" id="msg_166911"><span style="font-size: 12pt;" class="bbc_size"><strong>Engine
 Update </strong></span><br>
 <br>
 Hi everyone, how do you do ! here is an Engine update&nbsp; <br>
@@ -1180,24 +950,7 @@ following<br>
 &nbsp;&nbsp;&nbsp;Library/include/Nero/[all files]
 </div>
 </div>
-</div>
-<div class="moderatorbar">
-<div class="smalltext modified" id="modified_166911">«
-<em>Last Edit: May 06, 2022, 04:23:16 pm by NeroGames</em>
-» </div>
-<div class="signature" id="msg_166911_signature"><a href="https://github.com/NeroGames/nero-game-engine" class="bbc_link" target="_blank" rel="noopener noreferrer">git hub repository</a><br>
-<a href="https://nero-games.com/" class="bbc_link" target="_blank" rel="noopener noreferrer">nero-games.com</a></div>
-</div>
-</div>
-<span class="botslice"><span></span></span>
-</div>
-<div class="windowbg"> <span class="topslice"><span></span></span>
-<div class="post_wrapper">
-<div class="postarea">
-<div class="post">
-<div class="inner" id="msg_167038">Hi everyone,
-hope you are doing great ! <br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>Engine
+</div></div></div><div class="windowbg"><div class="post_wrapper"><div class="postarea"><div class="post"><div class="inner" id="msg_167038"><span style="font-size: 12pt;" class="bbc_size"><strong>Engine
 Update</strong></span><br>
 <br>
 <span style="font-size: 10pt;" class="bbc_size"><strong>Bug
@@ -1317,62 +1070,7 @@ first version is released. <br>
 </div>
 <span class="botslice"><span></span></span>
 </div>
-<div class="windowbg2"><strong> <span class="topslice"><span></span></span>
-</strong>
-<div class="post_wrapper">
-<div class="postarea">
-<div class="post">
-<div class="inner" id="msg_167510"><strong>Hi everyone,
-hope you are doing great&nbsp;
-<br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>Nero
-Game Engine 1.0 released</strong></span><br>
-<br>
-The Engine first version is now released. The SDK can be downloaded on
-the <a href="https://www.nero-games.com/" class="bbc_link" target="_blank" rel="noopener noreferrer">Engine
-Website</a>. It was fun to develop the Engine. There are many
-features that was planned that did not make their way into the first
-version, But there are also other that was not planned that endup in
-the first version. I guess&nbsp; it's how projects work&nbsp; <br>
-<br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>Website
-&amp; Tutorials</strong></span><br>
-<br>
-From now on, I will focus on building the Website, I plan to do some
-videos tutorial and maybe write some articles on game development.<br>
-<br>
-<br>
-<span style="font-size: 12pt;" class="bbc_size"><strong>Nero
-Game Engine 2.0</strong></span><br>
-<br>
-Developing the Engine was pretty cool, so I plan to continue with a
-second version more powerfull. The second version will focus on three
-things<br>
-<br>
-&nbsp;&nbsp;&nbsp;1- Cross platform with focus on Androind,
-IOS and Nintendo Switch (or its successor);<br>
-&nbsp;&nbsp;&nbsp;2- Introduction of Lua as scripting
-lauguage<br>
-&nbsp;&nbsp;&nbsp;3- A more powerfull Editor and more
-features in a Scene
-</strong></div>
-</div>
-</div>
-
-</div>
-<span class="botslice"><span></span></span>
-</div>
-<div class="windowbg"><strong> <span class="topslice"><span></span></span>
-</strong>
-<div class="post_wrapper">
-<div class="postarea">
-<div class="flow_hidden">
-<div class="keyinfo"><strong></strong></div>
-</div>
-<div class="post">
-<div class="inner" id="msg_167729"><strong>Hi everyone how
-do you do ! <br>
-<span style="font-size: 11pt;" class="bbc_size"><strong>Engine
+<div class="windowbg2"><strong> <span class="topslice"><span></span></span></strong></div><div class="windowbg"><div class="post_wrapper"><div class="postarea"><div class="post"><div class="inner" id="msg_167729"><strong><span style="font-size: 11pt;" class="bbc_size"><strong>Engine
 Update 1.0.1</strong></span><br>
 <br>
 The Update can be donwloaded from the <br>
