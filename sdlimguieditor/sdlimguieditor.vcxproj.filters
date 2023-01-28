@@ -80,5 +80,8 @@
     <ClInclude Include="dearimgui\imgui_stdlib.h">
       <Filter>Archivos de encabezado\Imgui</Filter>
     </ClInclude>
+    <ClInclude Include="IconsFontAwesome4.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

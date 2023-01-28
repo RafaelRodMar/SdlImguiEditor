@@ -4,6 +4,7 @@
 #include<string>
 #include<vector>
 #include<bitset>
+#include "IconsFontAwesome4.h" //header with names for every icon.
 #include "dearimgui/imgui.h"
 #include "dearimgui/imgui_impl_sdl.h"
 #include "dearimgui/imgui_impl_sdlrenderer.h"
@@ -82,6 +83,7 @@ int main(int argc, char* args[])
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	io.Fonts->AddFontDefault();
 
 	//configuration flags
 	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; //navigate through controls by keyboard
@@ -92,6 +94,13 @@ int main(int argc, char* args[])
 
 	//setup Dear ImGui style
 	ImGui::StyleColorsDark();
+
+	//merge icons into default tool font
+	ImFontConfig config;
+	config.MergeMode = true;
+	config.GlyphMinAdvanceX = 13.0f; //use if you want to make the icon monospaced.
+	static const ImWchar icon_ranges[] = { ICON_MIN_FA, ICON_MAX_FA, 0 };
+	io.Fonts->AddFontFromFileTTF("fontawesome-webfont.ttf", 13.0f, &config, icon_ranges);
 
 	//setup platform/renderer backends
 	ImGui_ImplSDL2_InitForSDLRenderer(g_pWindow, g_pRenderer);
@@ -260,11 +269,16 @@ int main(int argc, char* args[])
 			ImGui::End();
 
 			ImGui::Begin("Assets");
+			//icon example
+			ImGui::Text("%s among %d items", ICON_FA_SEARCH, 54);
+			ImGui::Button(ICON_FA_SEARCH " Search");
 			ImGui::End();
 
 			ImGui::Begin("View");
 			ImGui::Image((ImTextureID)warrior, ImVec2(33, 33));
 			ImGui::End();
+
+			ImGui::ShowDemoWindow();
 
 
 			//rendering

@@ -151,6 +151,7 @@
     <ClInclude Include="dearimgui\imstb_textedit.h" />
     <ClInclude Include="dearimgui\imstb_truetype.h" />
     <ClInclude Include="entity.h" />
+    <ClInclude Include="IconsFontAwesome4.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
