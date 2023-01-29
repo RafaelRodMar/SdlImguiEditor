@@ -8,135 +8,233 @@
 
 
 
+
   
   <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>nerostudy</title></head><body>
-Menu bar : file, edit, build, views, settings, tools, help.<br>
-
-Tools: hierarchy/project, level, layers, objects, log/console,
-inspector.<br>
-
-Resources: sprites, animation, mesh, sound, music, fonts.<br>
-
-Map editor. Add and manipulate sprites on the scene. Save in JSON
-format.<br>
-
-Atlas: texture + text file describing the sprites in the texture.
-(format: id + x,y,w,h)<br>
-
-Sprites preview and manipulation: add/remove from canvas, select sprite
-one by one, move sprites with mouse, rotate and scale.<br>
-
+Menu bar : file, edit (undo/redo), build, views(grid), settings, tools, help.<br>
+Project manager: when the engine starts.<br>
 Working directory and saving: one directory for each scene with all the
 related things there. JSON format allows easy loading.<br>
+<span style="font-size: 12pt;" class="bbc_size"></span>Configuration
+files: JSON file with resources: name of the type of resource (font,
+sound, music, texture, etc), folder, extension, default.<br>
+Map editor. Add and manipulate sprites on the scene. Save in JSON
+format.<br>
+Canvas : change color, shows position of the mouse.<br>
+Auto Save: every 30 seconds.<br>
+Engine modes and submodes : <br>
 
-Layers: add/delete, move up/down, show/hide, move entire layer
+
+- Scene edition mode: allows to build a scene. Submodes: <br>
+
+
+&nbsp;&nbsp;&nbsp; - object: allows to handle any type of object.
+Actions: add, delete, move, rotate, scale, duplicate.<br>
+
+
+&nbsp;&nbsp;&nbsp; - mesh: allows the edition of mesh objects in the
+scene.<br>
+
+
+&nbsp;&nbsp;&nbsp; - play: allows to test the game in real time.<br>
+
+
+<span style="font-size: 10pt;" class="bbc_size"><strong></strong></span>Name of entities: to retrieve them. Object o = engine.findObject("name")<br>
+
+Categories of entities: for collision logic. can_collide(Player, Enemy)<br>
+<br>
+<table style="text-align: left; width: 954px; height: 760px;" border="1" cellpadding="2" cellspacing="2">
+  <caption>Tools<br>
+  </caption><tbody>
+    <tr>
+      <td style="vertical-align: top;">project/hierarchy<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">level<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">layers<br>
+      </td>
+      <td style="vertical-align: top;">Layers: add/delete, move up/down, show/hide, move entire layer
 horizontally/vertically. each layer is in a different JSON file, each
 layer is a vector of sprites.<br>
-
-Sprite manipulations: copy selected sprite to left, right, up, down,
-diagonal. Useful for tilemap scene. Flip horizontally/vertically,
-delete sprite, change color.<br>
-
-Canvas : change color, shows position of the mouse.<br>
-
-Log: describes what's happening and is saved with all the project files. engine_log("message")<br>
-
-Auto Save: every 30 seconds.<br>
-
-Mesh editor: objects made with connected points.<br>
-
-Object Node (Entity): everything in a scene will be encapsulated in a
-ObjectNode and attached to a parent.<br>
-
-Different objects: <br>
-
-primary objects: SpriteObject, LayerObject, MeshObject, PhysicObject,
-AnimationObject, LightObject, SoundObject, MusicObject, ParticleObject,
-ShaderObject.<br>
-
-Logical objecs: combining two primary objects. MeshedObject( MeshObject
-attached to SpriteObject), SolidObject (SpriteObject to a PhysicObject).<br>
 
 Layers: objects are stored in layers and each layer only contains that
 kind of object. The engine can create layers to separate different kind
 of objects.<br>
 
-Mesh, Mesh Object and Mesh Editor: <br>
 
-Engine modes and submodes : <br>
+Layers of the same type can be merged.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">objects<br>
+      </td>
+      <td style="vertical-align: top;">Object Node (Entity): everything in a scene will be encapsulated in a
+ObjectNode and attached to a parent.<br>
 
-- Scene edition mode: allows to build a scene. Submodes: <br>
 
-&nbsp;&nbsp;&nbsp; - object: allows to handle any type of object.
-Actions: add, delete, move, rotate, scale, duplicate.<br>
 
-&nbsp;&nbsp;&nbsp; - mesh: allows the edition of mesh objects in the
-scene.<br>
+Different objects: <br>
 
-&nbsp;&nbsp;&nbsp; - play: allows to test the game in real time.<br>
 
-<span style="font-size: 10pt;" class="bbc_size"><strong></strong></span>Mesh:
-there are four types: polygon, circle, line, chain. A line is made of
-two vertex, adding one more converts it into a chain.<br>
 
-MeshObject: encapsulates a mesh.<br>
+primary objects: SpriteObject, LayerObject, MeshObject, PhysicObject,
+AnimationObject, LightObject, SoundObject, MusicObject, ParticleObject,
+ShaderObject.<br>
 
-MeshEditor: mesh submode activates the meshEditor. User can :
-add/remove/move vertex, move edge, edge extrusion.<br>
-Solid Object: adding a sprite and a mesh you get a MeshedObject. The
-mesh can be dynamic, static or kinematic. In play mode the engine
-generates the physic object from the mesh.<br>
-Name of entities: to retrieve them. Object o = engine.findObject("name")<br>
-Categories of entities: for collision logic. can_collide(Player, Enemy)<br>
-Grid.<br>
-Gravity.<br>
-Undo and redo actions.<br>
 
-<br>
 
-<div class="post"><span style="font-size: 14pt;" class="bbc_size"><strong></strong></span><span style="font-size: 14pt;" class="bbc_size"><strong></strong></span><br>
-<span style="font-size: 14pt;" class="bbc_size"><strong></strong></span> <strong>The Left</strong> : The left side of the Canvas :
-Engine Mode, Save, Load, Sprite Tab, Mesh Tab, Color Tab<br>
-<strong>The Center</strong> : The Canvas, the utility
-buttons on top the Canvas, the Log window bellow the Canvas<br>
-<strong>The Right</strong> : The right side of the Canvas :
-Layer, Mesh, Object, Scene, Draw Checkbuttons, etc.<br>
-<br><img style="cursor: pointer; width: 1307px; height: 686px;" class="bbc_img resized" alt="" src="1ed210e1ed0f508ffc324289e42096b6.png"><br>
-<span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><span style="font-size: 14pt;" class="bbc_size"><strong></strong></span>Collisions:
+Logical objecs: combining two primary objects. MeshedObject( MeshObject
+attached to SpriteObject), SolidObject (SpriteObject to a PhysicObject).<br>
+
+
+Objects in the hierarchy: find, move, remove.<br>
+      <br>
+Collisions:
 four methods: begin, end, presolve and postsolve. Begin and end are
 called when there is the first contact and when the contact ends. The
 other are called arternatively and repeatedly while the objects are
 overlapping.<br>
+
+
+Collisions: cancollide("obj1", "ojb2")<br>
+
+      <br>
+
+
 Actions: ActionObject, register actions in objects:
 my_player.registerAction&lt;JumpAction&gt;("jump") ---&gt;&nbsp; if(key
 j is pressed) m_player.callAction("jump").<br>
-Objects in the hierarchy: find, move, remove.<br>
-Collisions: cancollide("obj1", "ojb2")<br><span style="font-size: 12pt;" class="bbc_size"></span>Configuration
-files: JSON file with resources: name of the type of resource (font,
-sound, music, texture, etc), folder, extension, default.<br>
-Animations: the editor read the textures and the json files. It build automatically the animations.<br>
-Animations has a name (player) and one or more sequences (idle, walk,
-run, jump). The default sequence for player is idle, so idle can be
-substituted by player for easyness.<br>
-Sequences tab: its empty until you select an animation. Then it's
-filled with the sequences, and each one contains: loop or not, frame
-rate.<br>
-Animations can be static telling them to not update and changing their
-frame when necessary. A breakable object can show the frame 0 until it
-breaks, then you set it to use the frame 1.<br>
-Layers of the same type can be merged.<br>
+      <br>
 Text object: it can be moved, rotated, scaled, duplicated..., you can
 change its font, size, outline thickness, style(bold, italic,
 underline, linethrough), color. For newline can be used the | character.<br>
-Project manager: when the engine starts.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">log/console<br>
+      </td>
+      <td style="vertical-align: top;">
+
+Log: describes what's happening and is saved with all the project files. engine_log("message")</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">inspector<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">resources<br>
+      </td>
+      <td style="vertical-align: top;">
+      <table style="text-align: left; width: 768px; height: 360px;" border="1" cellpadding="2" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top;">sprites<br>
+            </td>
+            <td style="vertical-align: top;">Sprites preview and manipulation: add/remove from canvas, select sprite
+one by one, move sprites with mouse, rotate and scale.<br>
 
 
-<span style="font-size: 12pt;" class="bbc_size"><strong></strong></span><br>
-<div class="windowbg2">
-<div class="windowbg"><strong> <span class="topslice"><span></span></span><strong><span style="font-size: 12pt;" class="bbc_size"><strong></strong></span></strong></strong><strong><strong></strong></strong><strong><strong><strong><span style="font-size: 12pt;" class="bbc_size"></span></strong></strong></strong><strong><strong><img style="width: 1920px; height: 1038px;" alt="" src="426c93fcbf081a33e67af6cb9399463e.png">
-</strong></strong>
+Sprite manipulations: copy selected sprite to left, right, up, down,
+diagonal. Useful for tilemap scene. Flip horizontally/vertically,
+delete sprite, change color, gravity.</td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">animations<br>
+            </td>
+            <td style="vertical-align: top;">
 
-<strong><strong></strong></strong><strong><strong></strong></strong><strong><strong></strong></strong><strong><strong></strong></strong><strong><strong><span style="font-size: 11pt;" class="bbc_size"><strong></strong></span></strong></strong><strong><strong></strong></strong><strong></strong><strong><strong>
-<span style="font-size: 11pt;" class="bbc_size"><strong></strong></span></strong></strong><strong><strong><span style="font-size: 11pt;" class="bbc_size"><strong></strong></span></strong></strong><strong><strong><br>
-<span style="font-size: 11pt;" class="bbc_size"><strong></strong></span></strong></strong></div></div></div><br>
+Animations: the editor read the textures and the json files. It build automatically the animations.<br>
+
+
+
+Animations has a name (player) and one or more sequences (idle, walk,
+run, jump). The default sequence for player is idle, so idle can be
+substituted by player for easyness.<br>
+
+
+
+Sequences tab: its empty until you select an animation. Then it's
+filled with the sequences, and each one contains: loop or not, frame
+rate.<br>
+
+
+
+Animations can be static telling them to not update and changing their
+frame when necessary. A breakable object can show the frame 0 until it
+breaks, then you set it to use the frame 1.<br>
+
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">mesh<br>
+            </td>
+            <td style="vertical-align: top;">Mesh editor: objects made with connected points.<br>
+
+
+Mesh:
+there are four types: polygon, circle, line, chain. A line is made of
+two vertex, adding one more converts it into a chain.<br>
+
+
+
+
+MeshObject: encapsulates a mesh.<br>
+
+
+
+
+MeshEditor: mesh submode activates the meshEditor. User can :
+add/remove/move vertex, move edge, edge extrusion.<br>
+
+
+
+Solid Object: adding a sprite and a mesh you get a MeshedObject. The
+mesh can be dynamic, static or kinematic. In play mode the engine
+generates the physic object from the mesh.</td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">sounds<br>
+            </td>
+            <td style="vertical-align: top;"><br>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">music<br>
+            </td>
+            <td style="vertical-align: top;"><br>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">fonts<br>
+            </td>
+            <td style="vertical-align: top;"><br>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">atlas<br>
+            </td>
+            <td style="vertical-align: top;">texture + text file describing the sprites in the texture.
+(format: id + x,y,w,h)</td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<img src="1ed210e1ed0f508ffc324289e42096b6.png" style="cursor: pointer; width: 1024px; height: 537px;" class="bbc_img resized" alt=""><br>
+<br>
+<strong><strong><img src="426c93fcbf081a33e67af6cb9399463e.png" style="width: 1024px; height: 554px;" alt="">
+</strong></strong><br>
 </body></html>
