@@ -13,6 +13,7 @@ public:
 	//image
 	SDL_Texture* texture;
 
+	//name, type, filepath
 	Entity(std::string n, std::string t, std::string p) {
 		name = n; type = t; path = p;
 		pos.x = pos.y = 0;

@@ -83,9 +83,6 @@
     <ClInclude Include="dearimgui\imstb_truetype.h">
       <Filter>Archivos de encabezado\Imgui</Filter>
     </ClInclude>
-    <ClInclude Include="entity.h">
-      <Filter>Archivos de origen</Filter>
-    </ClInclude>
     <ClInclude Include="dearimgui\imgui_stdlib.h">
       <Filter>Archivos de encabezado\Imgui</Filter>
     </ClInclude>
@@ -102,6 +99,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Vector2D.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="project.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

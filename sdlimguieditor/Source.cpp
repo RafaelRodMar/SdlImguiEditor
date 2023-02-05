@@ -15,6 +15,7 @@
 #include "dearimgui/imgui_stdlib.h"  //for using std::string in some imgui funcions.
 #include "entity.h"
 #include <time.h>
+#include "project.h"
 
 SDL_Window* g_pWindow = 0;
 SDL_Renderer* g_pRenderer = 0;
@@ -76,14 +77,11 @@ int main(int argc, char* args[])
 	ImGui_ImplSDLRenderer_Init(g_pRenderer);
 	//***************************************
 
-	std::vector<Entity> ventities;
+	//create a new project
+	Project* project = new Project();
 
-	std::string types[] = {"sound", "image", "background"};
-	std::string names = "name";
-	int num = 0;
 	for (int i = 0; i < 10; i++) {
-		ventities.push_back(Entity(names + std::to_string(num), types[rand() % 3], ""));
-		num++;
+		project->vscenes.push_back(Entity("scene", "scene", ""));
 	}
 
 	bool quit = false;
@@ -157,12 +155,11 @@ int main(int argc, char* args[])
 			{
 				if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
 				{
-					if (ImGui::MenuItem("Add entity"))
+					if (ImGui::MenuItem("Add scene"))
 					{
-						if (ventities.size() < 256)
+						if (project->vscenes.size() < 256)
 						{
-							ventities.push_back(Entity(names + std::to_string(num), types[rand() % 3], ""));
-							num++;
+							project->vscenes.push_back(Entity("scene", "scene", ""));
 						}
 					}
 					ImGui::EndPopup();
@@ -174,7 +171,7 @@ int main(int argc, char* args[])
 				/// of the loop. May be a pointer to your own node type, etc.
 				static std::vector<bool> selection_mask(256, false);
 				int node_clicked = -1;
-				for (int i = 0; i < ventities.size(); i++) {
+				for (int i = 0; i < project->vscenes.size(); i++) {
 					// Disable the default "open on single-click behavior" + set Selected flag according to our selection.
 					// To alter selection we use IsItemClicked() && !IsItemToggledOpen(), so clicking on an arrow doesn't alter selection.
 					ImGuiTreeNodeFlags node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
@@ -182,7 +179,7 @@ int main(int argc, char* args[])
 					if (is_selected)
 						node_flags |= ImGuiTreeNodeFlags_Selected;
 
-					bool node_open = ImGui::TreeNodeEx((void*)(intptr_t)i, node_flags, ventities[i].name.c_str());
+					bool node_open = ImGui::TreeNodeEx((void*)(intptr_t)i, node_flags, project->vscenes[i].name.c_str());
 					if (ImGui::IsItemClicked() && !ImGui::IsItemToggledOpen())
 					{
 						node_clicked = i;
@@ -194,7 +191,7 @@ int main(int argc, char* args[])
 					{
 						if (ImGui::MenuItem("Remove entity"))
 						{
-							ventities.erase(ventities.begin() + i);
+							project->vscenes.erase(project->vscenes.begin() + i);
 						}
 						ImGui::EndPopup();
 					}
@@ -230,10 +227,10 @@ int main(int argc, char* args[])
 			if (last_selected != -1)
 			{
 				ImGui::Text("Project element : %d", last_selected);
-				ImGui::Text("Name : %s", ventities[last_selected].name);
-				ImGui::Text("Type : %s", ventities[last_selected].type);
-				ImGui::Text("Position : %d, %d", ventities[last_selected].pos.x, ventities[last_selected].pos.y);
-				ImGui::InputText("archive", &ventities[last_selected].path);
+				ImGui::Text("Name : %s", project->vscenes[last_selected].name);
+				ImGui::Text("Type : %s", project->vscenes[last_selected].type);
+				ImGui::Text("Position : %d, %d", project->vscenes[last_selected].pos.x, project->vscenes[last_selected].pos.y);
+				ImGui::InputText("archive", &project->vscenes[last_selected].path);
 			}
 			ImGui::End();
 

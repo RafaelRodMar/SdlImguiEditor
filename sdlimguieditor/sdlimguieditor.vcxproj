@@ -158,6 +158,7 @@
     <ClInclude Include="IconsFontAwesome4.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="project.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
