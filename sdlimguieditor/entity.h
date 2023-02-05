@@ -9,6 +9,7 @@ public:
 	std::string type;
 	std::string path;
 	SDL_Point pos;
+	std::vector<Entity> ventities;
 
 	//image
 	SDL_Texture* texture;
