@@ -81,6 +81,10 @@ public:
 		return m_fonts[f];
 	}
 
+	SDL_Texture* getTexture(std::string t) {
+		return m_textureMap[t];
+	}
+
 	/*void clearFonts() {
 		auto iter = m_fonts.begin();
 		while (iter != m_fonts.end()) {
@@ -95,6 +99,8 @@ public:
 		}
 		m_fonts.clear();
 	}
+
+	SDL_Renderer* renderer;
 
 private:
 	map<string, SDL_Texture*> m_textureMap; //map with all the SDL_Textures

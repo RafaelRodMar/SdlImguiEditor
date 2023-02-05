@@ -1,5 +1,4 @@
 #include "AssetsManager.h"
-#include "game.h"
 #include <sdl.h>
 #include <SDL_ttf.h>
 #include <fstream>
@@ -245,7 +244,7 @@ void AssetsManager::loadAssets()
 			ss >> name;
 			ss >> filename;
 
-			if (datatype == "img") loadTexture("assets/img/" + filename, name, Game::Instance()->getRenderer());
+			if (datatype == "img") loadTexture("assets/img/" + filename, name, renderer);
 			if (datatype == "snd") loadSound("assets/snd/" + filename, name, SOUND_SFX);
 			if (datatype == "mus") loadSound("assets/mus/" + filename, name, SOUND_MUSIC);
 			if (datatype == "fnt") loadFont("assets/fnt/" + filename, name, 24);
@@ -289,7 +288,7 @@ void AssetsManager::loadAssetsJson()
 				string name = x.key();
 				string filename = x.value().get<std::string>();
 
-				if (type[i] == "img") loadTexture("assets/img/" + filename, name, Game::Instance()->getRenderer());
+				if (type[i] == "img") loadTexture("assets/img/" + filename, name, renderer);
 				if (type[i] == "snd") loadSound("assets/snd/" + filename, name, SOUND_SFX);
 				if (type[i] == "mus") loadSound("assets/mus/" + filename, name, SOUND_MUSIC);
 				if (type[i] == "fnt") loadFont("assets/fnt/" + filename, name, 24);

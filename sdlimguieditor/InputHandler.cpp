@@ -1,5 +1,4 @@
 #include "InputHandler.h"
-#include "Game.h"
 #include <iostream>
 
 InputHandler* InputHandler::s_pInstance = 0;
@@ -174,7 +173,7 @@ void InputHandler::update()
 		switch (event.type)
 		{
 		case SDL_QUIT:
-			Game::Instance()->quit();
+			//Game::Instance()->quit();
 			break;
 
 		case SDL_JOYAXISMOTION:

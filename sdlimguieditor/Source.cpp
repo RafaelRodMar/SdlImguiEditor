@@ -4,6 +4,10 @@
 #include<string>
 #include<vector>
 #include<bitset>
+#include "Vector2D.h"
+#include "json.hpp"
+#include "AssetsManager.h"
+#include "InputHandler.h"
 #include "IconsFontAwesome4.h" //header with names for every icon.
 #include "dearimgui/imgui.h"
 #include "dearimgui/imgui_impl_sdl.h"
@@ -76,7 +80,12 @@ int main(int argc, char* args[])
 		return 1; // sdl could not initialize
 	}
 
-	SDL_Texture* warrior = loadTexture("files/warrior.png", g_pRenderer);
+	//pass the renderer to the assets manager
+	AssetsManager::Instance()->renderer = g_pRenderer;
+	//load all the assets in the json file
+	AssetsManager::Instance()->loadAssetsJson();
+
+	SDL_Texture* warrior = loadTexture("assets/img/warrior.png", g_pRenderer);
 
 	//***************************************ImGui
 	//setup Dear ImGui context
@@ -276,6 +285,7 @@ int main(int argc, char* args[])
 
 			ImGui::Begin("View");
 			ImGui::Image((ImTextureID)warrior, ImVec2(33, 33));
+			ImGui::Image((ImTextureID)AssetsManager::Instance()->getTexture("warrior"), ImVec2(33,33));
 			ImGui::End();
 
 			ImGui::ShowDemoWindow();
@@ -300,6 +310,7 @@ int main(int argc, char* args[])
 	// clean up SDL
 	SDL_DestroyWindow(g_pWindow);
 	SDL_DestroyRenderer(g_pRenderer);
+	AssetsManager::Instance()->clearAllTextures();
 	SDL_Quit();
 	return 0;
 }
