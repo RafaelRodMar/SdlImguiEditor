@@ -78,11 +78,11 @@ int main(int argc, char* args[])
 	//***************************************
 
 	//create a new project
-	Project* project = new Project();
+	Project* project = new Project("testProject");
 
-	for (int i = 0; i < 10; i++) {
+	/*for (int i = 0; i < 10; i++) {
 		project->vscenes.push_back(Entity("scene", "scene", ""));
-	}
+	}*/
 
 	bool quit = false;
 	SDL_Event e;
@@ -149,9 +149,10 @@ int main(int argc, char* args[])
 
 			//one window
 			static int last_selected = -1;
+			ImGui::SetNextItemOpen(true, 0);
 			ImGui::Begin("Project");                          // Create a window with name and append into it.
 
-			if (ImGui::TreeNode("project name"))
+			if (ImGui::TreeNode(project->name.c_str()))
 			{
 				if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
 				{
@@ -189,9 +190,10 @@ int main(int argc, char* args[])
 					//context menu
 					if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
 					{
-						if (ImGui::MenuItem("Remove entity"))
+						if (ImGui::MenuItem("Remove scene"))
 						{
 							project->vscenes.erase(project->vscenes.begin() + i);
+							last_selected = -1;
 						}
 						ImGui::EndPopup();
 					}

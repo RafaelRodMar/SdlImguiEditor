@@ -8,7 +8,10 @@ public:
 	std::string name;
 	std::vector<Entity> vscenes;
 
-	Project() {}
+	//project(name)
+	Project(std::string n) {
+		name = n;
+	}
 
 private:
 };
