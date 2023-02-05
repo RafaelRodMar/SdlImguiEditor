@@ -19,44 +19,6 @@
 SDL_Window* g_pWindow = 0;
 SDL_Renderer* g_pRenderer = 0;
 
-SDL_Texture* loadTexture(std::string fileName, SDL_Renderer* pRenderer)
-{
-	SDL_Surface* pTempSurface = IMG_Load(fileName.c_str()); //create Surface with contents of fileName
-
-	if (pTempSurface == 0) //exception handle load error
-	{
-		std::cout << "error loading file: " << fileName << std::endl;
-		std::cout << SDL_GetError() << " " << fileName << std::endl;
-		return false;
-	}
-
-	SDL_Texture* pTexture = SDL_CreateTextureFromSurface(pRenderer, pTempSurface); //Pass Surface to Texture
-	SDL_FreeSurface(pTempSurface); //Delete Surface
-
-	if (pTexture == 0) //exception handle transiction Surfacte to Texture
-	{
-		std::cout << "error creating Texture of file: " << fileName << std::endl;
-		return false;
-	}
-
-	return pTexture; //save texture.
-}
-
-void draw(SDL_Texture* texture, int x, int y, int width, int height, SDL_Renderer* pRenderer, SDL_RendererFlip flip)
-{
-	SDL_Rect srcRect; //source rectangle
-	SDL_Rect destRect; //destination rectangle
-
-	srcRect.x = 0;
-	srcRect.y = 0;
-	srcRect.w = destRect.w = width;
-	srcRect.h = destRect.h = height;
-	destRect.x = x; //select x axis on game window
-	destRect.y = y; //select y axis on game window
-
-	SDL_RenderCopyEx(pRenderer, texture, &srcRect, &destRect, 0, 0, flip); //Load image to render buffer.
-}
-
 int main(int argc, char* args[])
 {
 	srand(time(nullptr));
@@ -85,8 +47,6 @@ int main(int argc, char* args[])
 	//load all the assets in the json file
 	AssetsManager::Instance()->loadAssetsJson();
 
-	SDL_Texture* warrior = loadTexture("assets/img/warrior.png", g_pRenderer);
-
 	//***************************************ImGui
 	//setup Dear ImGui context
 	IMGUI_CHECKVERSION();
@@ -109,7 +69,7 @@ int main(int argc, char* args[])
 	config.MergeMode = true;
 	config.GlyphMinAdvanceX = 13.0f; //use if you want to make the icon monospaced.
 	static const ImWchar icon_ranges[] = { ICON_MIN_FA, ICON_MAX_FA, 0 };
-	io.Fonts->AddFontFromFileTTF("fontawesome-webfont.ttf", 13.0f, &config, icon_ranges);
+	io.Fonts->AddFontFromFileTTF("assets\\fnt\\fontawesome-webfont.ttf", 13.0f, &config, icon_ranges);
 
 	//setup platform/renderer backends
 	ImGui_ImplSDL2_InitForSDLRenderer(g_pWindow, g_pRenderer);
@@ -284,8 +244,9 @@ int main(int argc, char* args[])
 			ImGui::End();
 
 			ImGui::Begin("View");
-			ImGui::Image((ImTextureID)warrior, ImVec2(33, 33));
 			ImGui::Image((ImTextureID)AssetsManager::Instance()->getTexture("warrior"), ImVec2(33,33));
+			ImGui::SetCursorPos(ImVec2(100, 100));
+			ImGui::Image((ImTextureID)AssetsManager::Instance()->getTexture("warrior"), ImVec2(33, 33));
 			ImGui::End();
 
 			ImGui::ShowDemoWindow();
