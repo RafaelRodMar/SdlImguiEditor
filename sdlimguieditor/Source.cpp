@@ -147,7 +147,6 @@ int main(int argc, char* args[])
 			static int counter = 0;
 
 			//one window
-			static int last_selected = -1;
 			ImGui::SetNextItemOpen(true, 0);
 			ImGui::Begin("Project");                          // Create a window with name and append into it.
 
@@ -183,16 +182,20 @@ int main(int argc, char* args[])
 					if (ImGui::IsItemClicked() && !ImGui::IsItemToggledOpen())
 					{
 						node_clicked = i;
-						last_selected = i;
+						project->selected = i;
 					}
 
 					//context menu
 					if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
 					{
+						if (ImGui::MenuItem("Add Layer"))
+						{
+						}
+						ImGui::Separator();
 						if (ImGui::MenuItem("Remove scene"))
 						{
 							project->ventities.erase(project->ventities.begin() + i);
-							last_selected = -1;
+							project->selected = -1;
 						}
 						ImGui::EndPopup();
 					}
@@ -225,13 +228,13 @@ int main(int argc, char* args[])
 
 			//another window
 			ImGui::Begin("Inspector");
-			if (last_selected != -1)
+			if (project->selected != -1)
 			{
-				ImGui::Text("Project element : %d", last_selected);
-				ImGui::Text("Name : %s", project->ventities[last_selected].name);
-				ImGui::Text("Type : %s", project->ventities[last_selected].type);
-				ImGui::Text("Position : %d, %d", project->ventities[last_selected].pos.x, project->ventities[last_selected].pos.y);
-				ImGui::InputText("archive", &project->ventities[last_selected].path);
+				ImGui::Text("Project element : %d", project->selected);
+				ImGui::Text("Name : %s", project->ventities[project->selected].name);
+				ImGui::Text("Type : %s", project->ventities[project->selected].type);
+				ImGui::Text("Position : %d, %d", project->ventities[project->selected].pos.x, project->ventities[project->selected].pos.y);
+				ImGui::InputText("archive", &project->ventities[project->selected].path);
 			}
 			ImGui::End();
 
@@ -245,6 +248,10 @@ int main(int argc, char* args[])
 			ImGui::Image((ImTextureID)AssetsManager::Instance()->getTexture("warrior"), ImVec2(33,33));
 			ImGui::SetCursorPos(ImVec2(100, 100));
 			ImGui::Image((ImTextureID)AssetsManager::Instance()->getTexture("warrior"), ImVec2(33, 33));
+			ImGui::End();
+
+			ImGui::Begin("Console");
+			ImGui::Text("last selected %d", project->selected);
 			ImGui::End();
 
 			ImGui::ShowDemoWindow();
