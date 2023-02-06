@@ -10,6 +10,7 @@ public:
 	std::string path;
 	SDL_Point pos;
 	std::vector<Entity> ventities;
+	int selected = -1;
 
 	//image
 	SDL_Texture* texture;

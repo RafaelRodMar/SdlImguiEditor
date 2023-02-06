@@ -15,7 +15,6 @@
 #include "dearimgui/imgui_stdlib.h"  //for using std::string in some imgui funcions.
 #include "entity.h"
 #include <time.h>
-#include "project.h"
 
 SDL_Window* g_pWindow = 0;
 SDL_Renderer* g_pRenderer = 0;
@@ -78,10 +77,10 @@ int main(int argc, char* args[])
 	//***************************************
 
 	//create a new project
-	Project* project = new Project("testProject");
+	Entity* project = new Entity("testProject", "project", "");
 
 	/*for (int i = 0; i < 10; i++) {
-		project->vscenes.push_back(Entity("scene", "scene", ""));
+		project->ventities.push_back(Entity("scene", "scene", ""));
 	}*/
 
 	bool quit = false;
@@ -148,7 +147,6 @@ int main(int argc, char* args[])
 			static int counter = 0;
 
 			//one window
-			static int last_selected = -1;
 			ImGui::SetNextItemOpen(true, 0);
 			ImGui::Begin("Project");                          // Create a window with name and append into it.
 
@@ -158,9 +156,9 @@ int main(int argc, char* args[])
 				{
 					if (ImGui::MenuItem("Add scene"))
 					{
-						if (project->vscenes.size() < 256)
+						if (project->ventities.size() < 256)
 						{
-							project->vscenes.push_back(Entity("scene", "scene", ""));
+							project->ventities.push_back(Entity("scene", "scene", ""));
 						}
 					}
 					ImGui::EndPopup();
@@ -172,7 +170,7 @@ int main(int argc, char* args[])
 				/// of the loop. May be a pointer to your own node type, etc.
 				static std::vector<bool> selection_mask(256, false);
 				int node_clicked = -1;
-				for (int i = 0; i < project->vscenes.size(); i++) {
+				for (int i = 0; i < project->ventities.size(); i++) {
 					// Disable the default "open on single-click behavior" + set Selected flag according to our selection.
 					// To alter selection we use IsItemClicked() && !IsItemToggledOpen(), so clicking on an arrow doesn't alter selection.
 					ImGuiTreeNodeFlags node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
@@ -180,20 +178,24 @@ int main(int argc, char* args[])
 					if (is_selected)
 						node_flags |= ImGuiTreeNodeFlags_Selected;
 
-					bool node_open = ImGui::TreeNodeEx((void*)(intptr_t)i, node_flags, project->vscenes[i].name.c_str());
+					bool node_open = ImGui::TreeNodeEx((void*)(intptr_t)i, node_flags, project->ventities[i].name.c_str());
 					if (ImGui::IsItemClicked() && !ImGui::IsItemToggledOpen())
 					{
 						node_clicked = i;
-						last_selected = i;
+						project->selected = i;
 					}
 
 					//context menu
 					if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
 					{
+						if (ImGui::MenuItem("Add Layer"))
+						{
+						}
+						ImGui::Separator();
 						if (ImGui::MenuItem("Remove scene"))
 						{
-							project->vscenes.erase(project->vscenes.begin() + i);
-							last_selected = -1;
+							project->ventities.erase(project->ventities.begin() + i);
+							project->selected = -1;
 						}
 						ImGui::EndPopup();
 					}
@@ -226,13 +228,13 @@ int main(int argc, char* args[])
 
 			//another window
 			ImGui::Begin("Inspector");
-			if (last_selected != -1)
+			if (project->selected != -1)
 			{
-				ImGui::Text("Project element : %d", last_selected);
-				ImGui::Text("Name : %s", project->vscenes[last_selected].name);
-				ImGui::Text("Type : %s", project->vscenes[last_selected].type);
-				ImGui::Text("Position : %d, %d", project->vscenes[last_selected].pos.x, project->vscenes[last_selected].pos.y);
-				ImGui::InputText("archive", &project->vscenes[last_selected].path);
+				ImGui::Text("Project element : %d", project->selected);
+				ImGui::Text("Name : %s", project->ventities[project->selected].name);
+				ImGui::Text("Type : %s", project->ventities[project->selected].type);
+				ImGui::Text("Position : %d, %d", project->ventities[project->selected].pos.x, project->ventities[project->selected].pos.y);
+				ImGui::InputText("archive", &project->ventities[project->selected].path);
 			}
 			ImGui::End();
 
@@ -246,6 +248,10 @@ int main(int argc, char* args[])
 			ImGui::Image((ImTextureID)AssetsManager::Instance()->getTexture("warrior"), ImVec2(33,33));
 			ImGui::SetCursorPos(ImVec2(100, 100));
 			ImGui::Image((ImTextureID)AssetsManager::Instance()->getTexture("warrior"), ImVec2(33, 33));
+			ImGui::End();
+
+			ImGui::Begin("Console");
+			ImGui::Text("last selected %d", project->selected);
 			ImGui::End();
 
 			ImGui::ShowDemoWindow();
