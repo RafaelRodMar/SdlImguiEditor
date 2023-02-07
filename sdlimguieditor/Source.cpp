@@ -147,9 +147,10 @@ int main(int argc, char* args[])
 			static int counter = 0;
 
 			//one window
-			ImGui::SetNextItemOpen(true, 0);
 			ImGui::Begin("Project");                          // Create a window with name and append into it.
 
+			//show scenes
+			ImGui::SetNextItemOpen(true, 0);
 			if (ImGui::TreeNode(project->name.c_str()))
 			{
 				if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
@@ -158,7 +159,7 @@ int main(int argc, char* args[])
 					{
 						if (project->ventities.size() < 256)
 						{
-							project->ventities.push_back(Entity("scene", "scene", ""));
+							project->ventities.push_back(Entity("scene", "scene"));
 						}
 					}
 					ImGui::EndPopup();
@@ -190,6 +191,8 @@ int main(int argc, char* args[])
 					{
 						if (ImGui::MenuItem("Add Layer"))
 						{
+							project->selected = i;
+							project->ventities[project->selected].ventities.push_back(Entity("layer", "layer"));
 						}
 						ImGui::Separator();
 						if (ImGui::MenuItem("Remove scene"))
@@ -202,7 +205,11 @@ int main(int argc, char* args[])
 
 					if (node_open)
 					{
-						//ImGui::BulletText("Blah blah\nBlah Blah");
+						//show layers
+						node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
+						for (int j = 0; j < project->ventities[project->selected].ventities.size(); j++) {
+							ImGui::TreeNodeEx((void*)(intptr_t)j, node_flags, project->ventities[project->selected].ventities[j].name.c_str());
+						}
 						ImGui::TreePop();
 					}
 				}
