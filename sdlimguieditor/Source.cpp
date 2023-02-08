@@ -194,7 +194,6 @@ int main(int argc, char* args[])
 						{
 							project->selected = i;
 							project->ventities[project->selected].ventities.push_back(Entity("layer", "layer"));
-							//node_open = true;
 						}
 						ImGui::Separator();
 						if (ImGui::MenuItem("Remove scene"))
