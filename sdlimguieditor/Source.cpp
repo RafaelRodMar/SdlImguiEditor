@@ -189,10 +189,12 @@ int main(int argc, char* args[])
 					//context menu
 					if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
 					{
+						//ImGui::Text("test %d", ImGui::GetItemID());
 						if (ImGui::MenuItem("Add Layer"))
 						{
 							project->selected = i;
 							project->ventities[project->selected].ventities.push_back(Entity("layer", "layer"));
+							//node_open = true;
 						}
 						ImGui::Separator();
 						if (ImGui::MenuItem("Remove scene"))
@@ -206,9 +208,10 @@ int main(int argc, char* args[])
 					if (node_open)
 					{
 						//show layers
-						node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
-						for (int j = 0; j < project->ventities[project->selected].ventities.size(); j++) {
-							ImGui::TreeNodeEx((void*)(intptr_t)j, node_flags, project->ventities[project->selected].ventities[j].name.c_str());
+						//node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
+						node_flags = ImGuiTreeNodeFlags_None | ImGuiTreeNodeFlags_Leaf | ImGuiTreeNodeFlags_NoTreePushOnOpen; //leaf node
+						for (int j = 0; j < project->ventities[i].ventities.size(); j++) {
+							ImGui::TreeNodeEx((void*)(intptr_t)j, node_flags, project->ventities[i].ventities[j].name.c_str());
 						}
 						ImGui::TreePop();
 					}
@@ -229,7 +232,6 @@ int main(int argc, char* args[])
 				
 				ImGui::TreePop();
 			}
-
 			
 			ImGui::End();
 
