@@ -211,6 +211,19 @@ int main(int argc, char* args[])
 						node_flags = ImGuiTreeNodeFlags_None | ImGuiTreeNodeFlags_Leaf | ImGuiTreeNodeFlags_NoTreePushOnOpen; //leaf node
 						for (int j = 0; j < project->ventities[i].ventities.size(); j++) {
 							ImGui::TreeNodeEx((void*)(intptr_t)j, node_flags, project->ventities[i].ventities[j].name.c_str());
+
+							//context menu
+							if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
+							{
+								if (ImGui::MenuItem("Add Object"))
+								{
+								}
+								ImGui::Separator();
+								if (ImGui::MenuItem("Remove Layer"))
+								{
+								}
+								ImGui::EndPopup();
+							}
 						}
 						ImGui::TreePop();
 					}
