@@ -145,6 +145,7 @@ int main(int argc, char* args[])
 
 			static float f = 0.0f;
 			static int counter = 0;
+			Entity entitySelected;
 
 			//one window
 			ImGui::Begin("Project");                          // Create a window with name and append into it.

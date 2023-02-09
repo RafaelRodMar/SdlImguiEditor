@@ -11,9 +11,12 @@ public:
 	SDL_Point pos;
 	std::vector<Entity> ventities;
 	int selected = -1;
+	bool is_selected = false;
 
 	//image
 	SDL_Texture* texture;
+
+	Entity(){}
 
 	//name, type
 	Entity(std::string n, std::string t) {
