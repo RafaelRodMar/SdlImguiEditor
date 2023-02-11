@@ -1,5 +1,6 @@
 #include "InputHandler.h"
 #include <iostream>
+#include "dearimgui/imgui_impl_sdl.h"
 
 InputHandler* InputHandler::s_pInstance = 0;
 
@@ -170,10 +171,11 @@ void InputHandler::update()
 	SDL_Event event;
 	while (SDL_PollEvent(&event))
 	{
+		ImGui_ImplSDL2_ProcessEvent(&event);
 		switch (event.type)
 		{
 		case SDL_QUIT:
-			//Game::Instance()->quit();
+			Editor::Instance()->quit();
 			break;
 
 		case SDL_JOYAXISMOTION:

@@ -139,6 +139,7 @@
     <ClCompile Include="dearimgui\imgui_stdlib.cpp" />
     <ClCompile Include="dearimgui\imgui_tables.cpp" />
     <ClCompile Include="dearimgui\imgui_widgets.cpp" />
+    <ClCompile Include="editor.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Vector2D.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="dearimgui\imstb_rectpack.h" />
     <ClInclude Include="dearimgui\imstb_textedit.h" />
     <ClInclude Include="dearimgui\imstb_truetype.h" />
+    <ClInclude Include="editor.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="IconsFontAwesome4.h" />
     <ClInclude Include="InputHandler.h" />

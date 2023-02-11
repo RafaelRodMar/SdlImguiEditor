@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <vector>
-
+#include "editor.h"
 #include "SDL.h"
 #include "Vector2D.h"
 
