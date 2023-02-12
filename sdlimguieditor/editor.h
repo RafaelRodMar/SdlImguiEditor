@@ -5,6 +5,7 @@
 #include <SDL_image.h>
 #include "AssetsManager.h"
 #include "InputHandler.h"
+#include "entity.h"
 
 class Editor {
 public:
@@ -33,6 +34,8 @@ public:
 
 	int getEditorWidth() const { return m_editorWidth; }
 	int getEditorHeight() const { return m_editorHeight; }
+
+	Entity* project;
 
 private:
 	Editor();

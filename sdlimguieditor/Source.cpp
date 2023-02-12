@@ -109,6 +109,10 @@ bool Editor::init(const char* title, int xpos, int ypos, int width, int height, 
 	ImGui_ImplSDLRenderer_Init(m_pRenderer);
 	//***************************************
 
+	//create a new project
+	project = new Entity("testProject", "project", "");
+
+
 	g_pRenderer = m_pRenderer;
 	g_pWindow = m_pWindow;
 	return true;
@@ -123,7 +127,184 @@ void Editor::update() {
 }
 
 void Editor::render() {
+	// set to black // This function expects Red, Green, Blue and
+	// Alpha as color values
+	SDL_SetRenderDrawColor(g_pRenderer, 0, 0, 0, 255);
+	// clear the window to black
+	SDL_RenderClear(g_pRenderer);
 
+	//imgui
+	{
+		//start the Dear ImGui frame
+		ImGui_ImplSDLRenderer_NewFrame();
+		ImGui_ImplSDL2_NewFrame();
+		ImGui::NewFrame();
+
+		//docking
+		ImGui::DockSpaceOverViewport();
+
+		//menu
+		// ...
+		ImGui::DockSpace(ImGui::GetID("DockSpace"));
+
+		if (ImGui::BeginMainMenuBar()) {
+			if (ImGui::BeginMenu("File")) {
+				if (ImGui::MenuItem("Exit")) {
+					Editor::quit();
+				}
+				ImGui::EndMenu();
+			}
+			if (ImGui::BeginMenu("View")) {
+				ImGui::MenuItem("Some Panel", nullptr);
+				ImGui::EndMenu();
+			}
+
+			ImGui::EndMainMenuBar();
+		}
+
+		static float f = 0.0f;
+		static int counter = 0;
+		Entity entitySelected;
+
+		//one window
+		ImGui::Begin("Project");                          // Create a window with name and append into it.
+
+		//show scenes
+		ImGui::SetNextItemOpen(true, 0);
+		if (ImGui::TreeNode(project->name.c_str()))
+		{
+			if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
+			{
+				if (ImGui::MenuItem("Add scene"))
+				{
+					if (project->ventities.size() < 256)
+					{
+						project->ventities.push_back(Entity("scene", "scene"));
+					}
+				}
+				ImGui::EndPopup();
+			}
+
+			// 'selection_mask' is dumb representation of what may be user-side selection state.
+			//  You may retain selection state inside or outside your objects in whatever format you see fit.
+			// 'node_clicked' is temporary storage of what node we have clicked to process selection at the end
+			/// of the loop. May be a pointer to your own node type, etc.
+			static std::vector<bool> selection_mask(256, false);
+			int node_clicked = -1;
+			for (int i = 0; i < project->ventities.size(); i++) {
+				// Disable the default "open on single-click behavior" + set Selected flag according to our selection.
+				// To alter selection we use IsItemClicked() && !IsItemToggledOpen(), so clicking on an arrow doesn't alter selection.
+				ImGuiTreeNodeFlags node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
+				const bool is_selected = selection_mask[i] != false;
+				if (is_selected)
+					node_flags |= ImGuiTreeNodeFlags_Selected;
+
+				bool node_open = ImGui::TreeNodeEx((void*)(intptr_t)i, node_flags, project->ventities[i].name.c_str());
+				if (ImGui::IsItemClicked() && !ImGui::IsItemToggledOpen())
+				{
+					node_clicked = i;
+					project->selected = i;
+				}
+
+				//context menu
+				if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
+				{
+					//ImGui::Text("test %d", ImGui::GetItemID());
+					if (ImGui::MenuItem("Add Layer"))
+					{
+						project->selected = i;
+						project->ventities[project->selected].ventities.push_back(Entity("layer", "layer"));
+					}
+					ImGui::Separator();
+					if (ImGui::MenuItem("Remove scene"))
+					{
+						project->ventities.erase(project->ventities.begin() + i);
+						project->selected = -1;
+					}
+					ImGui::EndPopup();
+				}
+
+				if (node_open)
+				{
+					//show layers
+					//node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
+					node_flags = ImGuiTreeNodeFlags_None | ImGuiTreeNodeFlags_Leaf | ImGuiTreeNodeFlags_NoTreePushOnOpen; //leaf node
+					for (int j = 0; j < project->ventities[i].ventities.size(); j++) {
+						ImGui::TreeNodeEx((void*)(intptr_t)j, node_flags, project->ventities[i].ventities[j].name.c_str());
+
+						//context menu
+						if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
+						{
+							if (ImGui::MenuItem("Add Object"))
+							{
+							}
+							ImGui::Separator();
+							if (ImGui::MenuItem("Remove Layer"))
+							{
+							}
+							ImGui::EndPopup();
+						}
+					}
+					ImGui::TreePop();
+				}
+			}
+
+			if (node_clicked != -1)
+			{
+				// Update selection state
+				// (process outside of tree loop to avoid visual inconsistencies during the clicking frame)
+				if (ImGui::GetIO().KeyCtrl)
+					selection_mask[node_clicked] = !selection_mask[node_clicked];          // CTRL+click to toggle
+				else //if (!(selection_mask & (1 << node_clicked))) // Depending on selection behavior you want, may want to preserve selection when clicking on item that is part of the selection
+				{
+					std::fill(selection_mask.begin(), selection_mask.end(), 0);
+					selection_mask[node_clicked] = true;           // Click to single-select
+				}
+			}
+
+			ImGui::TreePop();
+		}
+
+		ImGui::End();
+
+		//another window
+		ImGui::Begin("Inspector");
+		if (project->selected != -1)
+		{
+			ImGui::Text("Project element : %d", project->selected);
+			ImGui::Text("Name : %s", project->ventities[project->selected].name);
+			ImGui::Text("Type : %s", project->ventities[project->selected].type);
+			ImGui::Text("Position : %d, %d", project->ventities[project->selected].pos.x, project->ventities[project->selected].pos.y);
+			ImGui::InputText("archive", &project->ventities[project->selected].path);
+		}
+		ImGui::End();
+
+		ImGui::Begin("Assets");
+		//icon example
+		ImGui::Text("%s among %d items", ICON_FA_SEARCH, 54);
+		ImGui::Button(ICON_FA_SEARCH " Search");
+		ImGui::End();
+
+		ImGui::Begin("View");
+		ImGui::Image((ImTextureID)AssetsManager::Instance()->getTexture("warrior"), ImVec2(33, 33));
+		ImGui::SetCursorPos(ImVec2(100, 100));
+		ImGui::Image((ImTextureID)AssetsManager::Instance()->getTexture("warrior"), ImVec2(33, 33));
+		ImGui::End();
+
+		ImGui::Begin("Console");
+		ImGui::Text("last selected %d", project->selected);
+		ImGui::End();
+
+		ImGui::ShowDemoWindow();
+
+
+		//rendering
+		ImGui::Render();
+		ImGui_ImplSDLRenderer_RenderDrawData(ImGui::GetDrawData());
+	}
+
+	// show the window
+	SDL_RenderPresent(g_pRenderer);
 }
 
 void Editor::quit() {
@@ -137,193 +318,10 @@ int main(int argc, char* args[])
 	if (Editor::Instance()->init("SDL ImGui editor", 100, 100, 1024, 768,
 		false))
 	{
-		//create a new project
-		Entity* project = new Entity("testProject", "project", "");
-
-		bool quit = false;
-
-		while (!quit) {
-			// everything succeeded lets draw the window
-			// set to black // This function expects Red, Green, Blue and
-			// Alpha as color values
-			SDL_SetRenderDrawColor(g_pRenderer, 0, 0, 0, 255);
-			// clear the window to black
-			SDL_RenderClear(g_pRenderer);
-
+		while (Editor::Instance()->running()) {
 			Editor::Instance()->handleEvents();
-
-			//imgui
-			{
-				//start the Dear ImGui frame
-				ImGui_ImplSDLRenderer_NewFrame();
-				ImGui_ImplSDL2_NewFrame();
-				ImGui::NewFrame();
-
-				//docking
-				ImGui::DockSpaceOverViewport();
-
-				//menu
-				// ...
-				ImGui::DockSpace(ImGui::GetID("DockSpace"));
-
-				if (ImGui::BeginMainMenuBar()) {
-					if (ImGui::BeginMenu("File")) {
-						if (ImGui::MenuItem("Exit")) {
-							quit = true;
-						}
-						ImGui::EndMenu();
-					}
-					if (ImGui::BeginMenu("View")) {
-						ImGui::MenuItem("Some Panel", nullptr);
-						ImGui::EndMenu();
-					}
-
-					ImGui::EndMainMenuBar();
-				}
-
-				static float f = 0.0f;
-				static int counter = 0;
-				Entity entitySelected;
-
-				//one window
-				ImGui::Begin("Project");                          // Create a window with name and append into it.
-
-				//show scenes
-				ImGui::SetNextItemOpen(true, 0);
-				if (ImGui::TreeNode(project->name.c_str()))
-				{
-					if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
-					{
-						if (ImGui::MenuItem("Add scene"))
-						{
-							if (project->ventities.size() < 256)
-							{
-								project->ventities.push_back(Entity("scene", "scene"));
-							}
-						}
-						ImGui::EndPopup();
-					}
-
-					// 'selection_mask' is dumb representation of what may be user-side selection state.
-					//  You may retain selection state inside or outside your objects in whatever format you see fit.
-					// 'node_clicked' is temporary storage of what node we have clicked to process selection at the end
-					/// of the loop. May be a pointer to your own node type, etc.
-					static std::vector<bool> selection_mask(256, false);
-					int node_clicked = -1;
-					for (int i = 0; i < project->ventities.size(); i++) {
-						// Disable the default "open on single-click behavior" + set Selected flag according to our selection.
-						// To alter selection we use IsItemClicked() && !IsItemToggledOpen(), so clicking on an arrow doesn't alter selection.
-						ImGuiTreeNodeFlags node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
-						const bool is_selected = selection_mask[i] != false;
-						if (is_selected)
-							node_flags |= ImGuiTreeNodeFlags_Selected;
-
-						bool node_open = ImGui::TreeNodeEx((void*)(intptr_t)i, node_flags, project->ventities[i].name.c_str());
-						if (ImGui::IsItemClicked() && !ImGui::IsItemToggledOpen())
-						{
-							node_clicked = i;
-							project->selected = i;
-						}
-
-						//context menu
-						if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
-						{
-							//ImGui::Text("test %d", ImGui::GetItemID());
-							if (ImGui::MenuItem("Add Layer"))
-							{
-								project->selected = i;
-								project->ventities[project->selected].ventities.push_back(Entity("layer", "layer"));
-							}
-							ImGui::Separator();
-							if (ImGui::MenuItem("Remove scene"))
-							{
-								project->ventities.erase(project->ventities.begin() + i);
-								project->selected = -1;
-							}
-							ImGui::EndPopup();
-						}
-
-						if (node_open)
-						{
-							//show layers
-							//node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
-							node_flags = ImGuiTreeNodeFlags_None | ImGuiTreeNodeFlags_Leaf | ImGuiTreeNodeFlags_NoTreePushOnOpen; //leaf node
-							for (int j = 0; j < project->ventities[i].ventities.size(); j++) {
-								ImGui::TreeNodeEx((void*)(intptr_t)j, node_flags, project->ventities[i].ventities[j].name.c_str());
-
-								//context menu
-								if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
-								{
-									if (ImGui::MenuItem("Add Object"))
-									{
-									}
-									ImGui::Separator();
-									if (ImGui::MenuItem("Remove Layer"))
-									{
-									}
-									ImGui::EndPopup();
-								}
-							}
-							ImGui::TreePop();
-						}
-					}
-
-					if (node_clicked != -1)
-					{
-						// Update selection state
-						// (process outside of tree loop to avoid visual inconsistencies during the clicking frame)
-						if (ImGui::GetIO().KeyCtrl)
-							selection_mask[node_clicked] = !selection_mask[node_clicked];          // CTRL+click to toggle
-						else //if (!(selection_mask & (1 << node_clicked))) // Depending on selection behavior you want, may want to preserve selection when clicking on item that is part of the selection
-						{
-							std::fill(selection_mask.begin(), selection_mask.end(), 0);
-							selection_mask[node_clicked] = true;           // Click to single-select
-						}
-					}
-
-					ImGui::TreePop();
-				}
-
-				ImGui::End();
-
-				//another window
-				ImGui::Begin("Inspector");
-				if (project->selected != -1)
-				{
-					ImGui::Text("Project element : %d", project->selected);
-					ImGui::Text("Name : %s", project->ventities[project->selected].name);
-					ImGui::Text("Type : %s", project->ventities[project->selected].type);
-					ImGui::Text("Position : %d, %d", project->ventities[project->selected].pos.x, project->ventities[project->selected].pos.y);
-					ImGui::InputText("archive", &project->ventities[project->selected].path);
-				}
-				ImGui::End();
-
-				ImGui::Begin("Assets");
-				//icon example
-				ImGui::Text("%s among %d items", ICON_FA_SEARCH, 54);
-				ImGui::Button(ICON_FA_SEARCH " Search");
-				ImGui::End();
-
-				ImGui::Begin("View");
-				ImGui::Image((ImTextureID)AssetsManager::Instance()->getTexture("warrior"), ImVec2(33, 33));
-				ImGui::SetCursorPos(ImVec2(100, 100));
-				ImGui::Image((ImTextureID)AssetsManager::Instance()->getTexture("warrior"), ImVec2(33, 33));
-				ImGui::End();
-
-				ImGui::Begin("Console");
-				ImGui::Text("last selected %d", project->selected);
-				ImGui::End();
-
-				ImGui::ShowDemoWindow();
-
-
-				//rendering
-				ImGui::Render();
-				ImGui_ImplSDLRenderer_RenderDrawData(ImGui::GetDrawData());
-			}
-
-			// show the window
-			SDL_RenderPresent(g_pRenderer);
+			Editor::Instance()->update();
+			Editor::Instance()->render();
 		}
 	}
 	else
