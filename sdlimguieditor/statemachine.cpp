@@ -10,7 +10,7 @@ StateMachine::~StateMachine()
 
 void StateMachine::changeState(STATES newState)
 {
-	if (newState == CREATEPROJECT) m_currentState = m_createProjectState;
+	if (newState == PROJECTMANAGER) m_currentState = m_projectManagerState;
 	if (newState == EDITOR) m_currentState = m_editorState;
 }
 
@@ -26,8 +26,8 @@ void StateMachine::render()
 void StateMachine::clean() {
 	m_currentState = nullptr;
 
-	m_createProjectState->onExit();
-	delete m_createProjectState;
+	m_projectManagerState->onExit();
+	delete m_projectManagerState;
 
 	m_editorState->onExit();
 	delete m_editorState;

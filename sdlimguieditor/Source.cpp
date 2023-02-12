@@ -114,10 +114,10 @@ bool Editor::init(const char* title, int xpos, int ypos, int width, int height, 
 	//init of StateMachine
 	m_pStateMachine = new StateMachine();     //create the statemachine
 
-	m_pStateMachine->m_createProjectState = new ProjectManagerState();
+	m_pStateMachine->m_projectManagerState = new ProjectManagerState();
 	m_pStateMachine->m_editorState = new EditorState();
 
-	m_pStateMachine->m_createProjectState->onEnter();
+	m_pStateMachine->m_projectManagerState->onEnter();
 	m_pStateMachine->m_editorState->onEnter();
 
 	m_pStateMachine->changeState(EDITOR); //assign a current state

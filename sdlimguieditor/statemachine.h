@@ -3,7 +3,7 @@
 #include "state.h"
 #include <vector>
 
-enum STATES { CREATEPROJECT, EDITOR };
+enum STATES { PROJECTMANAGER, EDITOR };
 
 class StateMachine
 {
@@ -17,7 +17,7 @@ public:
 	void render();
 	void clean();
 
-	State* m_createProjectState;
+	State* m_projectManagerState;
 	State* m_editorState;
 
 	State* m_currentState;
