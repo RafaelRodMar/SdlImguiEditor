@@ -36,6 +36,7 @@ public:
 	int getEditorWidth() const { return m_editorWidth; }
 	int getEditorHeight() const { return m_editorHeight; }
 	StateMachine* getStateMachine() { return m_pStateMachine; }
+	void cleanStateMachine() { delete m_pStateMachine; }
 
 	Entity* project;
 

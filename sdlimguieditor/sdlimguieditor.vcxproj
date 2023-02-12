@@ -140,7 +140,6 @@
     <ClCompile Include="dearimgui\imgui_stdlib.cpp" />
     <ClCompile Include="dearimgui\imgui_tables.cpp" />
     <ClCompile Include="dearimgui\imgui_widgets.cpp" />
-    <ClCompile Include="editor.cpp" />
     <ClCompile Include="EditorState.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Source.cpp" />

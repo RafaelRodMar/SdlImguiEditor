@@ -57,9 +57,6 @@
     <ClCompile Include="Vector2D.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="editor.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="statemachine.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>

@@ -354,6 +354,8 @@ int main(int argc, char* args[])
 	SDL_DestroyRenderer(g_pRenderer);
 	AssetsManager::Instance()->clearAllTextures();
 	InputHandler::Instance()->clean();
+	Editor::Instance()->getStateMachine()->clean();
+	Editor::Instance()->cleanStateMachine();
 	SDL_Quit();
 	return 0;
 }
