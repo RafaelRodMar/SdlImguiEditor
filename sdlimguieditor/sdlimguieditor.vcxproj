@@ -131,7 +131,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AssetsManager.cpp" />
-    <ClCompile Include="CreateProjectState.cpp" />
+    <ClCompile Include="ProjectManagerState.cpp" />
     <ClCompile Include="dearimgui\imgui.cpp" />
     <ClCompile Include="dearimgui\imgui_demo.cpp" />
     <ClCompile Include="dearimgui\imgui_draw.cpp" />
@@ -149,7 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssetsManager.h" />
-    <ClInclude Include="CreateProjectState.h" />
+    <ClInclude Include="ProjectManagerState.h" />
     <ClInclude Include="dearimgui\imconfig.h" />
     <ClInclude Include="dearimgui\imgui.h" />
     <ClInclude Include="dearimgui\imgui_impl_sdl.h" />

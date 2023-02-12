@@ -16,7 +16,7 @@
 #include "entity.h"
 #include <time.h>
 #include "editor.h"
-#include "CreateProjectState.h"
+#include "ProjectManagerState.h"
 #include "EditorState.h"
 
 //the Editor class
@@ -114,7 +114,7 @@ bool Editor::init(const char* title, int xpos, int ypos, int width, int height, 
 	//init of StateMachine
 	m_pStateMachine = new StateMachine();     //create the statemachine
 
-	m_pStateMachine->m_createProjectState = new CreateProjectState();
+	m_pStateMachine->m_createProjectState = new ProjectManagerState();
 	m_pStateMachine->m_editorState = new EditorState();
 
 	m_pStateMachine->m_createProjectState->onEnter();

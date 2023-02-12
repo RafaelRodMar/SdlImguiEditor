@@ -4,11 +4,11 @@
 #include <vector>
 #include "state.h"
 
-class CreateProjectState : public State
+class ProjectManagerState : public State
 {
 public:
-	CreateProjectState();
-	~CreateProjectState();
+	ProjectManagerState();
+	~ProjectManagerState();
 
 	virtual void update();
 	virtual void render();
