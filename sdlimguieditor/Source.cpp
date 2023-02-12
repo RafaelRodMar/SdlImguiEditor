@@ -16,6 +16,8 @@
 #include "entity.h"
 #include <time.h>
 #include "editor.h"
+#include "CreateProjectState.h"
+#include "EditorState.h"
 
 //the Editor class
 Editor* Editor::s_pInstance = 0;
@@ -109,9 +111,19 @@ bool Editor::init(const char* title, int xpos, int ypos, int width, int height, 
 	ImGui_ImplSDLRenderer_Init(m_pRenderer);
 	//***************************************
 
+	//init of StateMachine
+	m_pStateMachine = new StateMachine();     //create the statemachine
+
+	m_pStateMachine->m_createProjectState = new CreateProjectState();
+	m_pStateMachine->m_editorState = new EditorState();
+
+	m_pStateMachine->m_createProjectState->onEnter();
+	m_pStateMachine->m_editorState->onEnter();
+
+	m_pStateMachine->changeState(EDITOR); //assign a current state
+
 	//create a new project
 	project = new Entity("testProject", "project", "");
-
 
 	g_pRenderer = m_pRenderer;
 	g_pWindow = m_pWindow;

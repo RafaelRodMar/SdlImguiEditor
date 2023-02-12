@@ -5,6 +5,7 @@
 #include <SDL_image.h>
 #include "AssetsManager.h"
 #include "InputHandler.h"
+#include "statemachine.h"
 #include "entity.h"
 
 class Editor {
@@ -27,13 +28,14 @@ public:
 	void render();
 	void update();
 	void handleEvents();
-	void clean();
+	//void clean();
 	void quit();
 
 	bool running() { return m_bRunning; }
 
 	int getEditorWidth() const { return m_editorWidth; }
 	int getEditorHeight() const { return m_editorHeight; }
+	StateMachine* getStateMachine() { return m_pStateMachine; }
 
 	Entity* project;
 
@@ -42,6 +44,8 @@ private:
 	static Editor* s_pInstance;
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
+
+	StateMachine* m_pStateMachine;
 
 	bool m_bRunning;
 	int m_editorWidth;

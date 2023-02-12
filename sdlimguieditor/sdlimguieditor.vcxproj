@@ -131,6 +131,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AssetsManager.cpp" />
+    <ClCompile Include="CreateProjectState.cpp" />
     <ClCompile Include="dearimgui\imgui.cpp" />
     <ClCompile Include="dearimgui\imgui_demo.cpp" />
     <ClCompile Include="dearimgui\imgui_draw.cpp" />
@@ -140,12 +141,15 @@
     <ClCompile Include="dearimgui\imgui_tables.cpp" />
     <ClCompile Include="dearimgui\imgui_widgets.cpp" />
     <ClCompile Include="editor.cpp" />
+    <ClCompile Include="EditorState.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="statemachine.cpp" />
     <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssetsManager.h" />
+    <ClInclude Include="CreateProjectState.h" />
     <ClInclude Include="dearimgui\imconfig.h" />
     <ClInclude Include="dearimgui\imgui.h" />
     <ClInclude Include="dearimgui\imgui_impl_sdl.h" />
@@ -156,10 +160,13 @@
     <ClInclude Include="dearimgui\imstb_textedit.h" />
     <ClInclude Include="dearimgui\imstb_truetype.h" />
     <ClInclude Include="editor.h" />
+    <ClInclude Include="EditorState.h" />
+    <ClInclude Include="state.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="IconsFontAwesome4.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="statemachine.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
