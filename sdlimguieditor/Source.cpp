@@ -145,7 +145,38 @@ void Editor::render() {
 	// clear the window to black
 	SDL_RenderClear(g_pRenderer);
 
+	//start the Dear ImGui frame
+	ImGui_ImplSDLRenderer_NewFrame();
+	ImGui_ImplSDL2_NewFrame();
+	ImGui::NewFrame();
+
+	//docking
+	ImGui::DockSpaceOverViewport();
+	ImGui::DockSpace(ImGui::GetID("DockSpace"));
+
+	//menu
+
+	if (ImGui::BeginMainMenuBar()) {
+		if (ImGui::BeginMenu("File")) {
+			if (ImGui::MenuItem("Exit")) {
+				Editor::Instance()->quit();
+			}
+			ImGui::EndMenu();
+		}
+		if (ImGui::BeginMenu("View")) {
+			ImGui::MenuItem("Some Panel", nullptr);
+			ImGui::EndMenu();
+		}
+
+		ImGui::EndMainMenuBar();
+	}
+
+	//render the current state of the editor
 	m_pStateMachine->m_currentState->render();
+
+	//ImGui rendering
+	ImGui::Render();
+	ImGui_ImplSDLRenderer_RenderDrawData(ImGui::GetDrawData());
 
 	// show the window
 	SDL_RenderPresent(g_pRenderer);
