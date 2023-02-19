@@ -23,6 +23,8 @@ void EditorState::update()
 
 void EditorState::render()
 {
+	if (Editor::Instance()->project == nullptr) return;
+
 	//imgui
 
 	static float f = 0.0f;

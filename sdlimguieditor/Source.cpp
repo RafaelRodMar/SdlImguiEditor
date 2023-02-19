@@ -123,7 +123,7 @@ bool Editor::init(const char* title, int xpos, int ypos, int width, int height, 
 	m_pStateMachine->changeState(EDITOR); //assign a current state
 
 	//create a new project
-	project = new Entity("testProject", "project", "");
+	//project = new Entity("testProject", "project", "");
 
 	g_pRenderer = m_pRenderer;
 	g_pWindow = m_pWindow;
@@ -158,6 +158,9 @@ void Editor::render() {
 
 	if (ImGui::BeginMainMenuBar()) {
 		if (ImGui::BeginMenu("File")) {
+			if (ImGui::MenuItem("New Project")) {
+				project = new Entity("testProject", "project", "");
+			}
 			if (ImGui::MenuItem("Exit")) {
 				Editor::Instance()->quit();
 			}
