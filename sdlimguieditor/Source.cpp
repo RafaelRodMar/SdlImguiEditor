@@ -120,7 +120,7 @@ bool Editor::init(const char* title, int xpos, int ypos, int width, int height, 
 	m_pStateMachine->m_projectManagerState->onEnter();
 	m_pStateMachine->m_editorState->onEnter();
 
-	m_pStateMachine->changeState(EDITOR); //assign a current state
+	m_pStateMachine->changeState(PROJECTMANAGER); //assign a current state
 
 	//create a new project
 	//project = new Entity("testProject", "project", "");
@@ -158,8 +158,8 @@ void Editor::render() {
 
 	if (ImGui::BeginMainMenuBar()) {
 		if (ImGui::BeginMenu("File")) {
-			if (ImGui::MenuItem("New Project")) {
-				project = new Entity("testProject", "project", "");
+			if (ImGui::MenuItem("Project Manager")) {
+				m_pStateMachine->changeState(PROJECTMANAGER);
 			}
 			if (ImGui::MenuItem("Exit")) {
 				Editor::Instance()->quit();
@@ -222,6 +222,7 @@ int main(int argc, char* args[])
 	InputHandler::Instance()->clean();
 	Editor::Instance()->getStateMachine()->clean();
 	Editor::Instance()->cleanStateMachine();
+	if (Editor::Instance()->project != nullptr) delete Editor::Instance()->project;
 	SDL_Quit();
 	return 0;
 }
