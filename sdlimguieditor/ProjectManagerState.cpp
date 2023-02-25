@@ -33,7 +33,7 @@ void ProjectManagerState::render()
 		ImGui::InputText("Project name", str0, IM_ARRAYSIZE(str0));
 		if (ImGui::Button("Create Project"))
 		{
-			if (strlen(str0) > 0)
+			if (strlen(str0) > 0 && !std::filesystem::exists(str0))
 			{
 				txt = "  ";
 				Editor::Instance()->project = new Entity(str0, "project", str0);
