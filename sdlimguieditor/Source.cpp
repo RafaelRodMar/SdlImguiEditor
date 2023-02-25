@@ -161,6 +161,12 @@ void Editor::render() {
 			if (ImGui::MenuItem("Project Manager")) {
 				m_pStateMachine->changeState(PROJECTMANAGER);
 			}
+			if (m_pStateMachine->m_currentState->getStateID() == "EDITOR")
+			{
+				if (ImGui::MenuItem("Save Project")) {
+
+				}
+			}
 			if (ImGui::MenuItem("Exit")) {
 				Editor::Instance()->quit();
 			}
