@@ -62,11 +62,11 @@ void EditorState::render()
 			// Disable the default "open on single-click behavior" + set Selected flag according to our selection.
 			// To alter selection we use IsItemClicked() && !IsItemToggledOpen(), so clicking on an arrow doesn't alter selection.
 			ImGuiTreeNodeFlags node_flags_scenes = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
-			const bool is_selected = selection_mask_scenes[i] != false;
-			if (is_selected)
+			const bool is_selected_scenes = selection_mask_scenes[i] != false;
+			if (is_selected_scenes)
 				node_flags_scenes |= ImGuiTreeNodeFlags_Selected;
 
-			bool node_open = ImGui::TreeNodeEx((void*)(intptr_t)i, node_flags_scenes, vecScenes[i].name.c_str());
+			bool node_open_scenes = ImGui::TreeNodeEx((void*)(intptr_t)i, node_flags_scenes, vecScenes[i].name.c_str());
 			if (ImGui::IsItemClicked() && !ImGui::IsItemToggledOpen())
 			{
 				node_clicked_scenes = i;
@@ -91,13 +91,25 @@ void EditorState::render()
 				ImGui::EndPopup();
 			}
 
-			if (node_open)
+			if (node_open_scenes)
 			{
 				//show layers
-				//node_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
-				ImGuiTreeNodeFlags node_flags = ImGuiTreeNodeFlags_None | ImGuiTreeNodeFlags_Leaf | ImGuiTreeNodeFlags_NoTreePushOnOpen; //leaf node
+				static std::vector<bool> selection_mask_layers(256, false);
+				int node_clicked_layers = -1;
+				//node_flags = ImGuiTreeNodeFlags_None | ImGuiTreeNodeFlags_Leaf | ImGuiTreeNodeFlags_NoTreePushOnOpen; //leaf node
 				for (int j = 0; j < vecScenes[i].ventities.size(); j++) {
-					ImGui::TreeNodeEx((void*)(intptr_t)j, node_flags, vecScenes[i].ventities[j].name.c_str());
+					auto& vecLayers = vecScenes[i].ventities;
+					ImGuiTreeNodeFlags node_flags_layers = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
+					const bool is_selected_layers = selection_mask_layers[j] != false;
+					if (is_selected_layers)
+						node_flags_layers |= ImGuiTreeNodeFlags_Selected;
+
+					bool node_open_layers = ImGui::TreeNodeEx((void*)(intptr_t)j, node_flags_layers, vecLayers[j].name.c_str());
+					if (ImGui::IsItemClicked() && !ImGui::IsItemToggledOpen())
+					{
+						node_clicked_layers = j;
+						Editor::Instance()->project->ventities[i].selected = j;
+					}
 
 					//context menu
 					if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
@@ -110,6 +122,28 @@ void EditorState::render()
 						{
 						}
 						ImGui::EndPopup();
+					}
+
+					if (node_open_layers)
+					{
+						//show objects
+						ImGui::TreePop();
+					}
+				}
+
+				if (node_clicked_layers != -1)
+				{
+					//remove selections from scene level
+					node_clicked_scenes = -1;
+					std::fill(selection_mask_scenes.begin(), selection_mask_scenes.end(), 0);
+					// Update selection state
+					// (process outside of tree loop to avoid visual inconsistencies during the clicking frame)
+					if (ImGui::GetIO().KeyCtrl)
+						selection_mask_layers[node_clicked_layers] = !selection_mask_layers[node_clicked_layers];          // CTRL+click to toggle
+					else //if (!(selection_mask & (1 << node_clicked))) // Depending on selection behavior you want, may want to preserve selection when clicking on item that is part of the selection
+					{
+						std::fill(selection_mask_layers.begin(), selection_mask_layers.end(), 0);
+						selection_mask_layers[node_clicked_layers] = true;           // Click to single-select
 					}
 				}
 				ImGui::TreePop();
