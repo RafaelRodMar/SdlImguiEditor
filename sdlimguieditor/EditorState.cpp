@@ -21,6 +21,26 @@ void EditorState::update()
 {
 }
 
+void EditorState::render_tree_node(Entity& node) {
+	bool node_selected = ImGui::Selectable(node.name.c_str(), node.is_selected);
+	if (node_selected != node.is_selected) {
+		node.is_selected = node_selected;
+	}
+	ImGui::SameLine();
+	if (node.is_selected)
+		ImGui::Text("is");
+	else
+		ImGui::Text("is not");
+
+	if (!node.ventities.empty()) {
+		ImGui::Indent();
+		for (auto& child : node.ventities) {
+			render_tree_node(child);
+		}
+		ImGui::Unindent();
+	}
+}
+
 void EditorState::render()
 {
 	if (Editor::Instance()->project == nullptr) return;
@@ -166,6 +186,11 @@ void EditorState::render()
 		ImGui::TreePop();
 	}
 
+	ImGui::End();
+
+	//tree test window
+	ImGui::Begin("testWindow");
+		render_tree_node(*Editor::Instance()->project);
 	ImGui::End();
 
 	//another window

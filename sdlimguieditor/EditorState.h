@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "state.h"
+#include "entity.h"
 
 class EditorState :	public State
 {
@@ -17,6 +18,7 @@ public:
 	virtual bool onExit();
 
 	virtual std::string getStateID() const { return s_ID; }
+	void render_tree_node(Entity& node);
 
 private:
 	static const std::string s_ID;
