@@ -151,10 +151,10 @@ void EditorState::render()
 					}
 				}
 
-				if (node_clicked_layers != -1)
+				if (node_clicked_scenes != -1 && node_clicked_layers != -1)
 				{
 					//remove selections from scene level
-					node_clicked_scenes = -1;
+					//node_clicked_scenes = -1;
 					std::fill(selection_mask_scenes.begin(), selection_mask_scenes.end(), 0);
 					// Update selection state
 					// (process outside of tree loop to avoid visual inconsistencies during the clicking frame)
