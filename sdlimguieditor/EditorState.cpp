@@ -100,6 +100,72 @@ void EditorState::remove_node(Entity& node) {
 	}
 }
 
+void EditorState::render_tree_node2(Entity& node) {
+
+	if (ImGui::TreeNode(node.name.c_str()))
+	{
+
+		//context menu
+		if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
+		{
+			std::string add = "Add ";
+			std::string remove = "Remove ";
+
+			switch (node.type[0]) {
+			case 'p':
+				add += "scene";
+				break;
+			case 's':
+				add += "layer";
+				remove += "scene";
+				break;
+			case 'l':
+				add += "object";
+				remove += "layer";
+				break;
+			case 'o':
+				remove += "object";
+				break;
+			default:
+				break;
+			}
+
+			if (add != "Add ")
+			{
+				if (ImGui::MenuItem(add.c_str()))
+				{
+					node.addEntity();
+				}
+			}
+			if (remove != "Remove ")
+			{
+				ImGui::Separator();
+				if (ImGui::MenuItem(remove.c_str()))
+				{
+					node.remove = true;
+				}
+			}
+			ImGui::EndPopup();
+		}
+
+		/*ImGui::SameLine();
+		if (node.is_selected)
+			ImGui::Text("is");
+		else
+			ImGui::Text("is not");*/
+
+		if (!node.ventities.empty()) {
+			ImGui::Indent();
+			for (auto& child : node.ventities) {
+				render_tree_node2(child);
+			}
+			ImGui::Unindent();
+		}
+
+		ImGui::TreePop();
+	}
+}
+
 void EditorState::render()
 {
 	if (Editor::Instance()->project == nullptr) return;
@@ -249,7 +315,7 @@ void EditorState::render()
 
 	//tree test window
 	ImGui::Begin("testWindow");
-		render_tree_node(*Editor::Instance()->project);
+		render_tree_node2(*Editor::Instance()->project);
 		//remove_node(*Editor::Instance()->project);
 	ImGui::End();
 
