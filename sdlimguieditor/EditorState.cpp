@@ -26,6 +26,48 @@ void EditorState::render_tree_node(Entity& node) {
 	if (node_selected != node.is_selected) {
 		node.is_selected = node_selected;
 	}
+
+	//context menu
+	if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
+	{
+		std::string add = "Add ";
+		std::string remove = "Remove ";
+		
+		switch (node.type[0]) {
+		case 'p':
+			add += "scene";
+			break;
+		case 's':
+			add += "layer";
+			remove += "scene";
+			break;
+		case 'l':
+			add += "object";
+			remove += "layer";
+			break;
+		case 'o':
+			remove += "object";
+			break;
+		default:
+			break;
+		}
+
+		if (add != "Add ")
+		{
+			if (ImGui::MenuItem(add.c_str()))
+			{
+			}
+		}
+		if (remove != "Remove ")
+		{
+			ImGui::Separator();
+			if (ImGui::MenuItem(remove.c_str()))
+			{
+			}
+		}
+		ImGui::EndPopup();
+	}
+
 	ImGui::SameLine();
 	if (node.is_selected)
 		ImGui::Text("is");
