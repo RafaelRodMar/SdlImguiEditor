@@ -56,6 +56,7 @@ void EditorState::render_tree_node(Entity& node) {
 		{
 			if (ImGui::MenuItem(add.c_str()))
 			{
+				node.addEntity();
 			}
 		}
 		if (remove != "Remove ")
@@ -63,16 +64,17 @@ void EditorState::render_tree_node(Entity& node) {
 			ImGui::Separator();
 			if (ImGui::MenuItem(remove.c_str()))
 			{
+				node.remove = true;
 			}
 		}
 		ImGui::EndPopup();
 	}
 
-	ImGui::SameLine();
+	/*ImGui::SameLine();
 	if (node.is_selected)
 		ImGui::Text("is");
 	else
-		ImGui::Text("is not");
+		ImGui::Text("is not");*/
 
 	if (!node.ventities.empty()) {
 		ImGui::Indent();
@@ -80,6 +82,21 @@ void EditorState::render_tree_node(Entity& node) {
 			render_tree_node(child);
 		}
 		ImGui::Unindent();
+	}
+}
+
+void EditorState::remove_node(Entity& node) {
+	
+	if (!node.ventities.empty()) {
+		for (int i = 0; i < node.ventities.size();i++) {
+			if (node.ventities[i].remove == true) {
+				node.ventities.erase(node.ventities.begin() + i);
+			}
+			else
+			{
+				remove_node(node.ventities[i]);
+			}
+		}
 	}
 }
 
@@ -233,6 +250,7 @@ void EditorState::render()
 	//tree test window
 	ImGui::Begin("testWindow");
 		render_tree_node(*Editor::Instance()->project);
+		//remove_node(*Editor::Instance()->project);
 	ImGui::End();
 
 	//another window

@@ -12,6 +12,7 @@ public:
 	std::vector<Entity> ventities;
 	int selected = -1;
 	bool is_selected = false;
+	bool remove = false;
 
 	//image
 	SDL_Texture* texture;
