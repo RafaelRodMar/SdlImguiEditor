@@ -101,7 +101,7 @@ void EditorState::remove_node(Entity& node) {
 }
 
 void EditorState::render_tree_node2(Entity& node) {
-
+	ImGui::SetNextItemOpen(true, 0);
 	if (ImGui::TreeNode(node.name.c_str()))
 	{
 
@@ -148,18 +148,10 @@ void EditorState::render_tree_node2(Entity& node) {
 			ImGui::EndPopup();
 		}
 
-		/*ImGui::SameLine();
-		if (node.is_selected)
-			ImGui::Text("is");
-		else
-			ImGui::Text("is not");*/
-
 		if (!node.ventities.empty()) {
-			ImGui::Indent();
 			for (auto& child : node.ventities) {
 				render_tree_node2(child);
 			}
-			ImGui::Unindent();
 		}
 
 		ImGui::TreePop();

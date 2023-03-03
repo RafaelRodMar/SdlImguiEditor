@@ -13,6 +13,7 @@ public:
 	int selected = -1;
 	bool is_selected = false;
 	bool remove = false;
+	int entityID = 0;
 
 	//image
 	SDL_Texture* texture;
@@ -37,13 +38,13 @@ public:
 		if (ventities.size() >= 256) return false;
 		switch (type[0]) {
 		case 'p':
-			ventities.push_back(Entity("scene", "scene", ""));
+			ventities.push_back(Entity("scene" + std::to_string(entityID), "scene", ""));
 			break;
 		case 's':
-			ventities.push_back(Entity("layer", "layer", ""));
+			ventities.push_back(Entity("layer" + std::to_string(entityID), "layer", ""));
 			break;
 		case 'l':
-			ventities.push_back(Entity("object", "object", ""));
+			ventities.push_back(Entity("object" + std::to_string(entityID), "object", ""));
 			break;
 		case 'o':
 			//future feature: objects can have other objects attached.
@@ -51,6 +52,8 @@ public:
 		default:
 			break;
 		}
+
+		entityID++;
 
 		return true;
 	}
