@@ -37,11 +37,11 @@ void ProjectManagerState::render()
 			{
 				txt = "  ";
 				Editor::Instance()->project = new Entity(str0, "project", str0);
-				Editor::Instance()->project->ventities.push_back(Entity("scene0", "scene", ""));
-				Editor::Instance()->project->ventities.push_back(Entity("scene1", "scene", ""));
-				Editor::Instance()->project->ventities.push_back(Entity("scene2", "scene", ""));
-				Editor::Instance()->project->ventities[1].ventities.push_back(Entity("layer0", "layer", ""));
-				Editor::Instance()->project->ventities[1].ventities.push_back(Entity("layer1", "layer", ""));
+				Editor::Instance()->project->addEntity();
+				Editor::Instance()->project->addEntity();
+				Editor::Instance()->project->addEntity();
+				Editor::Instance()->project->ventities[1].addEntity();
+				Editor::Instance()->project->ventities[1].addEntity();
 				if (std::filesystem::create_directory(str0))
 				{
 					Editor::Instance()->getStateMachine()->changeState(EDITOR);
@@ -63,11 +63,11 @@ void ProjectManagerState::render()
 			else
 			{
 				Editor::Instance()->project = new Entity(str0, "project", str0);
-				Editor::Instance()->project->ventities.push_back(Entity("scene0", "scene", ""));
-				Editor::Instance()->project->ventities.push_back(Entity("scene1", "scene", ""));
-				Editor::Instance()->project->ventities.push_back(Entity("scene2", "scene", ""));
-				Editor::Instance()->project->ventities[1].ventities.push_back(Entity("layer0", "layer", ""));
-				Editor::Instance()->project->ventities[1].ventities.push_back(Entity("layer1", "layer", ""));
+				Editor::Instance()->project->addEntity();
+				Editor::Instance()->project->addEntity();
+				Editor::Instance()->project->addEntity();
+				Editor::Instance()->project->ventities[1].addEntity();
+				Editor::Instance()->project->ventities[1].addEntity();
 				Editor::Instance()->getStateMachine()->changeState(EDITOR);
 			}
 		}

@@ -133,6 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AssetsManager.cpp" />
+    <ClCompile Include="entity.cpp" />
     <ClCompile Include="ProjectManagerState.cpp" />
     <ClCompile Include="dearimgui\imgui.cpp" />
     <ClCompile Include="dearimgui\imgui_demo.cpp" />

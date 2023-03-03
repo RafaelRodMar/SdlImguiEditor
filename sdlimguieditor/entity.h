@@ -2,6 +2,7 @@
 #include<sdl.h>
 #include<SDL_image.h>
 #include<string>
+#include<vector>
 
 class Entity {
 public:
@@ -13,7 +14,6 @@ public:
 	int selected = -1;
 	bool is_selected = false;
 	bool remove = false;
-	int entityID = 0;
 
 	//image
 	SDL_Texture* texture;
@@ -33,29 +33,6 @@ public:
 		pos.x = pos.y = 0;
 	}
 
-	//Add a new entity based on the current entity type (scene, layer, object)
-	bool addEntity() {
-		if (ventities.size() >= 256) return false;
-		switch (type[0]) {
-		case 'p':
-			ventities.push_back(Entity("scene" + std::to_string(entityID), "scene", ""));
-			break;
-		case 's':
-			ventities.push_back(Entity("layer" + std::to_string(entityID), "layer", ""));
-			break;
-		case 'l':
-			ventities.push_back(Entity("object" + std::to_string(entityID), "object", ""));
-			break;
-		case 'o':
-			//future feature: objects can have other objects attached.
-			break;
-		default:
-			break;
-		}
-
-		entityID++;
-
-		return true;
-	}
+	bool addEntity();
 
 };

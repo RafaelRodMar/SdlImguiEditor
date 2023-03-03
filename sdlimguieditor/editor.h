@@ -39,6 +39,9 @@ public:
 	void cleanStateMachine() { delete m_pStateMachine; }
 
 	Entity* project;
+	int getEntityID() {
+		return entityID++;
+	}
 
 private:
 	Editor();
@@ -51,4 +54,5 @@ private:
 	bool m_bRunning;
 	int m_editorWidth;
 	int m_editorHeight;
+	int entityID = 0;  //every entity has a different ID number
 };
