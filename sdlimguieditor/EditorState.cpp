@@ -101,10 +101,18 @@ void EditorState::remove_node(Entity& node) {
 }
 
 void EditorState::render_tree_node2(Entity& node) {
+	ImGuiTreeNodeFlags base_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
+
+	if (entitySelected.name == node.name)
+		base_flags |= ImGuiTreeNodeFlags_Selected;
+
 	ImGui::SetNextItemOpen(true, 0);
-	if (ImGui::TreeNode(node.name.c_str()))
+	if (ImGui::TreeNodeEx(node.name.c_str(), base_flags))
 	{
-		if (ImGui::IsItemClicked()) entitySelected = node;
+		if (ImGui::IsItemClicked())
+		{
+			entitySelected = node;
+		}
 
 		//context menu
 		if (ImGui::BeginPopupContextItem()) // <-- use last item id as popup id
@@ -140,7 +148,7 @@ void EditorState::render_tree_node2(Entity& node) {
 			}
 			if (remove != "Remove ")
 			{
-				ImGui::Separator();
+				if(add != "Add ") ImGui::Separator();
 				if (ImGui::MenuItem(remove.c_str()))
 				{
 					node.remove = true;
