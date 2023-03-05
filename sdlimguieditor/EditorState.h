@@ -18,7 +18,6 @@ public:
 	virtual bool onExit();
 
 	virtual std::string getStateID() const { return s_ID; }
-	//void render_tree_node(Entity& node);
 	void render_tree_node2(Entity& node);
 	void remove_node(Entity& node);
 	void render_tree(Entity& node);

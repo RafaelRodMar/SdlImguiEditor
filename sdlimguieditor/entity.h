@@ -35,4 +35,11 @@ public:
 
 	bool addEntity();
 
+	//show information in inspector window
+	void onInspector();
+	void onInspectorProject();
+	void onInspectorScene();
+	void onInspectorLayer();
+	void onInspectorObject();
+
 };

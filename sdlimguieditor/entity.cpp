@@ -1,3 +1,5 @@
+#include "dearimgui/imgui.h"
+#include "dearimgui/imgui_stdlib.h"  //for using std::string in some imgui funcions.
 #include "entity.h"
 #include "editor.h"
 
@@ -24,4 +26,48 @@ bool Entity::addEntity() {
 	}
 
 	return true;
+}
+
+void Entity::onInspector()
+{
+	if (type == "project")
+		onInspectorProject();
+	else if (type == "scene") 
+		onInspectorScene();
+	else if (type == "layer")
+		onInspectorLayer();
+	else if (type == "object")
+		onInspectorObject();
+}
+
+void Entity::onInspectorProject()
+{
+	ImGui::Text("Project element name: %s", name);
+	ImGui::Text("Type : %s", type);
+	ImGui::Text("Position : %d, %d", pos.x, pos.y);
+	ImGui::InputText("archive", &path);
+}
+
+void Entity::onInspectorScene()
+{
+	ImGui::Text("Project element name: %s", name);
+	ImGui::Text("Type : %s", type);
+	ImGui::Text("Position : %d, %d", pos.x, pos.y);
+	ImGui::InputText("archive", &path);
+}
+
+void Entity::onInspectorLayer()
+{
+	ImGui::Text("Project element name: %s", name);
+	ImGui::Text("Type : %s", type);
+	ImGui::Text("Position : %d, %d", pos.x, pos.y);
+	ImGui::InputText("archive", &path);
+}
+
+void Entity::onInspectorObject()
+{
+	ImGui::Text("Project element name: %s", name);
+	ImGui::Text("Type : %s", type);
+	ImGui::Text("Position : %d, %d", pos.x, pos.y);
+	ImGui::InputText("archive", &path);
 }
