@@ -39,7 +39,7 @@ void EditorState::remove_node(Entity& node) {
 void EditorState::render_tree_node2(Entity& node) {
 	ImGuiTreeNodeFlags base_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
 
-	if (entitySelected.name == node.name)
+	if (entitySelected != nullptr && entitySelected->name == node.name)
 		base_flags |= ImGuiTreeNodeFlags_Selected;
 
 	ImGui::SetNextItemOpen(true, 0);
@@ -47,7 +47,7 @@ void EditorState::render_tree_node2(Entity& node) {
 	{
 		if (ImGui::IsItemClicked())
 		{
-			entitySelected = node;
+			entitySelected = &node;
 		}
 
 		//context menu
@@ -125,9 +125,9 @@ void EditorState::render()
 
 	//another window
 	ImGui::Begin("Inspector");
-	if (entitySelected.name != "")
+	if (entitySelected != nullptr)
 	{
-		entitySelected.onInspector();
+		entitySelected->onInspector();
 	}
 	ImGui::End();
 

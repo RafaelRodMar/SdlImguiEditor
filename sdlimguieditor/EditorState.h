@@ -22,7 +22,7 @@ public:
 	void remove_node(Entity& node);
 	void render_tree(Entity& node);
 
-	Entity entitySelected;
+	Entity* entitySelected;
 
 private:
 	static const std::string s_ID;
