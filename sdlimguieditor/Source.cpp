@@ -138,6 +138,10 @@ void Editor::update() {
 	m_pStateMachine->m_currentState->update();
 }
 
+void Editor::saveProject() {
+
+}
+
 void Editor::render() {
 	// set to black // This function expects Red, Green, Blue and
 	// Alpha as color values

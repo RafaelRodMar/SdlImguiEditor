@@ -26,10 +26,13 @@ void ProjectManagerState::update()
 
 void ProjectManagerState::render()
 {
+	ImGui::SetNextWindowFocus();
 	ImGui::SetNextItemOpen(true, 0);
 	ImGui::Begin("Project Manager");
 		static std::string txt = " ";
 		static char str0[128] = "";
+		if (!ImGui::IsAnyItemActive() && !ImGui::IsMouseClicked(0))
+			ImGui::SetKeyboardFocusHere(0);
 		ImGui::InputText("Project name", str0, IM_ARRAYSIZE(str0));
 		if (ImGui::Button("Create Project"))
 		{
@@ -44,6 +47,7 @@ void ProjectManagerState::render()
 				Editor::Instance()->project->ventities[1].addEntity();
 				if (std::filesystem::create_directory(str0))
 				{
+					
 					Editor::Instance()->getStateMachine()->changeState(EDITOR);
 				}
 				else

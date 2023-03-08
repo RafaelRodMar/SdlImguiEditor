@@ -42,6 +42,7 @@ public:
 	int getEntityID() {
 		return entityID++;
 	}
+	void saveProject();
 
 private:
 	Editor();
