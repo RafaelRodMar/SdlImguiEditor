@@ -144,6 +144,7 @@ nlohmann::json to_json(Entity node)
 	nlohmann::json json_node;
 	std::string entityType = "";
 	json_node["name"] = node.name;
+	json_node["type"] = node.type;
 	
 	for (int i = 0; i < node.ventities.size(); i++) {
 		json_node[node.ventities[i].type].push_back(to_json(node.ventities[i]));

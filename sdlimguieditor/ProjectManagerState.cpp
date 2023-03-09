@@ -1,6 +1,7 @@
 #include <filesystem>
 #include <fstream>
 #include <cstdlib>
+#include "json.hpp"
 #include "ProjectManagerState.h"
 #include "IconsFontAwesome4.h" //header with names for every icon.
 #include "dearimgui/imgui.h"
@@ -22,6 +23,21 @@ ProjectManagerState::~ProjectManagerState()
 
 void ProjectManagerState::update()
 {
+}
+
+Entity createNode(const nlohmann::json& nodeData) {
+	Entity node;
+
+	node.name = nodeData["name"].get<std::string>();
+	node.type = nodeData["type"].get<std::string>();
+
+	if (nodeData.find("scene") != nodeData.end()) {
+		for (const auto& sceneData : nodeData["scene"]) {
+			node.ventities.push_back(createNode(sceneData));
+		}
+	}
+
+	return node;
 }
 
 void ProjectManagerState::render()
@@ -66,12 +82,20 @@ void ProjectManagerState::render()
 			}
 			else
 			{
-				Editor::Instance()->project = new Entity(str0, "project", str0);
+				/*Editor::Instance()->project = new Entity(str0, "project", str0);
 				Editor::Instance()->project->addEntity();
 				Editor::Instance()->project->addEntity();
 				Editor::Instance()->project->addEntity();
 				Editor::Instance()->project->ventities[1].addEntity();
-				Editor::Instance()->project->ventities[1].addEntity();
+				Editor::Instance()->project->ventities[1].addEntity();*/
+				nlohmann::json jsonData;
+				std::string f = str0;
+				f += "\\"; f += str0; f += ".json";
+				std::ifstream jsonFile(f);
+				jsonFile >> jsonData;  //read the file
+
+				Editor::Instance()->project = &createNode(jsonData);
+
 				Editor::Instance()->getStateMachine()->changeState(EDITOR);
 			}
 		}
