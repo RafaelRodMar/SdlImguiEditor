@@ -1,6 +1,7 @@
 #include<SDL.h>
 #include<SDL_image.h>
 #include<iostream>
+#include<fstream>
 #include<string>
 #include<vector>
 #include<bitset>
@@ -138,8 +139,25 @@ void Editor::update() {
 	m_pStateMachine->m_currentState->update();
 }
 
-void Editor::saveProject() {
+nlohmann::json to_json(Entity node)
+{
+	nlohmann::json json_node;
+	std::string entityType = "";
+	json_node["name"] = node.name;
+	
+	for (int i = 0; i < node.ventities.size(); i++) {
+		json_node[node.ventities[i].type].push_back(to_json(node.ventities[i]));
+	}
 
+	return json_node;
+}
+
+void Editor::saveProject() {
+	nlohmann::json json_tree = to_json(*project);
+
+	std::ofstream output_file(project->name + "\\" + "entitytree.json");
+	output_file << json_tree.dump(2); //two spaces of indentation.
+	output_file.close();
 }
 
 void Editor::render() {
@@ -168,7 +186,7 @@ void Editor::render() {
 			if (m_pStateMachine->m_currentState->getStateID() == "EDITOR")
 			{
 				if (ImGui::MenuItem("Save Project")) {
-
+					saveProject();
 				}
 			}
 			if (ImGui::MenuItem("Exit")) {
