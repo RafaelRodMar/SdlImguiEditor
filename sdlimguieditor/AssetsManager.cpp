@@ -181,7 +181,7 @@ bool AssetsManager::loadFont(const string &fileName, string id, int size)
 	TTF_Font* f = TTF_OpenFont(fileName.c_str(), size);
 	if (f == NULL)
 	{
-		cout << "error opening font file" << endl;
+		cout << "error opening font file " << fileName << endl;
 		return false;
 	}
 

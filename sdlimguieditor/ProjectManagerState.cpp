@@ -37,6 +37,18 @@ Entity createNode(const nlohmann::json& nodeData) {
 		}
 	}
 
+	if (nodeData.find("layer") != nodeData.end()) {
+		for (const auto& layerData : nodeData["layer"]) {
+			node.ventities.push_back(createNode(layerData));
+		}
+	}
+
+	if (nodeData.find("object") != nodeData.end()) {
+		for (const auto& objectData : nodeData["object"]) {
+			node.ventities.push_back(createNode(objectData));
+		}
+	}
+
 	return node;
 }
 
@@ -90,13 +102,21 @@ void ProjectManagerState::render()
 				Editor::Instance()->project->ventities[1].addEntity();*/
 				nlohmann::json jsonData;
 				std::string f = str0;
-				f += "\\"; f += str0; f += ".json";
+				f += "\\"; f += "entitytree"; f += ".json";
+
 				std::ifstream jsonFile(f);
-				jsonFile >> jsonData;  //read the file
+				if (jsonFile.is_open())
+				{
+					jsonFile >> jsonData;  //read the file
 
-				Editor::Instance()->project = &createNode(jsonData);
+					Entity e = createNode(jsonData);
+					Editor::Instance()->project = new Entity("", "", "");
+					Editor::Instance()->project->name = e.name;
+					Editor::Instance()->project->type = e.type;
+					Editor::Instance()->project->ventities = e.ventities;
 
-				Editor::Instance()->getStateMachine()->changeState(EDITOR);
+					Editor::Instance()->getStateMachine()->changeState(EDITOR);
+				}
 			}
 		}
 		if (ImGui::Button("Return To Editor"))

@@ -1,5 +1,6 @@
 #include<SDL.h>
 #include<SDL_image.h>
+#include<SDL_ttf.h>
 #include<iostream>
 #include<fstream>
 #include<string>
@@ -75,6 +76,17 @@ bool Editor::init(const char* title, int xpos, int ypos, int width, int height, 
 		std::cout << "SDL init fail\n";
 		return false; // sdl could not initialize
 	}
+
+	if (TTF_Init() == 0)
+	{
+		std::cout << "sdl font initialization success\n";
+	}
+	else
+	{
+		std::cout << "sdl font init fail\n";
+		return false;
+	}
+
 	std::cout << "init success\n";
 	m_bRunning = true;
 
